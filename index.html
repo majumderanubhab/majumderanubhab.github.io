@@ -28,18 +28,20 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   background-repeat: no-repeat;
   background-size: cover;
 }
-.parallax2 {
-  /* The image used */
-  background-image: url("b2.JPG");
+.caption {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
 
-  /* Set a specific height */
-  min-height: 500px;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: -120px 0px;
-  background-repeat: no-repeat;
-  background-size: cover;
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
 }
 
 </style>
@@ -47,8 +49,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="dp.png" style="width:100%">
+  <!-- Avatar image in top left corner
+  <img src="dp.png" style="width:100%">-->
+
   <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
@@ -77,20 +80,11 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-hide-small w3-container w3-padding-top-16 w3-center w3-black" id="home">
-    <h1 class="w3-xlarge"><span class="w3-hide-small">I'm</span> Anubhab Majumder.</h1>
-    <p>Ph. D. Research Scholar.</p>
-    <!--<img src="b2.JPG" alt="boy" class="w3-image" width="992" height="1108">-->
-  </header>
-  <header class="w3-hide-medium w3-hide-large w3-container w3-padding-top-32 w3-center w3-black" id="home">
-    <h1 class="w3-xlarge"><span class="w3-hide-small">I'm</span> Anubhab Majumder.</h1>
-    <p>Ph. D. Research Scholar.</p>
-  </header>
-</div>
-  <div class="parallax"></div>
+  <div class="parallax">
+    <div class="caption">
+      <span class="border">I'm Anubhab Majumder</span>
+    </div>
+  </div>
 <!--  <div class="parallax2 w3-hide-large w3-hide-medium"></div>-->
 <div class="w3-padding-large" id="main">
   <!-- About Section -->
@@ -170,19 +164,19 @@ Renewable Energy, 2017</li><br>
 
     <div>
     <ol>
-    <li>Chattopadhyay, P., Majumder, A., Dikshit, H., Ghoshal, S. K., & Maity, A. (2018, June). A bio-inspired climbing robot: design, simulation, and experiments. In IOP conference series: materials science and engineering (Vol. 377, No. 1, p. 012105). IOP Publishing.</li><br>
-    <li>Chattopadhyay, P., Ghoshal, S., Majumder, A., & Dikshit, H. (2018). Locomotion Methods of Pipe Climbing robots: A Review. Journal of Engineering Science & Technology Review, 11(4).</li><br>
-    <li>Chattopadhyay, P., Dikshit, H., Majumder, A., Ghoshal, S., & Maity, A. (2018, April). Dynamic analysis of a bio-inspired climbing robot using ADAMS-Simulink co-simulation. In AIP conference proceedings (Vol. 1952, No. 1, p. 020015). AIP Publishing LLC.</li><br>
+      <li>Chattopadhyay, P., Majumder, A., Dikshit, H., Ghoshal, S. K., & Maity, A. (2018, June). A bio-inspired climbing robot: design, simulation, and experiments. In IOP conference series: materials science and engineering (Vol. 377, No. 1, p. 012105). IOP Publishing.</li><br>
+      <li>Chattopadhyay, P., Ghoshal, S., Majumder, A., & Dikshit, H. (2018). Locomotion Methods of Pipe Climbing robots: A Review. Journal of Engineering Science & Technology Review, 11(4).</li><br>
+      <li>Chattopadhyay, P., Dikshit, H., Majumder, A., Ghoshal, S., & Maity, A. (2018, April). Dynamic analysis of a bio-inspired climbing robot using ADAMS-Simulink co-simulation. In AIP conference proceedings (Vol. 1952, No. 1, p. 020015). AIP Publishing LLC.</li><br>
 
-    <li>Chattopadhyay, P., Ghoshal, S. K., & Majumder, A. (2020). IMPLEMENTATION OF PIECEWISE SINE FUNCTIONS ON LIMBLESS ROBOT LOCOMOTION. International Journal of Robotics and Automation, 35(4).</li><br>
+      <li>Chattopadhyay, P., Ghoshal, S. K., & Majumder, A. (2020). IMPLEMENTATION OF PIECEWISE SINE FUNCTIONS ON LIMBLESS ROBOT LOCOMOTION. International Journal of Robotics and Automation, 35(4).</li><br>
 
-    <li>Patra, A., Patel, M., Chattopadhyay, P., Majumder, A., & Ghoshal, S. K. (2020). A Bio-inspired Climbing Robot: Dynamic Modelling and Prototype Development. In Recent Advances in Mechanical Engineering (pp. 191-209). Springer, Singapore.</li><br>
+      <li>Patra, A., Patel, M., Chattopadhyay, P., Majumder, A., & Ghoshal, S. K. (2020). A Bio-inspired Climbing Robot: Dynamic Modelling and Prototype Development. In Recent Advances in Mechanical Engineering (pp. 191-209). Springer, Singapore.</li><br>
 
-    <li>Majumder, A., Patra, A., Patel, M., Chattopadhyay, P., & Ghoshal, S. K. (2019). Locomotion Study of a Hyper-redundant Modular Robot Using Artificial Neural Networks. In Proceedings of the Advances in Robotics 2019 (pp. 1-6).</li><br>
+      <li>Majumder, A., Patra, A., Patel, M., Chattopadhyay, P., & Ghoshal, S. K. (2019). Locomotion Study of a Hyper-redundant Modular Robot Using Artificial Neural Networks. In Proceedings of the Advances in Robotics 2019 (pp. 1-6).</li><br>
 
-    <li>P. Chattopadhyay, A. Majumder, H. Dikshit, S. Ghoshal and A. Maity, 2018. Design and Simulation of a Limbless Climbing Robot. Journal of Engineering and Applied Sciences, 13: 5529-5535.</li><br>
+      <li>P. Chattopadhyay, A. Majumder, H. Dikshit, S. Ghoshal and A. Maity, 2018. Design and Simulation of a Limbless Climbing Robot. Journal of Engineering and Applied Sciences, 13: 5529-5535.</li><br>
 
-  </ol>
+    </ol>
     <!-- End Grid/Pricing tables -->
     </div>
   <!-- End About Section -->
