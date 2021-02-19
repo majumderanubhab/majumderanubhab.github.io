@@ -47,6 +47,16 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   font-size: 25px;
 }
 
+.zoom {
+  transition: transform 0.5s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1); 
+}
+
 </style>
 <body class="w3-black">
 
@@ -92,7 +102,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </div>
 <div class="w3-padding-large" id="main">
   <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-light-grey w3-padding-64" id="about">
+  <div class="w3-content w3-text-light-grey w3-padding-64" id="about">
     <h2 class="w3-text-light-grey">About me</h2>
     <hr style="width:200px" class="w3-opacity">
     <p>I received my B. Tech. degree in Mechanical Engineering from Government College of Engineering & Textile Technology, Berhampore, India, in 2016 and M. Tech. degree in Mechanical Engineering with specialization in Machine Design from Indian Institute of Technology (Indian School of Mines) Dhanbad, India, in 2018. I am currently pursuing Ph. D. in Product Design from Innovation, Design Study and Sustainability Laboratory (IDeaSLab), Centre for Product Design and Manufacturing (CPDM), Indian Institute of Science, Bangalore, India. My research interests include conceptual design synthesis, multiple-state mechanical devices, creativity, kinematics and robotics.
@@ -176,18 +186,18 @@ Renewable Energy, 2017</li><br>
     <!-- Grid for photos -->
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-third">
-        <img src="7.jpg" style="width:100%">
-        <img src="6.jpg" style="width:100%">
+        <div class="zoom"><img src="7.jpg" style="width:100%"></div>
+        <div class="zoom"><img src="6.jpg" style="width:100%"></div>
       </div>
 
       <div class="w3-third">
-        <img src="1.jpg" style="width:100%">
-        <img src="2.jpg" style="width:100%">
+        <div class="zoom"><img src="1.jpg" style="width:100%"></div>
+        <div class="zoom"><img src="2.jpg" style="width:100%"></div>
       </div>
 
       <div class="w3-third">
-        <img src="5.JPG" style="width:100%">
-        <img src="3.jpg" style="width:100%">
+        <div class="zoom"><img src="5.JPG" style="width:100%"></div>
+        <div class="zoom"><img src="3.jpg" style="width:100%"></div>
       </div>
     <!-- End photo grid -->
     </div>
