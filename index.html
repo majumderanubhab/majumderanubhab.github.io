@@ -1,250 +1,513 @@
 <!DOCTYPE html>
-<html>
-<title>anubhabreveals</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html {
-  scroll-behavior: smooth;
-}
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-.parallax {
-  /* The image used */
-  background-image: url("4.JPG");
-
-  /* Set a specific height */
-  min-height: 500px;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.caption {
-  position: relative;
-  left: 0px;
-  top: 250px;
-  width: 100%;
-  text-align: center;
-  color: #000;
-}
-
-.caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-}
-
-.zoom {
-  transition: transform 0.5s;
-}
-
-.zoom:hover {
-  -ms-transform: scale(1.1); /* IE 9 */
-  -webkit-transform: scale(1.1); /* Safari 3-8 */
-  transform: scale(1.1); 
-}
-
-</style>
-<body class="w3-dark-grey">
-
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner
-  <img src="dp.png" style="width:100%">-->
-
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
-  </a>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>PHOTOS</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
-  </a>
-</nav>
-
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-  </div>
-</div>
-
-<div class="w3-padding-0px" id="main">
-  <div class="parallax">
-    <div class="caption">
-      <span class="border">I'm Anubhab Majumder</span>
-    </div>
-  </div>
-</div>
-<div class="w3-padding-large" id="main">
-  <!-- About Section -->
-  <div class="w3-content w3-text-white w3-padding-64" id="about">
-    <h2 class="w3-text-white">About me</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>I received my B. Tech. degree in Mechanical Engineering from Government College of Engineering & Textile Technology, Berhampore, India, in 2016 and M. Tech. degree in Mechanical Engineering with specialization in Machine Design from Indian Institute of Technology (Indian School of Mines) Dhanbad, India, in 2018. I am currently pursuing Ph. D. in Product Design from Innovation, Design Study and Sustainability Laboratory (IDeaSLab), Centre for Product Design and Manufacturing (CPDM), Indian Institute of Science, Bangalore, India. My research interests include conceptual design synthesis, multiple-state mechanical devices, creativity, kinematics and robotics.
-    </p>
-    <!--<h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-    <p class="w3-wide">Conceptual Design Synthesis</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:70%"></div>
-    </div>
-    <p class="w3-wide">MSC ADAMS</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
-    </div>
-    <p class="w3-wide">Robotics</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
-    </div>--><br>
-
-    <a href="Academic_CV_Anubhab.pdf" download>
-    <button class="w3-button w3-white w3-padding-large w3-section">
-      <i class="fa fa-download"></i> Download Resume
-    </button>
-  </a>
-
-    <!-- Grid for pricing tables -->
-
-
-    <!-- Testimonials -->
-    <h3 class="w3-padding-24 w3-text-white">Education</h3>
-    <img src="iisc.png" alt="Avatar" class="w3-left w3-square w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Indian Institute of Science (IISc)</span> </p>
-    <p>Doctor of Philosophy - PhD, Product Design (2018 - Present)</p><br>
-
-    <img src="ism.png" alt="Avatar" class="w3-left w3-square w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Indian Institute of Technology (Indian School of Mines), Dhanbad</span></p>
-    <p>Master of Technology (M.Tech.), Mechanical Engineering (2016 - 2018)</p><br>
-
-    <img src="gcettb.png" alt="Avatar" class="w3-left w3-square w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Government College of Engineering and Textile Technology, Berhampore</span></p>
-    <p>Bachelor of Technology (B.Tech.), Mechanical Engineering (2012 - 2016)</p><br>
-<div class= "w3-container w3-light-grey">
-    <h3 class="w3-padding-16 w3-text-black">Awards & Scholarships</h3>
-
-    <div>
-    <ul>
-    <li><b>Gold Medal</b> - Indian Institute of Technology (Indian School of Mines), Dhanbad</li><br>
-    <li><b>Best Paper Award</b> - International Conference on Mechanical, Materials and Renewable Energy, 2017</li><br>
-    <li><b>The Central Sector Scheme of Scholarship for College and University Students</b> - Ministry of Human Resource Development, Department of Higher Education, Government of India</li><br>
-    </ul>
-    <!-- End Grid/Pricing tables -->
-    </div>
-</div>
-    <h3 class="w3-padding-16 w3-text-white">Publications</h3>
-
-    <div>
-    <ol>
-	  <li>Majumder, A., & Chakrabarti, A. (2022). A Tool for Supporting Conceptual Design of Multiple State Mechanical Devices. Defence Science Journal, 72(2), 217-226. https://doi.org/10.14429/dsj.72.17240 </li><br>
-	  <li>Bhatt, A., Majumder, A., & Chakrabarti, A. (2021). Analyzing the modes of reasoning in design using the SAPPhIRE model of causality and the Extended Integrated Model of Designing. Artificial Intelligence for Engineering Design, Analysis and Manufacturing, 1-20. doi:10.1017/S0890060421000214 </li><br>
-      <li>Chattopadhyay, P., Majumder, A., Dikshit, H., Ghoshal, S. K., & Maity, A. (2018, June). A bio-inspired climbing robot: design, simulation, and experiments. In IOP conference series: materials science and engineering (Vol. 377, No. 1, p. 012105). IOP Publishing.</li><br>
-      <li>Chattopadhyay, P., Ghoshal, S., Majumder, A., & Dikshit, H. (2018). Locomotion Methods of Pipe Climbing robots: A Review. Journal of Engineering Science & Technology Review, 11(4).</li><br>
-      <li>Chattopadhyay, P., Dikshit, H., Majumder, A., Ghoshal, S., & Maity, A. (2018, April). Dynamic analysis of a bio-inspired climbing robot using ADAMS-Simulink co-simulation. In AIP conference proceedings (Vol. 1952, No. 1, p. 020015). AIP Publishing LLC.</li><br>
-
-      <li>Chattopadhyay, P., Ghoshal, S. K., & Majumder, A. (2020). IMPLEMENTATION OF PIECEWISE SINE FUNCTIONS ON LIMBLESS ROBOT LOCOMOTION. International Journal of Robotics and Automation, 35(4).</li><br>
-
-      <li>Patra, A., Patel, M., Chattopadhyay, P., Majumder, A., & Ghoshal, S. K. (2020). A Bio-inspired Climbing Robot: Dynamic Modelling and Prototype Development. In Recent Advances in Mechanical Engineering (pp. 191-209). Springer, Singapore.</li><br>
-
-      <li>Majumder, A., Patra, A., Patel, M., Chattopadhyay, P., & Ghoshal, S. K. (2019). Locomotion Study of a Hyper-redundant Modular Robot Using Artificial Neural Networks. In Proceedings of the Advances in Robotics 2019 (pp. 1-6).</li><br>
-
-      <li>P. Chattopadhyay, A. Majumder, H. Dikshit, S. Ghoshal and A. Maity, 2018. Design and Simulation of a Limbless Climbing Robot. Journal of Engineering and Applied Sciences, 13: 5529-5535.</li><br>
-
-    </ol>
-    <!-- End Grid/Pricing tables -->
-    </div>
-  <!-- End About Section -->
-  </div>
-
-  <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="photos">
-    <h2 class="w3-text-white">My Photos</h2>
-    <hr style="width:200px" class="w3-opacity">
-
-    <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-third">
-        <div class="zoom"><img src="7.jpg" style="width:100%"></div>
-        <div class="zoom"><img src="6.jpg" style="width:100%"></div>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anubhab Majumder</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/main.css?ver=1.1.0" rel="stylesheet">
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <noscript>
+      <style type="text/css">
+        [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <style>
+	ion-icon {
+		font-size: 40px;
+			}
+  </style>
+  <body id="top">
+    <header>
+      <div class="profile-page sidebar-collapse">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
+          <div class="container">
+            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip">Anubhab Majumder</a>
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
+				<li class="nav-item"><a class="nav-link smooth-scroll" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#publication">Publications</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
-
-      <div class="w3-third">
-        <div class="zoom"><img src="1.jpg" style="width:100%"></div>
-        <div class="zoom"><img src="2.jpg" style="width:100%"></div>
+    </header>
+    <div class="page-content">
+      <div>
+<div class="profile-page">
+  <div class="wrapper">
+    <div class="page-header page-header-small" filter-color="green">
+      <div class="page-header-image" data-parallax="true" style="background-image: url('images/bg.JPG')"></div>
+      <div class="container">
+        <div class="content-center">
+          <div class="cc-profile-image"><a href="#"><img src="images/anubhab.jpg" alt="Image"/></a></div>
+          <div class="h2 title">Anubhab Majumder</div>
+          <p class="category text-white">Mechanical Engineer, Design Researcher</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Contact Me</a><a class="btn btn-primary" href="Academic_CV_Anubhab.pdf" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+        </div>
       </div>
-
-      <div class="w3-third">
-        <div class="zoom"><img src="5.JPG" style="width:100%"></div>
-        <div class="zoom"><img src="3.jpg" style="width:100%"></div>
+      <div class="section">
+        <div class="container">
+          <div class="button-container">
+		  <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.linkedin.com/in/anubhab-majumder-88949066/" rel="tooltip" title="Follow me on Linkedin"><i class="fa fa-linkedin"></i></a>
+		  <a class="btn btn-default btn-round btn-lg btn-icon" href="https://scholar.google.co.in/citations?user=QJHp9z8AAAAJ&hl=en" rel="tooltip" title="Follow me on Google Scholar"><i class="fa fa-graduation-cap"></i></a>
+		  <a class="btn btn-default btn-round btn-lg btn-icon" href="https://bit.ly/3hoioSK" rel="tooltip" title="Subscribe to my YouTube channel"><i class="fa fa-youtube"></i></a>
+		  </div>
+        </div>
       </div>
-    <!-- End photo grid -->
     </div>
-  <!-- End Portfolio Section -->
   </div>
-
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-light-grey" id="contact">
-    <h2 class="w3-text-white">Contact Me</h2>
-    <hr style="width:200px" class="w3-opacity">
-
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> IISc Bengaluru, India</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 7872739656</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: anubhabreveals@gmail.com</p>
-    </div><br>
-    <!--<p>Let's get in touch. Send me a message:</p>
-
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-white w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
-    </form>-->
-  <!-- End Contact Section -->
-  </div>
-
-    <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-white w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Created by <a target="_blank" class="w3-hover-text-green">Anubhab Majumder</a></p>
-  <!-- End footer -->
-  </footer>
-
-<!-- END PAGE CONTENT -->
 </div>
+<div class="section" id="about">
+  <div class="container">
+    <div class="card" data-aos="fade-up" data-aos-offset="10">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="card-body">
+            <div class="h4 mt-0 title">About me</div>
+            <p>Hello! I am Anubhab Majumder. Mechanical Engineer and Design Researcher.</p>
+            <p>I received my B. Tech. degree in Mechanical Engineering from Government College of Engineering & Textile Technology, Berhampore, India, in 2016 and M. Tech. degree in Mechanical Engineering with specialization in Machine Design from Indian Institute of Technology (Indian School of Mines) Dhanbad, India, in 2018. I am currently pursuing Ph. D. in Product Design from Innovation, Design Study and Sustainability Laboratory (IDeaSLab), Centre for Product Design and Manufacturing (CPDM), Indian Institute of Science, Bangalore, India. My research interests include conceptual design synthesis, multiple-state mechanical devices, creativity, functional modelling, kinematics and robotics.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div class="card-body">
+            <div class="h4 mt-0 title">Basic Information</div>
+            <!--<div class="row">
+              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
+              <div class="col-sm-8">24</div>
+            </div>-->
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
+              <div class="col-sm-8">anubhabm@iisc.ac.in</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
+              <div class="col-sm-8">+91 7872739656</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
+              <div class="col-sm-8">Indian Institute of Science, Bangalore, India</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
+              <div class="col-sm-8">English, Bengali, Hindi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section" id="skill">
+  <div class="container cc-education">
+    <div class="h4 text-center mb-4 title">Skills</div>
+     
+    <div class="row">
+        <!--<div class="col-md-2 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+             
+          </div>
+        </div>-->
+      <div class="col-md-6" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+		<div class="card">
+          <div class="card-body">
+			<div class="icon-box">
+              <ion-icon name="desktop-outline"></ion-icon>
+            </div>
+            <p class="category">Software skills</p>
+            <p>Proficient in: MSC ADAMS, AUTOCAD.<br>Familiar with: MAPLE, MATLAB, Tecnomatix.</p>
+          </div>
+        </div>
+      </div>
+	  <div class="col-md-6" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+		<div class="card">
+          <div class="card-body">
+			<div class="icon-box">
+              <ion-icon name="logo-codepen"></ion-icon>
+            </div>
+            <p class="category">Programming skills</p>
+            <p>LaTex, HTML, PHP, JavaScript, VPython.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<!--<div class="section" id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 ml-auto mr-auto">
+        <div class="h4 text-center mb-4 title">Portfolio</div>
+        <div class="nav-align-center">
+          <ul class="nav nav-pills nav-pills-primary" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#web-development" role="tablist"><i class="fa fa-laptop" aria-hidden="true"></i></a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#graphic-design" role="tablist"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Photography" role="tablist"><i class="fa fa-camera" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content gallery mt-5">
+      <div class="tab-pane active" id="web-development">
+        <div class="ml-auto mr-auto">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#web-development">
+                  <figure class="cc-effect"><img src="images/project-1.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Recent Project</div>
+                      <p>Web Development</p>
+                    </figcaption>
+                  </figure></a></div>
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#web-development">
+                  <figure class="cc-effect"><img src="images/project-2.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Startup Project</div>
+                      <p>Web Development</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#web-development">
+                  <figure class="cc-effect"><img src="images/project-3.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Food Order Project</div>
+                      <p>Web Development</p>
+                    </figcaption>
+                  </figure></a></div>
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#web-development">
+                  <figure class="cc-effect"><img src="images/project-4.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Web Advertising Project</div>
+                      <p>Web Development</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="graphic-design" role="tabpanel">
+        <div class="ml-auto mr-auto">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#graphic-design">
+                  <figure class="cc-effect"><img src="images/graphic-design-1.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Triangle Pattern</div>
+                      <p>Graphic Design</p>
+                    </figcaption>
+                  </figure></a></div>
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#graphic-design">
+                  <figure class="cc-effect"><img src="images/graphic-design-2.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Abstract Umbrella</div>
+                      <p>Graphic Design</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#graphic-design">
+                  <figure class="cc-effect"><img src="images/graphic-design-3.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Cube Surface Texture</div>
+                      <p>Graphic Design</p>
+                    </figcaption>
+                  </figure></a></div>
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#graphic-design">
+                  <figure class="cc-effect"><img src="images/graphic-design-4.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Abstract Line</div>
+                      <p>Graphic Design</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="Photography" role="tabpanel">
+        <div class="ml-auto mr-auto">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#Photography">
+                  <figure class="cc-effect"><img src="images/photography-1.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Photoshoot</div>
+                      <p>Photography</p>
+                    </figcaption>
+                  </figure></a></div>
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#Photography">
+                  <figure class="cc-effect"><img src="images/photography-3.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Wedding Photoshoot</div>
+                      <p>Photography</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#Photography">
+                  <figure class="cc-effect"><img src="images/photography-2.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Beach Photoshoot</div>
+                      <p>Photography</p>
+                    </figcaption>
+                  </figure></a></div>
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#Photography">
+                  <figure class="cc-effect"><img src="images/photography-4.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Nature Photoshoot</div>
+                      <p>Photography</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
 
-</body>
+<div class="section" id="education">
+  <div class="container cc-education">
+    <div class="h4 text-center mb-4 title">Education</div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>2018 - Present</p>
+            <div class="h5">Doctor of Philosophy</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Ph.D. in Product Design</div>
+            <p class="category">Indian Institute of Science, Bangalore, India</p>
+            <p>Thesis Direction: Supporting Conceptual Design Synthesis of Multiple-state Mechanical Devices.<br>Supervisor: Prof. Amaresh Chakrabarti.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>2016 - 2018</p>
+            <div class="h5">Master of Technology</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">M.Tech. in Mechanical Engineering</div>
+            <p class="category">Indian Institute of Technology (ISM) Dhanbad, India</p>
+            <p>Specialization: Machine Design.<br>Thesis: A Bio-inspired Climbing Robot: Dynamic Modelling and Prototype Development.<br>Supervisor: Dr. Sanjoy K. Ghoshal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>2012 - 2016</p>
+            <div class="h5">Bachelor of Technology</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">B. Tech. in Mechanical Engineering</div>
+            <p class="category">Govt. College of Engineering and Textile Technology, Berhampore, India</p>
+            <p>Final Year Project: Peltier Refrigerator.<br>Supervisor: Dr. Aniruddha Ghosh.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section" id="publication">
+  <div class="container cc-experience">
+    <div class="h4 text-center mb-4 title">Publications</div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Journals</div>
+            <p>2022<br><b>A Tool for Supporting Conceptual Design of Multiple State Mechanical Devices.</b><br><b style="color:green">Majumder, A.</b>, & Chakrabarti, A.<br>Defence Science Journal, 72(2), 217-226.<br><br>
+			2021<br><b>Analyzing the modes of reasoning in design using the SAPPhIRE model of causality and the Extended Integrated Model of Designing.</b><br>Bhatt, A. N.,<b style="color:green">Majumder, A.</b>, & Chakrabarti, A.<br>Artificial Intelligence for Engineering Design, Analysis and Manufacturing 35, 384–403.<br><br>
+			2020<br>
+			<b>Implementation of Piecewise Sine Functions on Limbless Robot Locomotion.</b><br>Chattopadhyay, P., Ghoshal, S. K., <b style="color:green">Majumder, A.</b><br>International Journal of Robotics and Automation, 35(4).<br><br>
+			2018<br>
+			<b>Locomotion Methods of Pipe Climbing robots: A Review.</b>
+			<br>Chattopadhyay, P., Ghoshal, S., <b style="color:green">Majumder, A.</b>, Dikshit, H.
+			<br>Journal of Engineering Science and Technology Review, 11(4).
+			</p>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="card">
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Conferences</div>
+            <p>2020<br><b>A Bio-inspired Climbing Robot: Dynamic Modelling and Prototype Development.</b><br>Patra, A., Patel, M., Chattopadhyay, P., <b style="color:green">Majumder, A.</b>, Ghoshal, S. K.<br>In Recent Advances in Mechanical Engineering (pp. 191-209). Springer, Singapore<br><br>
+			2020<br><b>Evolution of a Modular Limbless Crawling and Climbing Robot.</b><br>Patel, M., Patra, A., Chattopadhyay, P., <b style="color:green">Majumder, A.</b>, Ghoshal, S. K. <br>Advanced Science, Engineering and Medicine 12.11 (2020): 1371-1377.<br><br>
+			2019<br>
+			<b>Locomotion Study of a Hyper-redundant Modular Robot Using Artificial Neural Networks.</b><br><b style="color:green">Majumder, A.</b>, Patra, A., Patel, M., Chattopadhyay, P., Ghoshal, S. K.<br>In Proceedings of the Advances in Robotics 2019 (pp. 1-6).<br><br>
+			2018<br>
+			<b>A bioinspired climbing robot: design, simulation, and experiments.</b>
+			<br>Chattopadhyay, P., <b style="color:green">Majumder, A.</b>, Dikshit, H., Ghoshal, S. K., Maity, A.
+			<br>In IOP conference series: materials science and engineering (Vol. 377, No. 1, p. 012105). IOP Publishing.<br><br>
+			2018<br>
+			<b>Dynamic analysis of a bio-inspired climbing robot using ADAMS-Simulink co-simulation.</b>
+			<br>Chattopadhyay, P., Dikshit, H., <b style="color:green">Majumder, A.</b>, Ghoshal, S. K., Maity, A.
+			<br>In AIP conference proceedings (Vol. 1952, No. 1, p. 020015). AIP Publishing LLC.
+			</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="section" id="reference">
+  <div class="container cc-reference">
+    <div class="h4 mb-4 text-center title">References</div>
+    <div class="card" data-aos="zoom-in">
+      <div class="carousel slide" id="cc-Indicators" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li class="active" data-target="#cc-Indicators" data-slide-to="0"></li>
+          <li data-target="#cc-Indicators" data-slide-to="1"></li>
+          <li data-target="#cc-Indicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4 cc-reference-header"><img src="images/5.JPG" alt="Image"/>
+                <p class="category">PLMSS 2019</p>
+              </div>
+              <div class="col-md-8">
+                <p> Receiving Memento from Padma Shri Professor Bhagavatula Dattaguru at the 7th International Conference on Product Life Cycle Modelling, Simulation and Synthesis (PLMSS) - 2019 </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4 cc-reference-header"><img src="images/5.JPG" alt="Image"/>
+                <p class="category">PLMSS 2019</p>
+              </div>
+              <div class="col-md-8">
+                <p> Receiving Memento from Padma Shri Professor Bhagavatula Dattaguru at the 7th International Conference on Product Life Cycle Modelling, Simulation and Synthesis (PLMSS) - 2019 </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4 cc-reference-header"><img src="images/5.JPG" alt="Image"/>
+                <p class="category">PLMSS 2019</p>
+              </div>
+              <div class="col-md-8">
+                <p> Receiving Memento from Padma Shri Professor Bhagavatula Dattaguru at the 7th International Conference on Product Life Cycle Modelling, Simulation and Synthesis (PLMSS) - 2019 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section" id="contact">
+  <div class="cc-contact-information" style="background-image: url('images/mapimage.jpg')">
+    <div class="container">
+      <div class="cc-contact">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="card mb-0" data-aos="zoom-in">
+              <div class="h4 text-center title">Contact Me</div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <form action="https://formspree.io/your@email.com" method="POST">
+                      <div class="p pb-3"><strong>Feel free to contact me </strong></div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                            <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
+                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="required"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input class="form-control" type="email" name="_replyto" placeholder="E-mail" required="required"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="form-group">
+                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <button class="btn btn-primary" type="submit">Send</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <p class="mb-0"><strong>Address </strong></p>
+                    <p class="pb-2">Indian Institute of Science, Bangalore, India.</p>
+                    <p class="mb-0"><strong>Phone</strong></p>
+                    <p class="pb-2">+91 7872739656</p>
+                    <p class="mb-0"><strong>Email</strong></p>
+                    <p>anubhabm@iisc.ac.in</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+    </div>
+    <footer class="footer">
+      <div class="container text-center"><a class="cc-facebook btn btn-link" href="#"><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " href="#"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a><a class="cc-instagram btn btn-link" href="#"><i class="fa fa-instagram fa-2x " aria-hidden="true"></i></a></div>
+      <div class="h4 title text-center">Anubhab Majumder</div>
+      <div class="text-center text-muted">
+        <p>&copy; Creative CV. All rights reserved.<br>Design - <a class="credit" href="https://templateflip.com" target="_blank">TemplateFlip</a></p>
+      </div>
+    </footer>
+    <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
+    <script src="js/core/popper.min.js?ver=1.1.0"></script>
+    <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
+    <script src="js/now-ui-kit.js?ver=1.1.0"></script>
+    <script src="js/aos.js?ver=1.1.0"></script>
+    <script src="scripts/main.js?ver=1.1.0"></script>
+  </body>
 </html>
