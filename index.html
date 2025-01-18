@@ -1,524 +1,545 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Anubhab Majumder</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
-    <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
-    <link href="css/main.css?ver=1.1.0" rel="stylesheet">
-	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <noscript>
-      <style type="text/css">
-        [data-aos] {
-            opacity: 1 !important;
-            transform: translate(0) scale(1) !important;
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Make the body take up at least 100% of the viewport height */
+        html, body {
+            height: 100%;
+            margin: 0;
         }
-      </style>
-    </noscript>
-  </head>
-  <style>
-	ion-icon {
-		font-size: 40px;
-			}
-  </style>
-  <body id="top">
-    <header>
-      <div class="profile-page sidebar-collapse">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
-          <div class="container">
-            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip">Anubhab Majumder</a>
-              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
+
+        /* Flexbox layout for the page */
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Main content area should grow to fill available space */
+        .content {
+            flex-grow: 1;
+            padding-bottom: 50px;
+        }
+        .lead {
+            text-align: left;
+        }
+        .navbar {
+            background-color: #4C585B; /* Navbar background color */
+            padding: 10px 20px; /* Add some spacing */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .nav-link {
+            color: #FFFFFF; /* Link color */
+            font-size: 1rem; /* Font size for links */
+            font-weight: 500; /* Semi-bold links */
+            transition: color 0.3s, transform 0.3s; /* Smooth hover effects */
+        }
+
+        .nav-link:hover {
+            color: #F4EDD3; /* Lighter blue on hover */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        .navbar-brand {
+            color: #FFFFFF; /* Brand color */
+            font-weight: bold; /* Bold font for brand name */
+            font-size: 1.25rem; /* Slightly larger font */
+        }
+
+        .navbar-brand:hover {
+            color: #F4EDD3; /* Lighter blue on hover */
+        }
+
+        .navbar-toggler {
+            border: none; /* Remove button border */
+        }
+
+        .navbar-toggler:focus {
+            outline: none; /* Remove focus outline */
+        }
+
+        
+        /* Footer should be at the bottom */
+        footer-bottom {
+            background-color: #4C585B;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer-top {
+            background-color: #7E99A3;
+            color: white;
+            text-align: left;
+            padding: 10px 0;
+        }
+        .footer-top-columns {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Footer links and contact info */
+        .footer-top-column {
+            flex: 1;
+        }
+
+        .footer-top-column h5 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-top-column ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .footer-top-column ul li {
+            margin-bottom: 0px;
+        }
+
+        .footer-top-column ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-top-column ul li a:hover {
+            text-decoration: underline;
+        }
+        .smaller-display-4 {
+            font-size: 1.5rem; 
+            font-family: 'Bodoni';
+        }
+        .custom-text {
+            font-size: 0.875rem; 
+            opacity: 0.7; 
+        }
+        .carousel-inner img {
+            height: 300px; /* Adjust the height of images */
+            object-fit: cover; /* Ensures images fill the space properly */
+            border-radius: 8px; /* Adds rounded corners */
+        }
+
+        .list-group-item {
+            font-size: 1rem; /* Adjust font size */
+            line-height: 1.5; /* Improve readability */
+        }
+        /* Position the overlay at the bottom of the image */
+        .carousel-caption-bottom {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.6); /* Black background with 60% transparency */
+            color: #fff; /* White text color */
+            padding: 10px 15px; /* Add padding for spacing */
+            text-align: center; /* Center-align the text */
+            width: 100%; /* Make it span the full width of the image */
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        .award-image {
+            margin-bottom: 20px; /* Spacing between images */
+        }
+
+        .award-image img {
+            border-radius: 8px; /* Optional: Add rounded corners to images */
+        }
+        .award-image p {
+            font-size: 0.85rem;  /* Smaller font size */
+            color: #4C585B;  /* Lighter color for the caption */
+            margin-top: 8px; /* Optional: Add some space between the image and caption */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4C585B;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" onclick="showPage('home')">
+                    <img src="mylogo.ico" alt="Anubhab Majumder Logo" style="height: 40px; width: auto;"> Anubhab Majumder, PhD
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('home')">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('research')">Research</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('publications')">Publications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('workshops')">Workshops</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('awards')">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('courses')">Courses</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
-				<li class="nav-item"><a class="nav-link smooth-scroll" href="#education">Education</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#publication">Publications</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
         </nav>
-      </div>
-    </header>
-    <div class="page-content">
-      <div>
-<div class="profile-page">
-  <div class="wrapper">
-    <div class="page-header page-header-small" filter-color="green">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('images/bg.JPG')"></div>
-      <div class="container">
-        <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="images/anubhab.jpg" alt="Image"/></a></div>
-          <div class="h2 title">Anubhab Majumder</div>
-          <p class="category text-white">Mechanical Engineer, Design Researcher</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Contact Me</a><a class="btn btn-primary" href="Academic_CV_Anubhab.pdf" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
-        </div>
-      </div>
-      <div class="section">
-        <div class="container">
-          <div class="button-container">
-		  <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.linkedin.com/in/anubhab-majumder-88949066/" rel="tooltip" title="Follow me on Linkedin"><i class="fa fa-linkedin"></i></a>
-		  <a class="btn btn-default btn-round btn-lg btn-icon" href="https://scholar.google.co.in/citations?user=QJHp9z8AAAAJ&hl=en" rel="tooltip" title="Follow me on Google Scholar"><i class="fa fa-graduation-cap"></i></a>
-		  <a class="btn btn-default btn-round btn-lg btn-icon" href="https://bit.ly/3hoioSK" rel="tooltip" title="Subscribe to my YouTube channel"><i class="fa fa-youtube"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="https://github.com/anubhabreveals" rel="tooltip" title="Follow me on GitHub"><i class="fa fa-github"></i></a>
-		  </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section" id="about">
-  <div class="container">
-    <div class="card" data-aos="fade-up" data-aos-offset="10">
-      <div class="row">
-        <div class="col-lg-6 col-md-12">
-          <div class="card-body">
-            <div class="h4 mt-0 title">About me</div>
-            <p>Hello! I am Anubhab Majumder. Mechanical Engineer and Design Researcher.</p>
-            <p>I received my B. Tech. degree in Mechanical Engineering from Government College of Engineering & Textile Technology, Berhampore, India, in 2016 and M. Tech. degree in Mechanical Engineering with specialization in Machine Design from Indian Institute of Technology (Indian School of Mines) Dhanbad, India, in 2018. I am currently pursuing Ph. D. in Product Design from Innovation, Design Study and Sustainability Laboratory (IDeaSLab), Centre for Product Design and Manufacturing (CPDM), Indian Institute of Science, Bangalore, India. My research interests include conceptual design synthesis, multiple-state mechanical devices, creativity, functional modelling, kinematics and robotics.</p>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-12">
-          <div class="card-body">
-            <div class="h4 mt-0 title">Basic Information</div>
-            <!--<div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-              <div class="col-sm-8">24</div>
-            </div>-->
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-              <div class="col-sm-8">anubhabm@iisc.ac.in</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
-              <div class="col-sm-8">+91 7872739656</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
-              <div class="col-sm-8">Indian Institute of Science, Bangalore, India</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Languages:</strong></div>
-              <div class="col-sm-8">English, Bengali, Hindi</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section" id="skill">
-  <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Skills</div>
-     
-    <div class="row">
-        <!--<div class="col-md-2 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-             
-          </div>
-        </div>-->
-      <div class="col-md-6" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-		<div class="card">
-          <div class="card-body">
-			<div class="icon-box">
-              <ion-icon name="desktop-outline"></ion-icon>
-            </div>
-            <p class="category">Software skills</p>
-            <p>Proficient in: MSC ADAMS, AUTOCAD.<br>Familiar with: MAPLE, MATLAB, Tecnomatix.</p>
-          </div>
-        </div>
-      </div>
-	  <div class="col-md-6" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-		<div class="card">
-          <div class="card-body">
-			<div class="icon-box">
-              <ion-icon name="logo-codepen"></ion-icon>
-            </div>
-            <p class="category">Programming skills</p>
-            <p>LaTex, HTML, PHP, JavaScript, Python.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
-<!--<div class="section" id="portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 ml-auto mr-auto">
-        <div class="h4 text-center mb-4 title">Portfolio</div>
-        <div class="nav-align-center">
-          <ul class="nav nav-pills nav-pills-primary" role="tablist">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#web-development" role="tablist"><i class="fa fa-laptop" aria-hidden="true"></i></a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#graphic-design" role="tablist"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Photography" role="tablist"><i class="fa fa-camera" aria-hidden="true"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="tab-content gallery mt-5">
-      <div class="tab-pane active" id="web-development">
-        <div class="ml-auto mr-auto">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#web-development">
-                  <figure class="cc-effect"><img src="images/project-1.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Recent Project</div>
-                      <p>Web Development</p>
-                    </figcaption>
-                  </figure></a></div>
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#web-development">
-                  <figure class="cc-effect"><img src="images/project-2.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Startup Project</div>
-                      <p>Web Development</p>
-                    </figcaption>
-                  </figure></a></div>
-            </div>
-            <div class="col-md-6">
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#web-development">
-                  <figure class="cc-effect"><img src="images/project-3.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Food Order Project</div>
-                      <p>Web Development</p>
-                    </figcaption>
-                  </figure></a></div>
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#web-development">
-                  <figure class="cc-effect"><img src="images/project-4.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Web Advertising Project</div>
-                      <p>Web Development</p>
-                    </figcaption>
-                  </figure></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane" id="graphic-design" role="tabpanel">
-        <div class="ml-auto mr-auto">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#graphic-design">
-                  <figure class="cc-effect"><img src="images/graphic-design-1.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Triangle Pattern</div>
-                      <p>Graphic Design</p>
-                    </figcaption>
-                  </figure></a></div>
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#graphic-design">
-                  <figure class="cc-effect"><img src="images/graphic-design-2.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Abstract Umbrella</div>
-                      <p>Graphic Design</p>
-                    </figcaption>
-                  </figure></a></div>
-            </div>
-            <div class="col-md-6">
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#graphic-design">
-                  <figure class="cc-effect"><img src="images/graphic-design-3.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Cube Surface Texture</div>
-                      <p>Graphic Design</p>
-                    </figcaption>
-                  </figure></a></div>
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#graphic-design">
-                  <figure class="cc-effect"><img src="images/graphic-design-4.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Abstract Line</div>
-                      <p>Graphic Design</p>
-                    </figcaption>
-                  </figure></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane" id="Photography" role="tabpanel">
-        <div class="ml-auto mr-auto">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#Photography">
-                  <figure class="cc-effect"><img src="images/photography-1.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Photoshoot</div>
-                      <p>Photography</p>
-                    </figcaption>
-                  </figure></a></div>
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#Photography">
-                  <figure class="cc-effect"><img src="images/photography-3.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Wedding Photoshoot</div>
-                      <p>Photography</p>
-                    </figcaption>
-                  </figure></a></div>
-            </div>
-            <div class="col-md-6">
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#Photography">
-                  <figure class="cc-effect"><img src="images/photography-2.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Beach Photoshoot</div>
-                      <p>Photography</p>
-                    </figcaption>
-                  </figure></a></div>
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#Photography">
-                  <figure class="cc-effect"><img src="images/photography-4.jpg" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Nature Photoshoot</div>
-                      <p>Photography</p>
-                    </figcaption>
-                  </figure></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>-->
 
-<div class="section" id="education">
-  <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Education</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2018 - Present</p>
-            <div class="h5">Doctor of Philosophy</div>
-          </div>
+        <!-- Content Area -->
+        <div class="container mt-4 content" id="content">
+            <div id="homePage">
+                <div class="text-center mt-4">
+                    <h1 class="display-4">Welcome!</h1>
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <img src="images/anubhab.jpg" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-9">
+                            <p class="lead">I am currently a Research Associate in the Department of Design and Manufacturing at the Indian Institute of Science (IISc), Bangalore. I recently completed my Ph.D. in Product Design and Engineering from the Indian Institute of Science under the supervision of Prof. Amaresh Chakrabarti. My research focuses on conceptual design synthesis, design theory, function modeling, multi-state mechanical devices, creativity, kinematics, and robotics.
+                            <br>
+                            Prior to this, I earned an M.Tech. in Mechanical Engineering (Machine Design, Gold Medalist) from IIT (ISM) Dhanbad in 2018 and a B.Tech. in Mechanical Engineering from the Government College of Engineering & Textile Technology, Berhampore, India.
+                            </p>
+                            <p class="lead">
+                            This site provides comprehensive information about my research background, projects, and publications.
+                            <br>
+                            Should you require any additional details, please feel free to contact me!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Ph.D. in Product Design</div>
-            <p class="category">Indian Institute of Science, Bangalore, India</p>
-            <p>Thesis Direction: Supporting Conceptual Design Synthesis of Multiple-state Mechanical Devices.<br>Supervisor: Prof. Amaresh Chakrabarti.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2016 - 2018</p>
-            <div class="h5">Master of Technology</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">M.Tech. in Mechanical Engineering</div>
-            <p class="category">Indian Institute of Technology (ISM) Dhanbad, India</p>
-            <p>Specialization: Machine Design.<br>Thesis: A Bio-inspired Climbing Robot: Dynamic Modelling and Prototype Development.<br>Supervisor: Dr. Sanjoy K. Ghoshal.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2012 - 2016</p>
-            <div class="h5">Bachelor of Technology</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">B. Tech. in Mechanical Engineering</div>
-            <p class="category">Govt. College of Engineering and Textile Technology, Berhampore, India</p>
-            <p>Final Year Project: Peltier Refrigerator.<br>Supervisor: Dr. Aniruddha Ghosh.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section" id="publication">
-  <div class="container cc-experience">
-    <div class="h4 text-center mb-4 title">Publications</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-12" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Journals</div>
-            <p>2022<br><b>A Tool for Supporting Conceptual Design of Multiple State Mechanical Devices.</b><br><b style="color:green">Majumder, A.</b>, & Chakrabarti, A.<br>Defence Science Journal, 72(2), 217-226.<br><br>
-			2021<br><b>Analyzing the modes of reasoning in design using the SAPPhIRE model of causality and the Extended Integrated Model of Designing.</b><br>Bhatt, A. N.,<b style="color:green">Majumder, A.</b>, & Chakrabarti, A.<br>Artificial Intelligence for Engineering Design, Analysis and Manufacturing 35, 384–403.<br><br>
-			2020<br>
-			<b>Implementation of Piecewise Sine Functions on Limbless Robot Locomotion.</b><br>Chattopadhyay, P., Ghoshal, S. K., <b style="color:green">Majumder, A.</b><br>International Journal of Robotics and Automation, 35(4).<br><br>
-			2018<br>
-			<b>Locomotion Methods of Pipe Climbing robots: A Review.</b>
-			<br>Chattopadhyay, P., Ghoshal, S., <b style="color:green">Majumder, A.</b>, Dikshit, H.
-			<br>Journal of Engineering Science and Technology Review, 11(4).
-			</p>
-          </div>
-        </div>
-      </div>
-    </div>
-	<div class="card">
-      <div class="row">
-        <div class="col-md-12" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Conferences</div>
-            <p>2020<br><b>A Bio-inspired Climbing Robot: Dynamic Modelling and Prototype Development.</b><br>Patra, A., Patel, M., Chattopadhyay, P., <b style="color:green">Majumder, A.</b>, Ghoshal, S. K.<br>In Recent Advances in Mechanical Engineering (pp. 191-209). Springer, Singapore<br><br>
-			2020<br><b>Evolution of a Modular Limbless Crawling and Climbing Robot.</b><br>Patel, M., Patra, A., Chattopadhyay, P., <b style="color:green">Majumder, A.</b>, Ghoshal, S. K. <br>Advanced Science, Engineering and Medicine 12.11 (2020): 1371-1377.<br><br>
-			2019<br>
-			<b>Locomotion Study of a Hyper-redundant Modular Robot Using Artificial Neural Networks.</b><br><b style="color:green">Majumder, A.</b>, Patra, A., Patel, M., Chattopadhyay, P., Ghoshal, S. K.<br>In Proceedings of the Advances in Robotics 2019 (pp. 1-6).<br><br>
-			2018<br>
-			<b>A bioinspired climbing robot: design, simulation, and experiments.</b>
-			<br>Chattopadhyay, P., <b style="color:green">Majumder, A.</b>, Dikshit, H., Ghoshal, S. K., Maity, A.
-			<br>In IOP conference series: materials science and engineering (Vol. 377, No. 1, p. 012105). IOP Publishing.<br><br>
-			2018<br>
-			<b>Dynamic analysis of a bio-inspired climbing robot using ADAMS-Simulink co-simulation.</b>
-			<br>Chattopadhyay, P., Dikshit, H., <b style="color:green">Majumder, A.</b>, Ghoshal, S. K., Maity, A.
-			<br>In AIP conference proceedings (Vol. 1952, No. 1, p. 020015). AIP Publishing LLC.
-			</p>
-          </div>
-        </div>
-      </div>
+
+        <!-- Footer -->
+        <footer-top>
+            <div class="footer-top-columns container mt-4">
+                <!-- Contact Info -->
+                <div class="footer-top-column">
+                    <h5>Contact Info</h5>
+                    <ul>
+                        <li>Email: majumderanubhab@gmail.com</li>
+                        <li>Phone: +91 7872739656</li>
+                        <li>Address: Department of Design and Manufacturing,<br> Indian Institute of Science,<br> Bangalore - 560012, India</li>
+                    </ul>
+                </div>
+                <!-- Useful Links -->
+                <div class="footer-top-column">
+                    <h5>Useful Links</h5>
+                    <ul>
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('research')">Research</a></li>
+                        <li><a href="#" onclick="showPage('publications')">Publications</a></li>
+                        <li><a href="#" onclick="showPage('workshops')">Workshops</a></li>
+                        <li><a href="#" onclick="showPage('awards')">Awards</a></li>
+                        <li><a href="#" onclick="showPage('courses')">Courses</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer-top>
+        <footer-bottom>
+            <p class="mb-0">&copy; 2025 Anubhab Majumder. All rights reserved.</p>
+            <p class="mb-0 custom-text">Designed by Anubhab Majumder</p>
+        </footer-bottom>
     </div>
 
-  </div>
-</div>
-<div class="section" id="reference">
-  <div class="container cc-reference">
-    <div class="h4 mb-4 text-center title">Gallery</div>
-    <div class="card" data-aos="zoom-in">
-      <div class="carousel slide" id="cc-Indicators" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li class="active" data-target="#cc-Indicators" data-slide-to="0"></li>
-          <li data-target="#cc-Indicators" data-slide-to="1"></li>
-          <li data-target="#cc-Indicators" data-slide-to="2"></li>
-		  <li data-target="#cc-Indicators" data-slide-to="3"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-4 cc-reference-header"><img src="images/icord21.jpg" alt="Image"/>
-                <p class="category">ICoRD 2021</p>
-              </div>
-              <div class="col-md-8">
-                <p> Hosting the 8th International Conference on Research into Design (ICoRD'21) held during 7th to 10th January 2021. ICoRD’21 was organised jointly by IDC, IIT Bombay and CPDM, IISc Bangalore. ICoRD’21 was hosted online by IDC School of Design, Indian Institute of Technology Bombay, Mumbai, India.</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 cc-reference-header"><img src="images/5.JPG" alt="Image"/>
-                <p class="category">PLMSS 2019</p>
-              </div>
-              <div class="col-md-8">
-                <p> Receiving Memento from Padma Shri Professor Bhagavatula Dattaguru at the 7th International Conference on Product Life Cycle Modelling, Simulation and Synthesis (PLMSS) - 2019 </p>
-              </div>
-            </div>
-          </div>
-		  <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 cc-reference-header"><img src="images/icord.jpg" alt="Image"/>
-                <p class="category">ICoRD 2019</p>
-              </div>
-              <div class="col-md-8">
-                <p> With Professor Udaya Kumar at the 7th International Conference on Research into Design (ICoRD'19). Prof. Udaya Kumar is noted for his design of the Indian rupee sign '₹'.</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 cc-reference-header"><img src="images/icmmre.JPG" alt="Image"/>
-                <p class="category">ICMMRE 2017</p>
-              </div>
-              <div class="col-md-8">
-                <p> Recieving Best Paper Award from Dr. Amitanshu Pattanaik (Senior Scientist, DRDO) for the paper titled "A bio-inspired climbing robot: design, simulation, and experiments" presented at the ICMMRE 2017: International Conference on Mechanical, Materials and Renewable Energy.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section" id="contact">
-  <div class="cc-contact-information" style="background-image: url('images/mapimage.jpg')">
-    <div class="container">
-      <div class="cc-contact">
-        <div class="row">
-          <div class="col-md-9">
-            <div class="card mb-0" data-aos="zoom-in">
-              <div class="h4 text-center title">Contact Me</div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <form action="https://formspree.io/your@email.com" method="POST">
-                      <div class="p pb-3"><strong>Feel free to contact me </strong></div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>
-                          </div>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Pages content
+        const pages = {
+            home: document.getElementById('homePage').innerHTML,
+            research: `
+                <div class="text-center mt-4"><h1 class="display-4">Research</h1><br></div>
+                <!-- Topic 1 -->
+                <div class="jumbotron bg-light p-4 mb-4 rounded">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/Research/RAG.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
                         </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
-                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="required"/>
-                          </div>
+                        <div class="col-md-9">
+                            <h2 class="display-4 smaller-display-4">A RAG Tool for Creating SAPPhIRE Models of Artificial Systems</h2>
+                            <p class="lead">Timeline: 2024-2025</p>
+                            <p class="lead">
+                                This research introduces a Retrieval-Augmented Generation (RAG) tool designed to generate structured descriptions of artificial systems using the SAPPhIRE model of causality. The SAPPhIRE model, which includes constructs such as States, Actions, Parts, Phenomena, Inputs, oRgans, and Effects, supports design-by-analogy by providing a causal explanation of how a system achieves its intended function. The study leverages Large Language Models (LLMs) to automate the creation of SAPPhIRE models, reducing the dependency on human experts and enabling the scaling of databases for design inspiration. The tool's effectiveness is evaluated based on factual accuracy and reliability, with preliminary results indicating its potential to create accurate and reliable SAPPhIRE models for various artificial systems.
+                            </p>
+                            <a href="#">Learn More</a>
                         </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input class="form-control" type="email" name="_replyto" placeholder="E-mail" required="required"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="form-group">
-                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <button class="btn btn-primary" type="submit">Send</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <p class="mb-0"><strong>Address </strong></p>
-                    <p class="pb-2">Indian Institute of Science, Bangalore, India.</p>
-                    <p class="mb-0"><strong>Phone</strong></p>
-                    <p class="pb-2">+91 7872739656</p>
-                    <p class="mb-0"><strong>Email</strong></p>
-                    <p>anubhabm@iisc.ac.in</p>
-                  </div>
+                <!-- Topic 1 -->
+                <div class="jumbotron bg-light p-4 mb-4 rounded">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/Research/function_model.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
+                        </div>
+                        <div class="col-md-9">
+                            <h2 class="display-4 smaller-display-4">Function Modelling of Multi-state Systems</h2>
+                            <p class="lead">Timeline: 2023-2024</p>
+                            <p class="lead">
+                                This research introduces an integrated function modelling approach for multi-state systems using the SAPPhIRE model of causality. The aim is to provide a comprehensive description of systems that achieve different functions at various operating states by altering their topological structure and component interactions. The approach explains how transitions occur across operating states, how functions are performed within a single state, and how the system transforms the operand in a technical process. The effectiveness of this method is demonstrated through a case study of a hairdryer system, showcasing SAPPhIRE's potential to model complex multi-state systems.
+                            </p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div></div>
-    </div>
-    <footer class="footer">
-      <!--<div class="container text-center"><a class="cc-facebook btn btn-link" href="#"><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " href="#"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a><a class="cc-instagram btn btn-link" href="#"><i class="fa fa-instagram fa-2x " aria-hidden="true"></i></a></div>-->
-      <div class="h4 title text-center">Anubhab Majumder</div>
-      <div class="text-center text-muted">
-        <p>Design - <a class="credit" href="https://templateflip.com" target="_blank">TemplateFlip</a></p>
-      </div>
-    </footer>
-    <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
-    <script src="js/core/popper.min.js?ver=1.1.0"></script>
-    <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
-    <script src="js/now-ui-kit.js?ver=1.1.0"></script>
-    <script src="js/aos.js?ver=1.1.0"></script>
-    <script src="scripts/main.js?ver=1.1.0"></script>
-  </body>
+                <!-- Topic 1 -->
+                <div class="jumbotron bg-light p-4 mb-4 rounded">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/Research/codesymm.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
+                        </div>
+                        <div class="col-md-9">
+                            <h2 class="display-4 smaller-display-4">CODE SYMM—A Tool to Facilitate Conceptual Design Synthesis of Multi-state Mechanical Devices</h2>
+                            <p class="lead">Timeline: 2021-2023</p>
+                            <p class="lead">
+                                This research focuses on the development and evaluation of CODE SYMM, a web-based tool designed to assist in the conceptual design synthesis of multi-state mechanical devices (MSMDs). The tool provides a prescriptive model to guide designers through generating initial solution proposals, modifying semiworking solutions, and ensuring the final designs meet desired behaviors. By automating the retrieval of kinematic building blocks and modification rules, CODE SYMM enhances designers' ability to create multiple alternative design concepts efficiently. The tool's effectiveness was validated through design experiments, demonstrating significant improvements in both the fluency and time efficiency of designers.
+                            </p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Topic 1 -->
+                <div class="jumbotron bg-light p-4 mb-4 rounded">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/Research/reasoning.png" class="img-fluid rounded" alt="Topic 1 Thumbnail">
+                        </div>
+                        <div class="col-md-9">
+                            <h2 class="display-4 smaller-display-4">Analyzing the Modes of Reasoning in Design</h2>
+                            <p class="lead">Timeline: 2020-2021</p>
+                            <p class="lead">
+                                This research delves into the various modes of reasoning—explanatory abduction, innovative abduction, deduction, and induction—underlying the design process. By leveraging the SAPPhIRE model of causality and the Extended Integrated Model of Designing, the study aims to provide a comprehensive understanding of how these reasoning modes manifest during design synthesis. The SAPPhIRE model helps in mapping the constructs of design to abductive reasoning, offering a detailed explanation of the synthesis process. The Extended Integrated Model of Designing captures the reasoning modes through empirical studies, analyzing participants' verbal speech and design outcomes. The findings highlight the model's effectiveness in explaining the reasoning processes in design, contributing to better design education and the development of supportive tools for designers.
+                            </p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 1 -->
+                <div class="jumbotron bg-light p-4 mb-4 rounded">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/Research/design_task.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
+                        </div>
+                        <div class="col-md-9">
+                            <h2 class="display-4 smaller-display-4">Empirical Studies on Conceptual Design Synthesis of Multiple-State Mechanical Devices</h2>
+                            <p class="lead">Timeline: 2019-2021</p>
+                            <p class="lead">
+                                This research explores the conceptual design synthesis of multiple-state mechanical devices, focusing on generating solution alternatives that significantly impact the cost and quality of the final product. The study investigates how designers currently approach multiple-state design synthesis (MSDS) and identifies the challenges and strategies involved. Through empirical studies with engineering design students, the research provides insights into the synthesis process, highlighting the importance of generating a wide range of solutions and understanding the types of elemental functions (EFs) involved. The findings contribute to developing a descriptive model for MSDS, which can support designers in systematically exploring a larger solution space and improving the efficiency of the design process.
+                            </p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 2 -->
+                <div class="jumbotron bg-light p-4 mb-4 rounded">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/Research/serpentine_robot.png" class="img-fluid rounded" alt="Topic 3 Thumbnail">
+                        </div>
+                        <div class="col-md-9">
+                            <h2 class="display-4 smaller-display-4">Locomotion Study of a Hyper-redundant Modular Robot</h2>
+                            <p class="lead">Timeline: 2017-2019</p>
+                            <p class="lead">
+                                This research focuses on the locomotion of hyper-redundant modular robots, which are designed to navigate complex terrains without wheels. By leveraging Artificial Neural Networks (ANNs), we aim to predict and control the kinematic behavior of these robots. The study involves developing a six-module robot with five degrees of freedom, capable of performing various locomotion patterns such as straight heading and steering. Through extensive experimentation and ANN modeling, we have successfully established a relationship between input joint variables and the resulting motion, paving the way for more efficient and adaptable robotic systems.
+                            </p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 3 -->
+                <div class="jumbotron bg-light p-4 mb-4 rounded">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/Research/climbing_robot.png" class="img-fluid rounded" alt="Topic 2 Thumbnail">
+                        </div>
+                        <div class="col-md-9">
+                            <h2 class="display-4 smaller-display-4">A Bio-Inspired Climbing Robot: Dynamic Modelling and Prototype Development</h2>
+                            <p class="lead">Timeline: 2017-2018</p>
+                            <p class="lead">
+                                This research presents the development of a bio-inspired climbing robot that mimics the motion of an inchworm. The robot, designed with four identical modules connected by revolute joints, uses switchable electromagnets for adhesion to ferromagnetic surfaces. The study involves dynamic analysis using both Lagrange's model and bond graph model to estimate the joint torques required for actuator sizing. The prototype successfully implements the predefined inchworm gait, demonstrating the robot's capability to climb vertical surfaces efficiently. This work contributes to the field of bio-inspired robotics, offering insights into the design and control of climbing robots for applications in inspection and maintenance of large structures.
+                            </p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            `,
+
+            publications: `
+                <div class="text-center mt-4"><h1 class="display-4">Publications</h1><br></div>
+                <p>Here are some of my recent publications:</p>
+                <div class="embed-responsive">
+                    <iframe src="https://bibbase.org/show?bib=https%3A%2F%2Fbibbase.org%2Fnetwork%2Ffiles%2FtaZnspooXvExdzXgE&noBootstrap=1" 
+                        class="embed-responsive-item" 
+                        style="width: 100%; height: 60vh; border: none;">
+                    </iframe>
+                </div>
+            `,
+            workshops: `
+
+                <div class="text-center mt-4"><h1 class="display-4">Workshops</h1><br></div>
+                <div class="row align-items-top lead">
+                    <!-- Slideshow on the Left -->
+                    <div class="col-md-5">
+                        <div id="workshopCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item">
+                                    <img src="images/Workshops/icord25.jpeg" class="d-block w-100" alt="Workshop 8">
+                                    <div class="carousel-caption-bottom">
+                                        <div class="overlay">
+                                            <p>10th International Conference on Research Into Design, IIT Hyderabad</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Workshops/pisces3.jpeg" class="d-block w-100" alt="Workshop 7">
+                                    <div class="carousel-caption-bottom">
+                                        <div class="overlay">
+                                            <p>3rd PISCES Entrepreneurship Workshop, Kokoon Hotel, Banyuwangi, Indonesia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Workshops/pisces2.jpeg" class="d-block w-100" alt="Workshop 6">
+                                    <div class="carousel-caption-bottom">
+                                        <div class="overlay">
+                                            <p>2nd PISCES Entrepreneurship Workshop, PISCES Living Lab, Banyuwangi, Indonesia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Workshops/pisces1.jpg" class="d-block w-100" alt="Workshop 6">
+                                    <div class="carousel-caption-bottom">
+                                        <div class="overlay">
+                                            <p>1st PISCES Entrepreneurship Workshop, Kokoon Hotel, Banyuwangi, Indonesia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Workshops/Icord23_2.jpg" class="d-block w-100" alt="Workshop 4">
+                                    <div class="carousel-caption-bottom">
+                                        <div class="overlay">
+                                            <p>9th International Conference on Research Into Design, IISc, Bengaluru</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item active">
+                                    <img src="images/Workshops/DT_airforce.jpeg" class="d-block w-100" alt="Workshop 3">
+                                    <div class="carousel-caption-bottom">
+                                        <div class="overlay">
+                                            <p>IISC D-Box Workshop: Airforce School Jalahalli, Bengaluru</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Workshops/DT_cpdm.jpeg" class="d-block w-100" alt="Workshop 2">
+                                    <div class="carousel-caption-bottom">
+                                        <div class="overlay">
+                                            <p>IISC D-Box Workshop: DM, IISc</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Workshops/DT_kviisc.jpeg" class="d-block w-100" alt="Workshop 1">
+                                    <div class="carousel-caption-bottom">
+                                        <div class="overlay">
+                                            <p>IISC D-Box Workshop: Kendriya Vidyalaya, IISc, Bengaluru</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#workshopCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#workshopCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        
+                    </div>
+
+                    <!-- List of Workshops on the Right -->
+                    <div class="col-md-7">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6>Practicing Causal Reasoning in Product Design using the SAPPhIRE Model and GenAI</h6>
+                                <p>10th International Conference on Research Into Design (ICoRD'25, Day-1, Parallel Workshop WS-110), IIT Hyderabad, January 8, 2025</p>
+                                <p>Collaborator(s): Mr. Kausik Bhattacharya</p>  
+                            </li>
+                            <li class="list-group-item">
+                                <h6>PISCES Entrepreneurship Workshop Series</h6>
+                                <p>Workshop-1: Banyuwangi, Indonesia, April 22-25, 2024 <br>
+                                Workshop-2: Banyuwangi, Indonesia, August 21-24, 2024 <br>
+                                Workshop-3: Banyuwangi, Indonesia, December 2-4, 2024 </p>
+                                <p>Collaborator(s): Prof. Amaresh Chakrabarti, Prof. Vishal Singh</p>  
+                            </li>
+                            <li class="list-group-item">
+                                <h6>How to build the SAPPhIRE model of causality representing the working of engineering systems</h6>
+                                <p>9th International Conference on Research Into Design (ICoRD'23, Day-3, Parallel Session 4), IISc, January 11, 2023</p>
+                                <p>Collaborator(s): Mr. Kausik Bhattacharya, Dr. Apoorv Naresh Bhatt</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>IISC D-Box: Design Thinking workshops for undergraduate and school students</h6>
+                                <p>Organized by the Department of Design and Manufacturing, IISc, Bengaluru.<br>May 2019 - Feb 2023</p>
+                                <p>Collaborator(s): Dr. Apoorv Naresh Bhatt, Prof. Amaresh Chakrabarti</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+            awards: `
+                <div class="text-center mt-4"><h1 class="display-4">Awards</h1><br></div>
+                <div class="row align-items-top lead">
+                    <div class="col-md-2">
+                        <div class="award-image">
+                            <img src="images/Awards/ICoRD23.JPG" class="img-fluid" alt="Award 1">
+                            <p class="text-center">Distinguished Paper Award, ICoRD'23, India</p>
+                        </div>
+                        <div class="award-image">
+                            <img src="images/Awards/icmmre.JPG" class="img-fluid" alt="Award 2">
+                            <p class="text-center">Best Paper Award, ICMMRE 2017, India</p>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Distinguished Paper Award</strong>, ICoRD 2025, India, 2025</li>
+                            <li class="list-group-item"><strong>Reviewers' Favourite Award</strong>, ICED 2023, France, 2023</li>
+                            <li class="list-group-item"><strong>Distinguished Paper Award</strong>, ICoRD 2023, India, 2023</li>
+                            <li class="list-group-item"><strong>IIT(ISM) Gold Medal</strong>,  Indian Institute of Technology (ISM), Dhanbad, 2018</li>
+                            <li class="list-group-item"><strong>Best Paper Award</strong>, ICMMRE 2017, India, 2017</li>
+                            <li class="list-group-item"><strong>GATE Scholarship</strong>, Ministry of Education, Govt. of India, 2016-2018</li>
+                            <li class="list-group-item"><strong>National Scholarship</strong>, Department of Higher Education, Ministry of Education, Govt. of India, 2012-2016</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="award-image">
+                            <img src="images/Awards/ICoRD25.jpeg" class="img-fluid" alt="Award 3">
+                            <p class="text-center">Distinguished Paper Award, ICoRD'25, India</p>
+                        </div>
+                        <div class="award-image">
+                            <img src="images/Awards/iced23.jpeg" class="img-fluid" alt="Award 4">
+                            <p class="text-center">Reviewers' Favourite Award, ICED 2023, France</p>
+                        </div>
+                    </div>
+                </div>
+            `,
+            courses: `
+                <div class="text-center mt-4"><h1 class="display-4">Courses</h1><br></div>
+                <p>Coming Soon...</p>
+                <ul class="list-group"></ul>
+            `,
+        };
+
+        // Show page content
+        function showPage(page) {
+            const content = document.getElementById('content');
+            content.innerHTML = pages[page];
+        }
+    </script>
+    
+</body>
 </html>
