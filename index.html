@@ -6,6 +6,8 @@
     <title>Your Personal Website</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
         /* Make the body take up at least 100% of the viewport height */
         html, body {
@@ -121,7 +123,7 @@
         .carousel-inner img {
             height: 300px; /* Adjust the height of images */
             object-fit: cover; /* Ensures images fill the space properly */
-            border-radius: 8px; /* Adds rounded corners */
+            border-radius: 0px; /* Adds rounded corners */
         }
 
         .list-group-item {
@@ -141,21 +143,63 @@
             padding: 10px 15px; /* Add padding for spacing */
             text-align: center; /* Center-align the text */
             width: 100%; /* Make it span the full width of the image */
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
         }
         .award-image {
             margin-bottom: 20px; /* Spacing between images */
         }
 
         .award-image img {
-            border-radius: 8px; /* Optional: Add rounded corners to images */
+            border-radius: 0px; /* Optional: Add rounded corners to images */
         }
         .award-image p {
             font-size: 0.85rem;  /* Smaller font size */
             color: #4C585B;  /* Lighter color for the caption */
             margin-top: 8px; /* Optional: Add some space between the image and caption */
         }
+        .parallax {
+            /* The image used */
+            background-image: url("images/Bordeaux - Cropped.jpeg");
+
+            /* Set a specific height */
+            min-height: 300px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* Positioning for overlay */
+            position: relative;
+
+            /* Enable flexbox for centering content */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center;    /* Center vertically */
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+            z-index: 1;
+        }
+
+        .parallax-content {
+            position: relative; /* Keeps the text above the overlay */
+            z-index: 2; /* Ensure text stays above the overlay */
+            color: white; /* Adjust text color */
+            font-size: 24px; /* Customize text size */
+            text-align: center; /* Center-align text */
+            padding: 0 20px; /* Optional padding for better readability */
+        }
+
+        
 
     </style>
 </head>
@@ -163,10 +207,10 @@
 
     <div class="page-container">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4C585B;">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#" onclick="showPage('home')">
-                    <img src="mylogo.ico" alt="Anubhab Majumder Logo" style="height: 40px; width: auto;"> Anubhab Majumder, PhD
+                    <img src="mylogo.ico" alt="Anubhab Majumder Logo" style="height: 40px; width: auto; "> Anubhab Majumder, PhD
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -183,15 +227,20 @@
                 </div>
             </div>
         </nav>
-
+        
+        <div class="parallax">
+            <div class="parallax-overlay"></div>
+            <div class="parallax-content">
+                <h1 class="display-4">Welcome!</h1>
+            </div>
+        </div>
         <!-- Content Area -->
         <div class="container mt-4 content" id="content">
             <div id="homePage">
                 <div class="text-center mt-4">
-                    <h1 class="display-4">Welcome!</h1>
                     <div class="row align-items-center">
                         <div class="col-md-3">
-                            <img src="images/anubhab.jpg" class="img-fluid rounded">
+                            <img src="images/anubhab.jpg" class="img-fluid">
                         </div>
                         <div class="col-md-9">
                             <p class="lead">I am currently a Research Associate in the Department of Design and Manufacturing at the Indian Institute of Science (IISc), Bangalore. I recently completed my Ph.D. in Product Design and Engineering from the Indian Institute of Science under the supervision of Prof. Amaresh Chakrabarti. My research focuses on conceptual design synthesis, design theory, function modeling, multi-state mechanical devices, creativity, kinematics, and robotics.
@@ -203,6 +252,10 @@
                             <br>
                             Should you require any additional details, please feel free to contact me!
                             </p>
+                            <div style="text-align: right;">
+                                <a href="Academic_CV_Anubhab.pdf" class="btn btn-secondary" download="Anubhab-Majumder-CV.pdf">Download CV</a>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -214,24 +267,37 @@
             <div class="footer-top-columns container mt-4">
                 <!-- Contact Info -->
                 <div class="footer-top-column">
-                    <h5>Contact Info</h5>
-                    <ul>
-                        <li>Email: majumderanubhab@gmail.com</li>
-                        <li>Phone: +91 7872739656</li>
-                        <li>Address: Department of Design and Manufacturing,<br> Indian Institute of Science,<br> Bangalore - 560012, India</li>
-                    </ul>
-                </div>
-                <!-- Useful Links -->
-                <div class="footer-top-column">
-                    <h5>Useful Links</h5>
-                    <ul>
-                        <li><a href="#" onclick="showPage('home')">Home</a></li>
-                        <li><a href="#" onclick="showPage('research')">Research</a></li>
-                        <li><a href="#" onclick="showPage('publications')">Publications</a></li>
-                        <li><a href="#" onclick="showPage('workshops')">Workshops</a></li>
-                        <li><a href="#" onclick="showPage('awards')">Awards</a></li>
-                        <li><a href="#" onclick="showPage('courses')">Courses</a></li>
-                    </ul>
+                    <div class="row align-items-top">
+                        <div class="col-md-6">
+                            <h5>Contact Info</h5>
+                            <ul>
+                                <li>Email: majumderanubhab@gmail.com</li>
+                                <li>Phone: +91 7872739656</li>
+                                <li>Address: Department of Design and Manufacturing,<br> Indian Institute of Science,<br> Bangalore - 560012, India</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>Useful Links</h5>
+                            <ul>
+                                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                                <li><a href="#" onclick="showPage('research')">Research</a></li>
+                                <li><a href="#" onclick="showPage('publications')">Publications</a></li>
+                                <li><a href="#" onclick="showPage('workshops')">Workshops</a></li>
+                                <li><a href="#" onclick="showPage('awards')">Awards</a></li>
+                                <li><a href="#" onclick="showPage('courses')">Courses</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>Let's Connect</h5>
+                            <ul>
+                                <li><a href="https://www.linkedin.com/in/anubhab-majumder-88949066/"><i class="fab fa-linkedin"></i> linkedIn</a></li>
+                                <li><a href="https://www.researchgate.net/profile/Anubhab-Majumder"><i class="fab fa-researchgate"></i> ResearchGate</a></li>
+                                <li><a href="https://scholar.google.co.in/citations?user=QJHp9z8AAAAJ&hl=en"><i class="fas fa-book"></i> Goole Scholar</a></li>
+                                <li><a href="https://orcid.org/0000-0002-8447-0629"><i class="fab fa-orcid"></i> ORCiD</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </footer-top>
@@ -249,7 +315,6 @@
         const pages = {
             home: document.getElementById('homePage').innerHTML,
             research: `
-                <div class="text-center mt-4"><h1 class="display-4">Research</h1><br></div>
                 <!-- Topic 1 -->
                 <div class="jumbotron bg-light p-4 mb-4 rounded">
                     <div class="row">
@@ -368,8 +433,15 @@
             `,
 
             publications: `
-                <div class="text-center mt-4"><h1 class="display-4">Publications</h1><br></div>
                 <p>Here are some of my recent publications:</p>
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by">
+                    <option value="year">Year</option>
+                    <option value="author">Author</option>
+                    <option value="type">Article Type</option>
+                </select>
+                
+                <ul id="references-list"></ul>
                 <div class="embed-responsive">
                     <iframe src="https://bibbase.org/show?bib=https%3A%2F%2Fbibbase.org%2Fnetwork%2Ffiles%2FtaZnspooXvExdzXgE&noBootstrap=1" 
                         class="embed-responsive-item" 
@@ -378,8 +450,6 @@
                 </div>
             `,
             workshops: `
-
-                <div class="text-center mt-4"><h1 class="display-4">Workshops</h1><br></div>
                 <div class="row align-items-top lead">
                     <!-- Slideshow on the Left -->
                     <div class="col-md-5">
@@ -492,9 +562,8 @@
                 </div>
             `,
             awards: `
-                <div class="text-center mt-4"><h1 class="display-4">Awards</h1><br></div>
                 <div class="row align-items-top lead">
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="award-image">
                             <img src="images/Awards/ICoRD23.JPG" class="img-fluid" alt="Award 1">
                             <p class="text-center">Distinguished Paper Award, ICoRD'23, India</p>
@@ -504,18 +573,18 @@
                             <p class="text-center">Best Paper Award, ICMMRE 2017, India</p>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><strong>Distinguished Paper Award</strong>, ICoRD 2025, India, 2025</li>
-                            <li class="list-group-item"><strong>Reviewers' Favourite Award</strong>, ICED 2023, France, 2023</li>
-                            <li class="list-group-item"><strong>Distinguished Paper Award</strong>, ICoRD 2023, India, 2023</li>
-                            <li class="list-group-item"><strong>IIT(ISM) Gold Medal</strong>,  Indian Institute of Technology (ISM), Dhanbad, 2018</li>
-                            <li class="list-group-item"><strong>Best Paper Award</strong>, ICMMRE 2017, India, 2017</li>
+                            <li class="list-group-item"><strong>Distinguished Paper Award</strong>, ICoRD 2025, Indian Institute of Technology Hyderabad, India, 2025</li>
+                            <li class="list-group-item"><strong>Reviewers' Favourite Award</strong>, ICED 2023, University of Bordeaux, France, 2023</li>
+                            <li class="list-group-item"><strong>Distinguished Paper Award</strong>, ICoRD 2023, Indian Institute of Science, India, 2023</li>
+                            <li class="list-group-item"><strong>IIT(ISM) Gold Medal</strong>,  Indian Institute of Technology (ISM), Dhanbad, India, 2018</li>
+                            <li class="list-group-item"><strong>Best Paper Award</strong>, ICMMRE 2017, Sikkim, India, 2017</li>
                             <li class="list-group-item"><strong>GATE Scholarship</strong>, Ministry of Education, Govt. of India, 2016-2018</li>
                             <li class="list-group-item"><strong>National Scholarship</strong>, Department of Higher Education, Ministry of Education, Govt. of India, 2012-2016</li>
                         </ul>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="award-image">
                             <img src="images/Awards/ICoRD25.jpeg" class="img-fluid" alt="Award 3">
                             <p class="text-center">Distinguished Paper Award, ICoRD'25, India</p>
@@ -528,7 +597,6 @@
                 </div>
             `,
             courses: `
-                <div class="text-center mt-4"><h1 class="display-4">Courses</h1><br></div>
                 <p>Coming Soon...</p>
                 <ul class="list-group"></ul>
             `,
@@ -537,8 +605,79 @@
         // Show page content
         function showPage(page) {
             const content = document.getElementById('content');
+            const heading = document.querySelector('.parallax-content h1');
+            // Change the heading text dynamically based on the selected page
+            if (page === 'home') {
+                heading.innerText = 'Welcome!';
+            } else {
+                heading.innerText = page.charAt(0).toUpperCase() + page.slice(1); // Capitalize the page name
+            }
             content.innerHTML = pages[page];
         }
+
+        
+    </script>
+    <script src="bibtexParser.js"></script>
+    <script>
+      // Function to fetch and parse the .bib file
+      async function fetchBibData() {
+        const response = await fetch('references.bib'); // Adjust file path if needed
+        const bibtexData = await response.text();
+  
+        // Parse .bib file using a BibTeX parser
+        const parsedData = parseBibTeX(bibtexData); // You will define this function
+        return parsedData;
+      }
+  
+      // Function to format the references into APA style
+      function formatAPA(reference) {
+        const authors = reference.author;
+        const year = reference.year;
+        const title = reference.title;
+        const booktitle = reference.booktitle || reference.journal;
+        const volume = reference.volume ? `, ${reference.volume}` : '';
+        const number = reference.number ? `(${reference.number})` : '';
+        const pages = reference.pages ? `, pp. ${reference.pages}` : '';
+        const publisher = reference.publisher ? `: ${reference.publisher}` : '';
+        
+        return `${authors} (${year}). ${title}. *${booktitle}*${volume}${number}${pages}${publisher}.`;
+      }
+  
+      // Function to sort references based on selected criteria
+      function sortReferences(criteria, data) {
+        let sortedData;
+        
+        if (criteria === 'year') {
+          sortedData = data.sort((a, b) => b.year - a.year);
+        } else if (criteria === 'author') {
+          sortedData = data.sort((a, b) => a.author.localeCompare(b.author));
+        } else if (criteria === 'type') {
+          sortedData = data.sort((a, b) => a.type.localeCompare(b.type));
+        }
+  
+        return sortedData;
+      }
+  
+      // Function to display the sorted references on the page
+      function displayReferences(references) {
+        const referencesList = document.getElementById('references-list');
+        const sortBy = document.getElementById('sort-by').value;
+        const sortedData = sortReferences(sortBy, references);
+  
+        referencesList.innerHTML = ""; // Clear existing list
+        sortedData.forEach(reference => {
+          const listItem = document.createElement('li');
+          listItem.textContent = formatAPA(reference);
+          referencesList.appendChild(listItem);
+        });
+      }
+  
+      // Fetch and display the references when the page loads
+      window.onload = async () => {
+        const bibData = await fetchBibData();
+        document.getElementById('sort-by').addEventListener('change', () => displayReferences(bibData));
+        displayReferences(bibData);
+      };
     </script>
     
 </body>
