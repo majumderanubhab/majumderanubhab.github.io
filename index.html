@@ -309,8 +309,10 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bibtex-js/2.2.1/bibtex.min.js"></script>
 
     <script>
+ 
         // Pages content
         const pages = {
             home: document.getElementById('homePage').innerHTML,
@@ -434,18 +436,11 @@
 
             publications: `
                 <p>Here are some of my recent publications:</p>
-                <label for="sort-by">Sort by:</label>
-                <select id="sort-by">
-                    <option value="year">Year</option>
-                    <option value="author">Author</option>
-                    <option value="type">Article Type</option>
-                </select>
                 
-                <ul id="references-list"></ul>
                 <div class="embed-responsive">
                     <iframe src="https://bibbase.org/show?bib=https%3A%2F%2Fbibbase.org%2Fnetwork%2Ffiles%2FtaZnspooXvExdzXgE&noBootstrap=1" 
                         class="embed-responsive-item" 
-                        style="width: 100%; height: 60vh; border: none;">
+                        style="width: 100%; height: 1500px; border: none;">
                     </iframe>
                 </div>
             `,
@@ -616,68 +611,6 @@
         }
 
         
-    </script>
-    <script src="bibtexParser.js"></script>
-    <script>
-      // Function to fetch and parse the .bib file
-      async function fetchBibData() {
-        const response = await fetch('references.bib'); // Adjust file path if needed
-        const bibtexData = await response.text();
-  
-        // Parse .bib file using a BibTeX parser
-        const parsedData = parseBibTeX(bibtexData); // You will define this function
-        return parsedData;
-      }
-  
-      // Function to format the references into APA style
-      function formatAPA(reference) {
-        const authors = reference.author;
-        const year = reference.year;
-        const title = reference.title;
-        const booktitle = reference.booktitle || reference.journal;
-        const volume = reference.volume ? `, ${reference.volume}` : '';
-        const number = reference.number ? `(${reference.number})` : '';
-        const pages = reference.pages ? `, pp. ${reference.pages}` : '';
-        const publisher = reference.publisher ? `: ${reference.publisher}` : '';
-        
-        return `${authors} (${year}). ${title}. *${booktitle}*${volume}${number}${pages}${publisher}.`;
-      }
-  
-      // Function to sort references based on selected criteria
-      function sortReferences(criteria, data) {
-        let sortedData;
-        
-        if (criteria === 'year') {
-          sortedData = data.sort((a, b) => b.year - a.year);
-        } else if (criteria === 'author') {
-          sortedData = data.sort((a, b) => a.author.localeCompare(b.author));
-        } else if (criteria === 'type') {
-          sortedData = data.sort((a, b) => a.type.localeCompare(b.type));
-        }
-  
-        return sortedData;
-      }
-  
-      // Function to display the sorted references on the page
-      function displayReferences(references) {
-        const referencesList = document.getElementById('references-list');
-        const sortBy = document.getElementById('sort-by').value;
-        const sortedData = sortReferences(sortBy, references);
-  
-        referencesList.innerHTML = ""; // Clear existing list
-        sortedData.forEach(reference => {
-          const listItem = document.createElement('li');
-          listItem.textContent = formatAPA(reference);
-          referencesList.appendChild(listItem);
-        });
-      }
-  
-      // Fetch and display the references when the page loads
-      window.onload = async () => {
-        const bibData = await fetchBibData();
-        document.getElementById('sort-by').addEventListener('change', () => displayReferences(bibData));
-        displayReferences(bibData);
-      };
     </script>
     
 </body>
