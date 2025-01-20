@@ -198,7 +198,7 @@
             text-align: center; /* Center-align text */
             padding: 0 20px; /* Optional padding for better readability */
         }
-
+        
         
 
     </style>
@@ -237,6 +237,7 @@
         <!-- Content Area -->
         <div class="container mt-4 content" id="content">
             <div id="homePage">
+                
                 <div class="text-center mt-4">
                     <div class="row align-items-center">
                         <div class="col-md-3">
@@ -317,12 +318,12 @@
         const pages = {
             home: document.getElementById('homePage').innerHTML,
             research: `
-                <div class="d-flex justify-content-center mb-4">
-                    <button class="btn btn-dark mx-2" onclick="filterResearch('all')">All</button>
-                    <button class="btn btn-info mx-2" onclick="filterResearch('synthesis')">Design Synthesis</button>
-                    <button class="btn btn-success mx-2" onclick="filterResearch('analysis')">Design Analysis</button>
-                    <button class="btn btn-warning mx-2" onclick="filterResearch('computing')">Design Computing</button>
-                    <button class="btn btn-secondary mx-2" onclick="filterResearch('bio-inspired')">Bio-inspired Design</button>
+                <div class="d-flex justify-content-center mb-4 flex-column flex-sm-row">
+                    <button class="btn btn-dark mx-2 mb-2" onclick="filterResearch('all')">All</button>
+                    <button class="btn btn-info mx-2 mb-2" onclick="filterResearch('synthesis')">Design Synthesis</button>
+                    <button class="btn btn-success mx-2 mb-2" onclick="filterResearch('analysis')">Design Analysis</button>
+                    <button class="btn btn-warning mx-2 mb-2" onclick="filterResearch('computing')">Design Computing</button>
+                    <button class="btn btn-secondary mx-2 mb-2" onclick="filterResearch('bio-inspired')">Bio-inspired Design</button>
                 </div>
                 <div id="research-topics">
                     <!-- Topic 1 -->
