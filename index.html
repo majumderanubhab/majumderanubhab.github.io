@@ -317,118 +317,143 @@
         const pages = {
             home: document.getElementById('homePage').innerHTML,
             research: `
-                <!-- Topic 1 -->
-                <div class="jumbotron bg-light p-4 mb-4 rounded">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="images/Research/RAG.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
-                        </div>
-                        <div class="col-md-9">
-                            <h2 class="display-4 smaller-display-4">A RAG Tool for Creating SAPPhIRE Models of Artificial Systems</h2>
-                            <p class="lead">Timeline: 2024-2025</p>
-                            <p class="lead">
-                                This research introduces a Retrieval-Augmented Generation (RAG) tool designed to generate structured descriptions of artificial systems using the SAPPhIRE model of causality. The SAPPhIRE model, which includes constructs such as States, Actions, Parts, Phenomena, Inputs, oRgans, and Effects, supports design-by-analogy by providing a causal explanation of how a system achieves its intended function. The study leverages Large Language Models (LLMs) to automate the creation of SAPPhIRE models, reducing the dependency on human experts and enabling the scaling of databases for design inspiration. The tool's effectiveness is evaluated based on factual accuracy and reliability, with preliminary results indicating its potential to create accurate and reliable SAPPhIRE models for various artificial systems.
-                            </p>
-                            <a href="#">Learn More</a>
+                <div class="d-flex justify-content-center mb-4">
+                    <button class="btn btn-dark mx-2" onclick="filterResearch('all')">All</button>
+                    <button class="btn btn-info mx-2" onclick="filterResearch('synthesis')">Design Synthesis</button>
+                    <button class="btn btn-success mx-2" onclick="filterResearch('analysis')">Design Analysis</button>
+                    <button class="btn btn-warning mx-2" onclick="filterResearch('computing')">Design Computing</button>
+                    <button class="btn btn-secondary mx-2" onclick="filterResearch('bio-inspired')">Bio-inspired Design</button>
+                </div>
+                <div id="research-topics">
+                    <!-- Topic 1 -->
+                    <div class="jumbotron bg-light p-4 mb-4 rounded" data-theme="analysis computing">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="images/Research/variant.png" class="img-fluid rounded" alt="Topic 1 Thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="display-4 smaller-display-4">Assessing the Variety of a Concept Space</h2>
+                                <p class="lead">Timeline: 2023-2025</p>
+                                <p class="lead">
+                                    This research introduces a new distance-based variety metric for assessing the variety of a concept space in engineering design. The proposed metric, based on Rao's quadratic diversity index, eliminates the need for a tree-like representation of design concepts. The study uses the SAPPhIRE model of causality to measure the real-valued distance between design concepts across seven levels of abstraction. Implemented in a software tool called 'VariAnT,' the framework supports designers in evaluating the breadth of concept space exploration, enhancing the generation of novel and diverse design solutions.
+                                </p>
+                                <a href="#">Learn More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Topic 1 -->
-                <div class="jumbotron bg-light p-4 mb-4 rounded">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="images/Research/function_model.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
-                        </div>
-                        <div class="col-md-9">
-                            <h2 class="display-4 smaller-display-4">Function Modelling of Multi-state Systems</h2>
-                            <p class="lead">Timeline: 2023-2024</p>
-                            <p class="lead">
-                                This research introduces an integrated function modelling approach for multi-state systems using the SAPPhIRE model of causality. The aim is to provide a comprehensive description of systems that achieve different functions at various operating states by altering their topological structure and component interactions. The approach explains how transitions occur across operating states, how functions are performed within a single state, and how the system transforms the operand in a technical process. The effectiveness of this method is demonstrated through a case study of a hairdryer system, showcasing SAPPhIRE's potential to model complex multi-state systems.
-                            </p>
-                            <a href="#">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Topic 1 -->
-                <div class="jumbotron bg-light p-4 mb-4 rounded">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="images/Research/codesymm.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
-                        </div>
-                        <div class="col-md-9">
-                            <h2 class="display-4 smaller-display-4">CODE SYMM—A Tool to Facilitate Conceptual Design Synthesis of Multi-state Mechanical Devices</h2>
-                            <p class="lead">Timeline: 2021-2023</p>
-                            <p class="lead">
-                                This research focuses on the development and evaluation of CODE SYMM, a web-based tool designed to assist in the conceptual design synthesis of multi-state mechanical devices (MSMDs). The tool provides a prescriptive model to guide designers through generating initial solution proposals, modifying semiworking solutions, and ensuring the final designs meet desired behaviors. By automating the retrieval of kinematic building blocks and modification rules, CODE SYMM enhances designers' ability to create multiple alternative design concepts efficiently. The tool's effectiveness was validated through design experiments, demonstrating significant improvements in both the fluency and time efficiency of designers.
-                            </p>
-                            <a href="#">Learn More</a>
+                    <!-- Topic 1 -->
+                    <div class="jumbotron bg-light p-4 mb-4 rounded" data-theme="computing">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="images/Research/RAG.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="display-4 smaller-display-4">A RAG Tool for Creating SAPPhIRE Models of Artificial Systems</h2>
+                                <p class="lead">Timeline: 2024-2025</p>
+                                <p class="lead">
+                                    This research introduces a Retrieval-Augmented Generation (RAG) tool designed to generate structured descriptions of artificial systems using the SAPPhIRE model of causality. The SAPPhIRE model, which includes constructs such as States, Actions, Parts, Phenomena, Inputs, oRgans, and Effects, supports design-by-analogy by providing a causal explanation of how a system achieves its intended function. The study leverages Large Language Models (LLMs) to automate the creation of SAPPhIRE models, reducing the dependency on human experts and enabling the scaling of databases for design inspiration. The tool's effectiveness is evaluated based on factual accuracy and reliability, with preliminary results indicating its potential to create accurate and reliable SAPPhIRE models for various artificial systems.
+                                </p>
+                                <a href="#">Learn More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Topic 1 -->
-                <div class="jumbotron bg-light p-4 mb-4 rounded">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="images/Research/reasoning.png" class="img-fluid rounded" alt="Topic 1 Thumbnail">
-                        </div>
-                        <div class="col-md-9">
-                            <h2 class="display-4 smaller-display-4">Analyzing the Modes of Reasoning in Design</h2>
-                            <p class="lead">Timeline: 2020-2021</p>
-                            <p class="lead">
-                                This research delves into the various modes of reasoning—explanatory abduction, innovative abduction, deduction, and induction—underlying the design process. By leveraging the SAPPhIRE model of causality and the Extended Integrated Model of Designing, the study aims to provide a comprehensive understanding of how these reasoning modes manifest during design synthesis. The SAPPhIRE model helps in mapping the constructs of design to abductive reasoning, offering a detailed explanation of the synthesis process. The Extended Integrated Model of Designing captures the reasoning modes through empirical studies, analyzing participants' verbal speech and design outcomes. The findings highlight the model's effectiveness in explaining the reasoning processes in design, contributing to better design education and the development of supportive tools for designers.
-                            </p>
-                            <a href="#">Learn More</a>
+                    <!-- Topic 1 -->
+                    <div class="jumbotron bg-light p-4 mb-4 rounded" data-theme="analysis">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="images/Research/function_model.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="display-4 smaller-display-4">Function Modelling of Multi-state Systems</h2>
+                                <p class="lead">Timeline: 2023-2024</p>
+                                <p class="lead">
+                                    This research introduces an integrated function modelling approach for multi-state systems using the SAPPhIRE model of causality. The aim is to provide a comprehensive description of systems that achieve different functions at various operating states by altering their topological structure and component interactions. The approach explains how transitions occur across operating states, how functions are performed within a single state, and how the system transforms the operand in a technical process. The effectiveness of this method is demonstrated through a case study of a hairdryer system, showcasing SAPPhIRE's potential to model complex multi-state systems.
+                                </p>
+                                <a href="#">Learn More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <!-- Topic 1 -->
+                    <div class="jumbotron bg-light p-4 mb-4 rounded" data-theme="computing synthesis">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="images/Research/codesymm.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="display-4 smaller-display-4">CODE SYMM—A Tool to Facilitate Conceptual Design Synthesis of Multi-state Mechanical Devices</h2>
+                                <p class="lead">Timeline: 2021-2023</p>
+                                <p class="lead">
+                                    This research focuses on the development and evaluation of CODE SYMM, a web-based tool designed to assist in the conceptual design synthesis of multi-state mechanical devices (MSMDs). The tool provides a prescriptive model to guide designers through generating initial solution proposals, modifying semiworking solutions, and ensuring the final designs meet desired behaviors. By automating the retrieval of kinematic building blocks and modification rules, CODE SYMM enhances designers' ability to create multiple alternative design concepts efficiently. The tool's effectiveness was validated through design experiments, demonstrating significant improvements in both the fluency and time efficiency of designers.
+                                </p>
+                                <a href="#">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Topic 1 -->
+                    <div class="jumbotron bg-light p-4 mb-4 rounded" data-theme="analysis">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="images/Research/reasoning.png" class="img-fluid rounded" alt="Topic 1 Thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="display-4 smaller-display-4">Analyzing the Modes of Reasoning in Design</h2>
+                                <p class="lead">Timeline: 2020-2021</p>
+                                <p class="lead">
+                                    This research delves into the various modes of reasoning—explanatory abduction, innovative abduction, deduction, and induction—underlying the design process. By leveraging the SAPPhIRE model of causality and the Extended Integrated Model of Designing, the study aims to provide a comprehensive understanding of how these reasoning modes manifest during design synthesis. The SAPPhIRE model helps in mapping the constructs of design to abductive reasoning, offering a detailed explanation of the synthesis process. The Extended Integrated Model of Designing captures the reasoning modes through empirical studies, analyzing participants' verbal speech and design outcomes. The findings highlight the model's effectiveness in explaining the reasoning processes in design, contributing to better design education and the development of supportive tools for designers.
+                                </p>
+                                <a href="#">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Topic 1 -->
-                <div class="jumbotron bg-light p-4 mb-4 rounded">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="images/Research/design_task.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
-                        </div>
-                        <div class="col-md-9">
-                            <h2 class="display-4 smaller-display-4">Empirical Studies on Conceptual Design Synthesis of Multiple-State Mechanical Devices</h2>
-                            <p class="lead">Timeline: 2019-2021</p>
-                            <p class="lead">
-                                This research explores the conceptual design synthesis of multiple-state mechanical devices, focusing on generating solution alternatives that significantly impact the cost and quality of the final product. The study investigates how designers currently approach multiple-state design synthesis (MSDS) and identifies the challenges and strategies involved. Through empirical studies with engineering design students, the research provides insights into the synthesis process, highlighting the importance of generating a wide range of solutions and understanding the types of elemental functions (EFs) involved. The findings contribute to developing a descriptive model for MSDS, which can support designers in systematically exploring a larger solution space and improving the efficiency of the design process.
-                            </p>
-                            <a href="#">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Topic 2 -->
-                <div class="jumbotron bg-light p-4 mb-4 rounded">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="images/Research/serpentine_robot.png" class="img-fluid rounded" alt="Topic 3 Thumbnail">
-                        </div>
-                        <div class="col-md-9">
-                            <h2 class="display-4 smaller-display-4">Locomotion Study of a Hyper-redundant Modular Robot</h2>
-                            <p class="lead">Timeline: 2017-2019</p>
-                            <p class="lead">
-                                This research focuses on the locomotion of hyper-redundant modular robots, which are designed to navigate complex terrains without wheels. By leveraging Artificial Neural Networks (ANNs), we aim to predict and control the kinematic behavior of these robots. The study involves developing a six-module robot with five degrees of freedom, capable of performing various locomotion patterns such as straight heading and steering. Through extensive experimentation and ANN modeling, we have successfully established a relationship between input joint variables and the resulting motion, paving the way for more efficient and adaptable robotic systems.
-                            </p>
-                            <a href="#">Learn More</a>
+                    <!-- Topic 1 -->
+                    <div class="jumbotron bg-light p-4 mb-4 rounded" data-theme="synthesis analysis">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="images/Research/design_task.jpg" class="img-fluid rounded" alt="Topic 1 Thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="display-4 smaller-display-4">Empirical Studies on Conceptual Design Synthesis of Multiple-State Mechanical Devices</h2>
+                                <p class="lead">Timeline: 2019-2021</p>
+                                <p class="lead">
+                                    This research explores the conceptual design synthesis of multiple-state mechanical devices, focusing on generating solution alternatives that significantly impact the cost and quality of the final product. The study investigates how designers currently approach multiple-state design synthesis (MSDS) and identifies the challenges and strategies involved. Through empirical studies with engineering design students, the research provides insights into the synthesis process, highlighting the importance of generating a wide range of solutions and understanding the types of elemental functions (EFs) involved. The findings contribute to developing a descriptive model for MSDS, which can support designers in systematically exploring a larger solution space and improving the efficiency of the design process.
+                                </p>
+                                <a href="#">Learn More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Topic 3 -->
-                <div class="jumbotron bg-light p-4 mb-4 rounded">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="images/Research/climbing_robot.png" class="img-fluid rounded" alt="Topic 2 Thumbnail">
+                    <!-- Topic 2 -->
+                    <div class="jumbotron bg-light p-4 mb-4 rounded" data-theme="bio-inspired analysis computing">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="images/Research/serpentine_robot.png" class="img-fluid rounded" alt="Topic 3 Thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="display-4 smaller-display-4">Locomotion Study of a Hyper-redundant Modular Robot</h2>
+                                <p class="lead">Timeline: 2017-2019</p>
+                                <p class="lead">
+                                    This research focuses on the locomotion of hyper-redundant modular robots, which are designed to navigate complex terrains without wheels. By leveraging Artificial Neural Networks (ANNs), we aim to predict and control the kinematic behavior of these robots. The study involves developing a six-module robot with five degrees of freedom, capable of performing various locomotion patterns such as straight heading and steering. Through extensive experimentation and ANN modeling, we have successfully established a relationship between input joint variables and the resulting motion, paving the way for more efficient and adaptable robotic systems.
+                                </p>
+                                <a href="#">Learn More</a>
+                            </div>
                         </div>
-                        <div class="col-md-9">
-                            <h2 class="display-4 smaller-display-4">A Bio-Inspired Climbing Robot: Dynamic Modelling and Prototype Development</h2>
-                            <p class="lead">Timeline: 2017-2018</p>
-                            <p class="lead">
-                                This research presents the development of a bio-inspired climbing robot that mimics the motion of an inchworm. The robot, designed with four identical modules connected by revolute joints, uses switchable electromagnets for adhesion to ferromagnetic surfaces. The study involves dynamic analysis using both Lagrange's model and bond graph model to estimate the joint torques required for actuator sizing. The prototype successfully implements the predefined inchworm gait, demonstrating the robot's capability to climb vertical surfaces efficiently. This work contributes to the field of bio-inspired robotics, offering insights into the design and control of climbing robots for applications in inspection and maintenance of large structures.
-                            </p>
-                            <a href="#">Learn More</a>
+                    </div>
+
+                    <!-- Topic 3 -->
+                    <div class="jumbotron bg-light p-4 mb-4 rounded" data-theme="bio-inspired analysis computing">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="images/Research/climbing_robot.png" class="img-fluid rounded" alt="Topic 2 Thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="display-4 smaller-display-4">A Bio-Inspired Climbing Robot: Dynamic Modelling and Prototype Development</h2>
+                                <p class="lead">Timeline: 2017-2018</p>
+                                <p class="lead">
+                                    This research presents the development of a bio-inspired climbing robot that mimics the motion of an inchworm. The robot, designed with four identical modules connected by revolute joints, uses switchable electromagnets for adhesion to ferromagnetic surfaces. The study involves dynamic analysis using both Lagrange's model and bond graph model to estimate the joint torques required for actuator sizing. The prototype successfully implements the predefined inchworm gait, demonstrating the robot's capability to climb vertical surfaces efficiently. This work contributes to the field of bio-inspired robotics, offering insights into the design and control of climbing robots for applications in inspection and maintenance of large structures.
+                                </p>
+                                <a href="#">Learn More</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -608,6 +633,18 @@
                 heading.innerText = page.charAt(0).toUpperCase() + page.slice(1); // Capitalize the page name
             }
             content.innerHTML = pages[page];
+        }
+
+        function filterResearch(theme) {
+            const topics = document.querySelectorAll('#research-topics .jumbotron');
+            topics.forEach(topic => {
+                const themes = topic.getAttribute('data-theme').split(' '); // Split themes into an array
+                if (theme === 'all' || themes.includes(theme)) {
+                    topic.style.display = 'block'; // Show relevant topics
+                } else {
+                    topic.style.display = 'none'; // Hide others
+                }
+            });
         }
 
         
