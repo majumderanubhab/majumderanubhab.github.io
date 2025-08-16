@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <style>
         /* Make the body take up at least 100% of the viewport height */
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
         }
@@ -27,46 +29,63 @@
             flex-grow: 1;
             padding-bottom: 50px;
         }
+
         .lead {
             text-align: left;
         }
+
         .navbar {
-            background-color: #4C585B; /* Navbar background color */
-            padding: 10px 20px; /* Add some spacing */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #4C585B;
+            /* Navbar background color */
+            padding: 10px 20px;
+            /* Add some spacing */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
         }
 
         .nav-link {
-            color: #FFFFFF; /* Link color */
-            font-size: 1rem; /* Font size for links */
-            font-weight: 500; /* Semi-bold links */
-            transition: color 0.3s, transform 0.3s; /* Smooth hover effects */
+            color: #FFFFFF;
+            /* Link color */
+            font-size: 1rem;
+            /* Font size for links */
+            font-weight: 500;
+            /* Semi-bold links */
+            transition: color 0.3s, transform 0.3s;
+            /* Smooth hover effects */
         }
 
         .nav-link:hover {
-            color: #F4EDD3; /* Lighter blue on hover */
-            transform: scale(1.05); /* Slight zoom effect */
+            color: #F4EDD3;
+            /* Lighter blue on hover */
+            transform: scale(1.05);
+            /* Slight zoom effect */
         }
 
         .navbar-brand {
-            color: #FFFFFF; /* Brand color */
-            font-weight: bold; /* Bold font for brand name */
-            font-size: 1.25rem; /* Slightly larger font */
+            color: #FFFFFF;
+            /* Brand color */
+            font-weight: bold;
+            /* Bold font for brand name */
+            font-size: 1.25rem;
+            /* Slightly larger font */
         }
 
         .navbar-brand:hover {
-            color: #F4EDD3; /* Lighter blue on hover */
+            color: #F4EDD3;
+            /* Lighter blue on hover */
         }
 
         .navbar-toggler {
-            border: none; /* Remove button border */
+            border: none;
+            /* Remove button border */
         }
 
         .navbar-toggler:focus {
-            outline: none; /* Remove focus outline */
+            outline: none;
+            /* Remove focus outline */
         }
 
-        
+
         /* Footer should be at the bottom */
         footer-bottom {
             background-color: #4C585B;
@@ -74,12 +93,14 @@
             text-align: center;
             padding: 10px 0;
         }
+
         footer-top {
             background-color: #7E99A3;
             color: white;
             text-align: left;
             padding: 10px 0;
         }
+
         .footer-top-columns {
             display: flex;
             justify-content: space-between;
@@ -112,24 +133,33 @@
         .footer-top-column ul li a:hover {
             text-decoration: underline;
         }
+
         .smaller-display-4 {
-            font-size: 1.5rem; 
+            font-size: 1.5rem;
             font-family: 'Bodoni';
         }
+
         .custom-text {
-            font-size: 0.875rem; 
-            opacity: 0.7; 
+            font-size: 0.875rem;
+            opacity: 0.7;
         }
+
         .carousel-inner img {
-            height: 300px; /* Adjust the height of images */
-            object-fit: cover; /* Ensures images fill the space properly */
-            border-radius: 0px; /* Adds rounded corners */
+            height: 300px;
+            /* Adjust the height of images */
+            object-fit: cover;
+            /* Ensures images fill the space properly */
+            border-radius: 0px;
+            /* Adds rounded corners */
         }
 
         .list-group-item {
-            font-size: 1rem; /* Adjust font size */
-            line-height: 1.5; /* Improve readability */
+            font-size: 1rem;
+            /* Adjust font size */
+            line-height: 1.5;
+            /* Improve readability */
         }
+
         /* Position the overlay at the bottom of the image */
         .carousel-caption-bottom {
             position: absolute;
@@ -138,26 +168,39 @@
         }
 
         .overlay {
-            background: rgba(0, 0, 0, 0.6); /* Black background with 60% transparency */
-            color: #fff; /* White text color */
-            padding: 10px 15px; /* Add padding for spacing */
-            text-align: center; /* Center-align the text */
-            width: 100%; /* Make it span the full width of the image */
+            background: rgba(0, 0, 0, 0.6);
+            /* Black background with 60% transparency */
+            color: #fff;
+            /* White text color */
+            padding: 10px 15px;
+            /* Add padding for spacing */
+            text-align: center;
+            /* Center-align the text */
+            width: 100%;
+            /* Make it span the full width of the image */
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
         }
+
         .award-image {
-            margin-bottom: 20px; /* Spacing between images */
+            margin-bottom: 20px;
+            /* Spacing between images */
         }
 
         .award-image img {
-            border-radius: 0px; /* Optional: Add rounded corners to images */
+            border-radius: 0px;
+            /* Optional: Add rounded corners to images */
         }
+
         .award-image p {
-            font-size: 0.85rem;  /* Smaller font size */
-            color: #4C585B;  /* Lighter color for the caption */
-            margin-top: 8px; /* Optional: Add some space between the image and caption */
+            font-size: 0.85rem;
+            /* Smaller font size */
+            color: #4C585B;
+            /* Lighter color for the caption */
+            margin-top: 8px;
+            /* Optional: Add some space between the image and caption */
         }
+
         .parallax {
             /* The image used */
             background-image: url("images/Bordeaux - Cropped.jpeg");
@@ -176,8 +219,10 @@
 
             /* Enable flexbox for centering content */
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center;    /* Center vertically */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
         }
 
         .parallax-overlay {
@@ -186,23 +231,28 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+            background: rgba(0, 0, 0, 0.3);
+            /* Semi-transparent black */
             z-index: 1;
         }
 
         .parallax-content {
-            position: relative; /* Keeps the text above the overlay */
-            z-index: 2; /* Ensure text stays above the overlay */
-            color: white; /* Adjust text color */
-            font-size: 24px; /* Customize text size */
-            text-align: center; /* Center-align text */
-            padding: 0 20px; /* Optional padding for better readability */
+            position: relative;
+            /* Keeps the text above the overlay */
+            z-index: 2;
+            /* Ensure text stays above the overlay */
+            color: white;
+            /* Adjust text color */
+            font-size: 24px;
+            /* Customize text size */
+            text-align: center;
+            /* Center-align text */
+            padding: 0 20px;
+            /* Optional padding for better readability */
         }
-        
-        
-
     </style>
 </head>
+
 <body>
 
     <div class="page-container">
@@ -210,24 +260,29 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#" onclick="showPage('home')">
-                    <img src="mylogo.ico" alt="Anubhab Majumder Logo" style="height: 40px; width: auto; "> Anubhab Majumder, PhD
+                    <img src="mylogo.ico" alt="Anubhab Majumder Logo" style="height: 40px; width: auto; "> Anubhab
+                    Majumder, PhD
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('home')">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('research')">Research</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('publications')">Publications</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('workshops')">Workshops</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('research')">Research</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#"
+                                onclick="showPage('publications')">Publications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('workshops')">Workshops</a>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('awards')">Awards</a></li>
                         <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('courses')">Courses</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
         <div class="parallax">
             <div class="parallax-overlay"></div>
             <div class="parallax-content">
@@ -237,26 +292,34 @@
         <!-- Content Area -->
         <div class="container mt-4 content" id="content">
             <div id="homePage">
-                
+
                 <div class="text-center mt-4">
                     <div class="row align-items-center">
                         <div class="col-md-3">
                             <img src="images/anubhab.jpg" class="img-fluid">
                         </div>
                         <div class="col-md-9">
-                            <p class="lead">I am currently a Research Associate in the Department of Design and Manufacturing at the Indian Institute of Science (IISc), Bangalore. I recently completed my Ph.D. in Product Design and Engineering from the Indian Institute of Science under the supervision of Prof. Amaresh Chakrabarti. My research focuses on conceptual design synthesis, design theory, function modeling, multi-state mechanical devices, creativity, kinematics, and robotics.
-                            <br>
-                            Prior to this, I earned an M.Tech. in Mechanical Engineering (Machine Design, Gold Medalist) from IIT (ISM) Dhanbad in 2018 and a B.Tech. in Mechanical Engineering from the Government College of Engineering & Textile Technology, Berhampore, India.
+                            <p class="lead">I am currently a Research Associate in the Department of Design and
+                                Manufacturing at the Indian Institute of Science (IISc), Bangalore. I recently completed
+                                my Ph.D. in Product Design and Engineering from the Indian Institute of Science under
+                                the supervision of Prof. Amaresh Chakrabarti. My research focuses on conceptual design
+                                synthesis, design theory, function modeling, multi-state mechanical devices, creativity,
+                                kinematics, and robotics.
+                                <br>
+                                Prior to this, I earned an M.Tech. in Mechanical Engineering (Machine Design, Gold
+                                Medalist) from IIT (ISM) Dhanbad in 2018 and a B.Tech. in Mechanical Engineering from
+                                the Government College of Engineering & Textile Technology, Berhampore, India.
                             </p>
                             <p class="lead">
-                            This site provides comprehensive information about my research background, projects, and publications.
-                            <br>
-                            Should you require any additional details, please feel free to contact me!
+                                This site provides comprehensive information about my research background, projects, and
+                                publications.
+                                <br>
+                                Should you require any additional details, please feel free to contact me!
                             </p>
-                            <div style="text-align: right;">
-                                <a href="Academic_CV_Anubhab.pdf" class="btn btn-secondary" download="Anubhab-Majumder-CV.pdf">Download CV</a>
-                            </div>
-                            
+                            <!--<div style="text-align: right;">
+                                <a href="#" class="btn btn-secondary" download="Anubhab-Majumder-CV.pdf">Download CV</a>
+                            </div>-->
+
                         </div>
                     </div>
                 </div>
@@ -274,7 +337,8 @@
                             <ul>
                                 <li>Email: majumderanubhab@gmail.com</li>
                                 <li>Phone: +91 7872739656</li>
-                                <li>Address: Department of Design and Manufacturing,<br> Indian Institute of Science,<br> Bangalore - 560012, India</li>
+                                <li>Address: Department of Design and Manufacturing,<br> Indian Institute of
+                                    Science,<br> Bangalore - 560012, India</li>
                             </ul>
                         </div>
                         <div class="col-md-3">
@@ -291,14 +355,18 @@
                         <div class="col-md-3">
                             <h5>Let's Connect</h5>
                             <ul>
-                                <li><a href="https://www.linkedin.com/in/anubhab-majumder-88949066/"><i class="fab fa-linkedin"></i> linkedIn</a></li>
-                                <li><a href="https://www.researchgate.net/profile/Anubhab-Majumder"><i class="fab fa-researchgate"></i> ResearchGate</a></li>
-                                <li><a href="https://scholar.google.co.in/citations?user=QJHp9z8AAAAJ&hl=en"><i class="fas fa-book"></i> Goole Scholar</a></li>
-                                <li><a href="https://orcid.org/0000-0002-8447-0629"><i class="fab fa-orcid"></i> ORCiD</a></li>
+                                <li><a href="https://www.linkedin.com/in/anubhab-majumder-88949066/"><i
+                                            class="fab fa-linkedin"></i> linkedIn</a></li>
+                                <li><a href="https://www.researchgate.net/profile/Anubhab-Majumder"><i
+                                            class="fab fa-researchgate"></i> ResearchGate</a></li>
+                                <li><a href="https://scholar.google.co.in/citations?user=QJHp9z8AAAAJ&hl=en"><i
+                                            class="fas fa-book"></i> Goole Scholar</a></li>
+                                <li><a href="https://orcid.org/0000-0002-8447-0629"><i class="fab fa-orcid"></i>
+                                        ORCiD</a></li>
                             </ul>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </footer-top>
@@ -313,7 +381,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bibtex-js/2.2.1/bibtex.min.js"></script>
 
     <script>
- 
+
         // Pages content
         const pages = {
             home: document.getElementById('homePage').innerHTML,
@@ -648,8 +716,9 @@
             });
         }
 
-        
+
     </script>
-    
+
 </body>
+
 </html>
