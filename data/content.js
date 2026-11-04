@@ -58,7 +58,7 @@ window.SITE = {
     "bio": [
       "I am an industrial postdoctoral researcher at Grundfos in Bjerringbro, Denmark, jointly affiliated with Aarhus University and a visiting postdoctoral researcher at DTU. I work on the MUSTANG 5.0 project, which supports a human-centric and sustainable Industry 5.0 transition in manufacturing. Before this, I was a postdoctoral researcher at TU Darmstadt, Germany, and a Research Associate in the Department of Design and Manufacturing at the Indian Institute of Science (IISc), Bangalore.",
       "I received my PhD in Product Design and Engineering from the IDeaS Lab at IISc, where my thesis won the institute gold medal (MAA Communications Medal) for the best PhD thesis in the department. I also hold an M.Tech. in Mechanical Engineering (Machine Design, Gold Medalist) from IIT (ISM) Dhanbad and a B.Tech. in Mechanical Engineering from the Government College of Engineering & Textile Technology, Berhampore.",
-      "I am a member of the Design Society and of the Academy of Design Sciences Foundation India (DeScIn). I serve on the International Programme Committee of ICoRD'27 and the Scientific Advisory Board of DESIGN 2026, and review for Research in Engineering Design, the International Journal of Design Creativity and Innovation, Forschung im Ingenieurwesen and ASME IDETC-CIE."
+      "I am a member of the Design Society and the Academy of Design Sciences Foundation India (DeScIn), and I serve on programme committees, scientific advisory boards and organising committees of flagship international conferences organised or endorsed by these societies. I also review for leading journals and conferences in engineering design."
     ],
     "interests": [
       "Conceptual design",
