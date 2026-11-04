@@ -9,6 +9,8 @@
  *  (that script also regenerates references.bib)
  *
  *  Publication "type": "journal" | "conference" | "thesis"
+ *  Profile: "prefix" goes before the name; "positionIcon" and "status.icon"
+ *  are Font Awesome icon names (fontawesome.com/icons).
  *  Every publication needs a unique "id" (e.g. "jmd2025-codesymm").
  *  Optional publication fields: "url", "doi", "award", "details"
  *  If no url/doi is given, the title links to a Google Scholar search.
@@ -31,7 +33,10 @@ window.SITE = {
   "profile": {
     "name": "Anubhab Majumder",
     "honorific": "PhD",
-    "position": "Industrial Postdoctoral Researcher",
+    "prefix": "Dr.",
+    "position": "Postdoctoral Researcher",
+    "positionIcon": "fa-graduation-cap",
+    "status": { "icon": "fa-shapes", "text": "Research into Design" },
     "affiliations": [
       "Grundfos Holding A/S",
       "Aarhus University, Dept. of Mechanical and Production Engineering"
@@ -54,7 +59,7 @@ window.SITE = {
       "Grundfos Øst 2, Poul Due Jensens Vej 17",
       "8850 Bjerringbro, Denmark"
     ],
-    "photo": "images/profile.jpg",
+    "photo": "images/profile-2026.jpg",
     "links": {
       "scholar": "https://scholar.google.com/citations?user=QJHp9z8AAAAJ&hl=en",
       "orcid": "https://orcid.org/0000-0002-8447-0629",
