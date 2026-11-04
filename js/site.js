@@ -45,32 +45,61 @@
   }
 
   /* ---------- Research ---------- */
-  const themeLabel = Object.fromEntries(S.researchThemes.map((t) => [t.key, t.label]));
-  const projectHtml = (r) => `
-    <article class="project ${r.image ? "" : "noimg"}" data-themes="${esc(r.themes.join(" "))}">
-      ${r.image ? `<img src="${esc(r.image)}" alt="" loading="lazy">` : ""}
-      <div>
-        <h3>${esc(r.title)}</h3>
-        <div class="years">${esc(r.years)}</div>
-        <p>${esc(r.summary)}</p>
-        <div class="tags">
-          ${r.themes.map((t) => `<span class="chip">${esc(themeLabel[t] || t)}</span>`).join("")}
-          ${r.link ? `<a href="${esc(r.link)}" target="_blank" rel="noopener">Related paper →</a>` : ""}
+  const pubById = Object.fromEntries(S.publications.map((p) => [p.id, p]));
+  const projectOf = {};
+  S.research.forEach((r) => r.publications.forEach((id) => (projectOf[id] = r)));
+
+  const figureHtml = (r) => {
+    const f = r.figures || [];
+    if (!f.length) return "";
+    return `<div class="project-figs">
+      <figure class="fig-main">
+        <button class="fig-open" type="button" data-project="${esc(r.id)}" aria-label="Enlarge figure"><img src="${esc(f[0].src)}" alt="${esc(f[0].caption)}" loading="lazy"></button>
+        <figcaption><span class="cap">${esc(f[0].caption)}</span>${f[0].credit ? `<span class="credit">${esc(f[0].credit)}</span>` : ""}</figcaption>
+      </figure>
+      ${f.length > 1 ? `<div class="thumbs">${f.map((x, i) => `<button type="button" class="thumb" data-i="${i}" aria-pressed="${i === 0}" aria-label="Show figure ${i + 1}"><img src="${esc(x.src)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
+    </div>`;
+  };
+  const projectHtml = (r) => {
+    const rp = r.publications.map((id) => pubById[id]).filter(Boolean);
+    return `
+    <article class="project ${r.figures && r.figures.length ? "" : "nofig"}" id="project-${esc(r.id)}">
+      <header><h3>${esc(r.title)}</h3><div class="years">${esc(r.period)}${r.context ? " · " + esc(r.context) : ""}</div></header>
+      <div class="project-body">
+        <div class="project-text">
+          <p>${esc(r.summary)}</p>
+          ${r.highlights && r.highlights.length ? `<ul class="highlights">${r.highlights.map((h) => `<li>${h}</li>`).join("")}</ul>` : ""}
         </div>
+        ${figureHtml(r)}
       </div>
+      ${rp.length ? `<details class="project-pubs"><summary>Related publications (${rp.length})</summary><ol>${rp.map((p) =>
+        `<li><a href="${esc(pubUrl(p))}" target="_blank" rel="noopener">${esc(p.title)}</a><span class="muted">${esc(p.venue)}, ${p.year}</span></li>`).join("")}</ol></details>` : ""}
     </article>`;
+  };
+  $("#research-index").innerHTML = S.research.map((r) => `<a class="chip" href="#project-${esc(r.id)}">${esc(r.title.split(":")[0])}</a>`).join("");
   $("#research-list").innerHTML = S.research.map(projectHtml).join("");
 
-  const rf = $("#research-filters");
-  rf.innerHTML = [{ key: "all", label: "All" }].concat(S.researchThemes)
-    .map((t) => `<button class="filter" data-key="${t.key}" aria-pressed="${t.key === "all"}">${esc(t.label)}</button>`).join("");
-  rf.addEventListener("click", (e) => {
-    const b = e.target.closest(".filter"); if (!b) return;
-    rf.querySelectorAll(".filter").forEach((x) => x.setAttribute("aria-pressed", x === b));
-    document.querySelectorAll("#research-list .project").forEach((el) => {
-      el.hidden = !(b.dataset.key === "all" || el.dataset.themes.split(" ").includes(b.dataset.key));
-    });
+  // thumbnails swap the main figure; main figure opens a lightbox
+  const projById = Object.fromEntries(S.research.map((r) => [r.id, r]));
+  const lb = $("#lightbox");
+  $("#research-list").addEventListener("click", (e) => {
+    const t = e.target.closest(".thumb");
+    if (t) {
+      const card = t.closest(".project"), r = projById[card.id.replace("project-", "")], f = r.figures[+t.dataset.i];
+      card.querySelectorAll(".thumb").forEach((x) => x.setAttribute("aria-pressed", x === t));
+      const img = card.querySelector(".fig-main img"); img.src = f.src; img.alt = f.caption;
+      card.querySelector(".fig-main figcaption").innerHTML = `<span class="cap">${esc(f.caption)}</span>${f.credit ? `<span class="credit">${esc(f.credit)}</span>` : ""}`;
+      return;
+    }
+    const o = e.target.closest(".fig-open");
+    if (o && lb.showModal) {
+      const img = o.querySelector("img");
+      lb.querySelector("img").src = img.src; lb.querySelector("img").alt = img.alt;
+      lb.querySelector("figcaption").innerHTML = o.parentElement.querySelector("figcaption").innerHTML;
+      lb.showModal();
+    }
   });
+  lb.addEventListener("click", () => lb.close());
 
   /* ---------- Publications ---------- */
   const TYPE = { journal: "Journal", conference: "Conference", thesis: "Thesis" };
@@ -111,6 +140,7 @@
         <span class="badge ${p.type}">${TYPE[p.type] || p.type}</span>
         ${p.award ? `<span class="badge">🏆 ${esc(p.award)}</span>` : ""}
         <button class="linkbtn" data-bib="${p._id}">BibTeX</button>
+        ${projectOf[p.id] ? `<a class="proj-link" href="#project-${esc(projectOf[p.id].id)}">↳ ${esc(projectOf[p.id].title.split(":")[0])}</a>` : ""}
       </div>
     </li>`;
 

@@ -33,15 +33,26 @@ def check(site):
                 errors.append(f"publication #{i + 1} is missing '{k}'")
         if p.get("type") not in ("journal", "conference", "thesis"):
             errors.append(f"publication #{i + 1} has unknown type {p.get('type')!r}")
-    for item in site["research"] + site["workshops"] + site["awards"]:
-        img = item.get("image")
+    images = [i.get("image") for i in site["workshops"] + site["awards"]]
+    images += [f.get("src") for r in site["research"] for f in r.get("figures", [])]
+    for img in images:
         if img and not (ROOT / img).exists():
             errors.append(f"missing image file: {img}")
-    themes = {t["key"] for t in site["researchThemes"]}
+    ids = [p.get("id") for p in site["publications"]]
+    if None in ids:
+        errors.append("every publication needs an 'id'")
+    dup = {i for i in ids if ids.count(i) > 1}
+    if dup:
+        errors.append(f"duplicate publication ids: {sorted(dup)}")
+    mapped = set()
     for r in site["research"]:
-        for t in r["themes"]:
-            if t not in themes:
-                errors.append(f"research '{r['title']}' uses unknown theme '{t}'")
+        for pid in r.get("publications", []):
+            if pid not in ids:
+                errors.append(f"research '{r['title']}' lists unknown publication id '{pid}'")
+            mapped.add(pid)
+    unmapped = [i for i in ids if i not in mapped]
+    if unmapped:
+        print("Note: publications not linked to any research project:", ", ".join(unmapped))
     if errors:
         sys.exit("Problems found:\n  - " + "\n  - ".join(errors))
 

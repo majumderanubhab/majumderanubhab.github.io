@@ -6,7 +6,8 @@ Personal academic website, served by GitHub Pages from `main`.
 
 All content is in **`data/content.js`**: profile, news, research, publications, experience, awards and workshops. The HTML stays untouched.
 
-- **New paper:** add an entry to `publications` (copy an existing one). `type` must be `journal`, `conference` or `thesis`. `doi` or `url` are optional.
+- **New paper:** add an entry to `publications` (copy an existing one) with a unique `id`. `type` must be `journal`, `conference` or `thesis`. `doi` or `url` are optional. Then add its `id` to the `publications` list of the matching project in `research`.
+- **Research project:** edit `research`. Each project has a summary, highlights, figures (the first is shown large, add `credit` for figures from papers) and linked publication ids.
 - **News item:** add an entry to the top of `news`.
 - **New job:** add it to the top of `experience`, then update `profile.position` / `affiliations` / `bio`.
 - **Images:** put them in `images/` and refer to them by path.
