@@ -1,7 +1,7 @@
 /* ============================================================
    Tokens: a quiet, GitHub-style profile for a design-methods researcher.
    Neutral greys, one petrol-teal accent (the ink of function-model
-   diagrams), and a colour per research line used only as small dots.
+   diagrams), and a colour per research thrust used only as small dots.
    Type: IBM Plex Sans for everything; Plex Mono only for code-like
    bits (README file name, DOI, BibTeX).
    ============================================================ */
@@ -148,7 +148,7 @@ a:hover { text-decoration: underline; text-underline-offset: .15em; }
 .topics { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .topics li { padding: 2px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500; line-height: 20px; }
 
-/* Pinned research lines */
+/* Pinned research thrusts */
 .pinned { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .pin { padding: 16px; display: flex; flex-direction: column; }
 .pin-title { display: inline-flex; align-items: baseline; gap: 8px; font-weight: 600; font-size: 14px; }

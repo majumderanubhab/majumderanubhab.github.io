@@ -53,7 +53,7 @@
   $("#bio").innerHTML = P.bio.map((p) => `<p>${esc(p)}</p>`).join("");
   $("#interests").innerHTML = P.interests.map((t) => `<li>${esc(t)}</li>`).join("");
 
-  /* ---------- Overview: pinned research lines ---------- */
+  /* ---------- Overview: pinned research thrusts ---------- */
   const firstSentence = (t) => (t.match(/^.*?[.!?](\s|$)/) || [t])[0].trim();
   $("#pinned").innerHTML = S.research.map((r) => `
     <li class="box pin">

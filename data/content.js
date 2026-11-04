@@ -29,7 +29,7 @@ window.SITE = {
       "Grundfos Holding A/S",
       "Aarhus University, Dept. of Mechanical and Production Engineering"
     ],
-    "tagline": "I develop methods and AI-supported tools that help engineers and product developers represent, generate and evaluate concepts in the early stages of design.",
+    "tagline": "I develop methods and AI-supported tools that help engineering designers and product developers represent, generate and evaluate concepts in the early stages of design.",
     "facts": [
       { "label": "Now", "text": "Industrial Postdoc, Grundfos and Aarhus University" },
       { "label": "Also", "text": "Visiting postdoctoral researcher, DTU" },
