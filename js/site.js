@@ -86,6 +86,113 @@
   </div>`;
   $("#graph-key").innerHTML = "Less" + [0, 1, 2, 3, 4].map((n) => `<span class="hm-key" style="--p:${shade(n)}%"${n ? "" : ' data-empty=""'}></span>`).join("") + "More";
 
+  /* ---------- Overview: academic journey and collaborator map ---------- */
+  const FP = S.footprint, LAND = window.LAND;
+  const flag = (cc, name) => `<span class="fi fi-${esc(cc)} fp-flag" role="img" aria-label="${esc(name)}" title="${esc(name)}"></span>`;
+  const fpInst = FP ? FP.institutions.map((inst) => {
+    const people = FP.coauthors.filter((a) => a.institution === inst.name).sort((a, b) => b.papers.length - a.papers.length);
+    return Object.assign({}, inst, { people, papers: [...new Set(people.flatMap((a) => a.papers))].filter((id) => pubById[id]) });
+  }) : [];
+  const fpLevel = (n) => (n >= 7 ? 1 : n >= 3 ? 0.75 : n >= 2 ? 0.55 : 0.38);
+  const fpState = { view: "world", layer: "both", cells: {}, open: null };
+  function fpDraw() {
+    const v = LAND[fpState.view], H = v.rows.length, W = v.rows[0].length, S = 960 / W;
+    const [w, e] = v.lon, [n, s] = v.lat;
+    const cellOf = (lat, lon) => {
+      const c = Math.floor((lon - w) / (e - w) * W), r = Math.floor((n - lat) / (n - s) * H);
+      return c < 0 || c >= W || r < 0 || r >= H ? null : [r, c];
+    };
+    const mid = (p) => [p[1] * S + S / 2, p[0] * S + S / 2];
+    let svg = "";
+    v.rows.forEach((row, r) => { for (let c = 0; c < W; c++) if (row[c] === "1") svg += `<rect class="fp-land" x="${c * S}" y="${r * S}" width="${S - S / 5}" height="${S - S / 5}" rx="${S / 6}"/>`; });
+    const jCells = FP.journey.map((j) => cellOf(j.lat, j.lon));
+    const showJ = fpState.layer !== "collab", showC = fpState.layer !== "journey";
+    if (showC) fpInst.forEach((inst) => {
+      const a = jCells[inst.from], b = cellOf(inst.lat, inst.lon);
+      if (!a || !b) return;
+      const [x1, y1] = mid(a), [x2, y2] = mid(b), d = Math.hypot(x2 - x1, y2 - y1);
+      if (d < S * 1.5) return;
+      svg += `<path class="fp-link" d="M${x1} ${y1}Q${(x1 + x2) / 2} ${(y1 + y2) / 2 - d * 0.18} ${x2} ${y2}" stroke-width="${S / 8}" stroke-dasharray="${S / 3} ${S / 4}"/>`;
+    });
+    if (showJ) {
+      const pts = jCells.filter(Boolean).map(mid);
+      if (pts.length > 1) svg += `<polyline class="fp-path" points="${pts.map((p) => p.join(",")).join(" ")}" stroke-width="${S / 4}"/>`;
+    }
+    const cells = {};
+    const add = (p, kind, i) => { if (p) (cells[p.join(",")] = cells[p.join(",")] || { j: [], c: [] })[kind].push(i); };
+    if (showC) fpInst.forEach((inst, i) => add(cellOf(inst.lat, inst.lon), "c", i));
+    if (showJ) FP.journey.forEach((j, i) => { add(jCells[i], "j", i); (j.also || []).forEach(([la, lo]) => add(cellOf(la, lo), "j", i)); });
+    for (const k in cells) {
+      const [r, c] = k.split(",").map(Number), o = cells[k], z = S * 1.25, x = c * S - S * 0.125, y = r * S - S * 0.125;
+      if (o.j.length) {
+        svg += `<rect class="fp-sq fp-j" data-k="${k}" x="${x}" y="${y}" width="${z}" height="${z}" rx="${S / 4}"/>`;
+        if (o.c.length) svg += `<rect class="fp-ring" x="${x - S * 0.2}" y="${y - S * 0.2}" width="${z + S * 0.4}" height="${z + S * 0.4}" rx="${S / 3}" stroke-width="${S / 7}"/>`;
+      } else {
+        const papers = new Set(o.c.flatMap((i) => fpInst[i].papers)).size;
+        svg += `<rect class="fp-sq fp-c" data-k="${k}" style="opacity:${fpLevel(papers)}" x="${x}" y="${y}" width="${z}" height="${z}" rx="${S / 4}"/>`;
+      }
+    }
+    const map = $("#fp-map");
+    map.setAttribute("viewBox", `0 0 960 ${H * S}`);
+    map.innerHTML = svg;
+    fpState.cells = cells;
+  }
+  const fpSummary = (inst) => `${plural(inst.people.length, "co-author")}, ${plural(inst.papers.length, "paper")}`;
+  function fpOpen(ids) {
+    fpState.open = ids;
+    const paper = (id) => {
+      const p = pubById[id];
+      return `<li><span class="fp-y">${p.year}</span>${p.url || p.doi ? `<a href="${esc(pubUrl(p))}" target="_blank" rel="noopener">${esc(p.title)}</a>` : `<span>${esc(p.title)} <span class="fp-y">${esc(p.details || "")}</span></span>`}</li>`;
+    };
+    $("#fp-panel").innerHTML = ids.map((i) => {
+      const inst = fpInst[i];
+      return `<section><h3 class="fp-panel-h"><span>${flag(inst.cc, inst.country)}${esc(inst.name)} · ${esc(inst.city)}, ${esc(inst.country)}</span><span class="fp-y">${fpSummary(inst)}</span></h3>
+        ${inst.people.map((a, k) => `<details class="fp-person"${k === 0 ? " open" : ""}><summary><strong>${esc(a.name)}</strong> <span class="fp-y">· ${plural(a.papers.length, "paper")}</span></summary>
+          <ol>${a.papers.map((id) => pubById[id]).filter(Boolean).sort((x, y) => y.year - x.year).map((p) => paper(p.id)).join("")}</ol></details>`).join("")}</section>`;
+    }).join("") + `<p class="fp-actions"><a href="#pub-count" class="muted-link" data-fp-pubs>Show in Publications</a><button type="button" class="btn btn-sm" data-fp-close>Close</button></p>`;
+    $("#fp-panel").hidden = false;
+    $("#fp-inst").querySelectorAll("[data-i]").forEach((b) => b.setAttribute("aria-pressed", ids.includes(+b.dataset.i)));
+  }
+  function fpClose() {
+    fpState.open = null; $("#fp-panel").hidden = true;
+    $("#fp-inst").querySelectorAll("[data-i]").forEach((b) => b.setAttribute("aria-pressed", "false"));
+  }
+  if (FP && LAND) {
+    $("#fp-stat").textContent = `${plural(FP.coauthors.length, "co-author")} · ${plural(fpInst.length, "institution")} · ${plural(new Set(fpInst.map((i) => i.country)).size, "country").replace("countrys", "countries")}`;
+    $("#fp-journey").innerHTML = FP.journey.map((j) => `<li><span class="fp-key fp-j" aria-hidden="true"></span>${flag(j.cc, "")}<span><strong>${esc(j.name)}</strong> · ${esc(j.role)} · ${esc(j.period)}</span></li>`).join("");
+    $("#fp-inst").innerHTML = fpInst.map((inst, i) => `<li><button type="button" class="fp-row" data-i="${i}" aria-pressed="false"><span class="fp-key fp-c" style="opacity:${fpLevel(inst.papers.length)}" aria-hidden="true"></span>${flag(inst.cc, inst.country)}<span><strong>${esc(inst.name)}</strong>, ${esc(inst.country)} · ${fpSummary(inst)}</span></button></li>`).join("");
+    fpDraw();
+    const seg = (id, key) => $(id).addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      $(id).querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+      fpState[key] = b.dataset.v; fpDraw();
+    });
+    seg("#fp-zoom", "view"); seg("#fp-layer", "layer");
+    $("#fp-map").addEventListener("mouseover", (e) => {
+      const sq = e.target.closest(".fp-sq"); if (!sq) return;
+      const o = fpState.cells[sq.dataset.k];
+      $("#fp-tip").textContent = [...new Set(o.j)].map((i) => `${FP.journey[i].name} (${FP.journey[i].period})`)
+        .concat(o.c.map((i) => `${fpInst[i].name}: ${fpSummary(fpInst[i])}`)).join("  |  ");
+    });
+    $("#fp-map").addEventListener("click", (e) => {
+      const sq = e.target.closest(".fp-sq"); if (!sq) return;
+      const o = fpState.cells[sq.dataset.k];
+      if (o.c.length) fpOpen(o.c);
+    });
+    $("#fp-inst").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) fpOpen([+b.dataset.i]); });
+    $("#fp-panel").addEventListener("click", (e) => {
+      if (e.target.closest("[data-fp-close]")) fpClose();
+      if (e.target.closest("[data-fp-pubs]")) {
+        const insts = fpState.open.map((i) => fpInst[i]);
+        state.only = { ids: new Set(insts.flatMap((i) => i.papers)), html: insts.map((i) => flag(i.cc, i.country) + esc(i.name)).join(", ") };
+        renderPubs();
+        if (location.hash === "#pub-count") window.dispatchEvent(new HashChangeEvent("hashchange"));
+      }
+    });
+  } else {
+    $("#fp-h").closest(".block").hidden = true;
+  }
+
   /* ---------- Overview: activity ---------- */
   const NEWS_SHOWN = 5;
   const newsHtml = (items) => items.map((n) => `<li><span class="feed-dot" aria-hidden="true"></span><div><p class="feed-date">${esc(n.date)}</p><p class="feed-text">${n.text}</p></div></li>`).join("");
@@ -207,28 +314,32 @@
     </li>`;
   };
 
-  const state = { type: "all", q: "", cell: null };
+  /* state.only = { ids: Set of publication ids, html: chip label } narrows the list
+     (set by the heatmap and the collaborator map). */
+  const state = { type: "all", q: "", only: null };
   function renderPubs() {
-    const q = state.q.toLowerCase(), c = state.cell;
+    const q = state.q.toLowerCase(), o = state.only;
     const list = pubs.filter((p) =>
       (state.type === "all" || p.type === state.type) &&
-      (!c || (p.year === c.year && projectOf[p.id] === c.r)) &&
+      (!o || o.ids.has(p.id)) &&
       (!q || (p.title + " " + p.authors + " " + p.venue + " " + p.year).toLowerCase().includes(q)));
     $("#pub-list").innerHTML = list.length
       ? list.map(pubHtml).join("")
       : `<li class="row empty">No publications match these filters. Try a shorter search or another filter.</li>`;
-    $("#pub-count").innerHTML = `<strong>${list.length}</strong> of ${pubs.length} publications` + (c
-      ? ` <span class="label filter-chip">${dot(c.r.color)}${esc(shortTitle(c.r))}, ${c.year}<button type="button" class="chip-x" aria-label="Clear thrust and year filter">×</button></span>`
+    $("#pub-count").innerHTML = `<strong>${list.length}</strong> of ${pubs.length} publications` + (o
+      ? ` <span class="label filter-chip">${o.html}<button type="button" class="chip-x" aria-label="Clear this filter">×</button></span>`
       : "");
   }
   $("#graph").addEventListener("click", (e) => {
     const a = e.target.closest("[data-y]"); if (!a) return;
-    state.cell = { r: S.research.find((r) => r.id === a.dataset.r), year: +a.dataset.y };
+    const r = S.research.find((x) => x.id === a.dataset.r), y = +a.dataset.y;
+    state.only = { ids: new Set(r.publications.filter((id) => pubById[id] && pubById[id].year === y)), html: `${dot(r.color)}${esc(shortTitle(r))}, ${y}` };
     renderPubs();
+    if (location.hash === "#pub-count") window.dispatchEvent(new HashChangeEvent("hashchange"));
   });
   $("#pub-count").addEventListener("click", (e) => {
     if (!e.target.closest(".chip-x")) return;
-    state.cell = null; renderPubs();
+    state.only = null; renderPubs();
   });
   const pf = $("#pub-filters");
   const counts = pubs.reduce((c, p) => ((c[p.type] = (c[p.type] || 0) + 1), c), {});
