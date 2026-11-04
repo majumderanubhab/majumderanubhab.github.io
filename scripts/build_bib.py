@@ -53,6 +53,17 @@ def check(site):
     unmapped = [i for i in ids if i not in mapped]
     if unmapped:
         print("Note: publications not linked to any research project:", ", ".join(unmapped))
+    fp = site.get("footprint", {})
+    names = {i["name"] for i in fp.get("institutions", [])}
+    for i in fp.get("institutions", []):
+        if not 0 <= i.get("from", -1) < len(fp.get("journey", [])):
+            errors.append(f"institution '{i['name']}' has an invalid 'from' journey step")
+    for a in fp.get("coauthors", []):
+        if a["institution"] not in names:
+            errors.append(f"co-author '{a['name']}' has unknown institution '{a['institution']}'")
+        for pid in a["papers"]:
+            if pid not in ids:
+                errors.append(f"co-author '{a['name']}' lists unknown publication id '{pid}'")
     if errors:
         sys.exit("Problems found:\n  - " + "\n  - ".join(errors))
 
