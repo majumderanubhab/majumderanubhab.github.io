@@ -17,6 +17,7 @@
  *  "figures": first one is shown large; add "credit" for figures
  *  taken from a published paper (author, year, venue, licence).
  *  "highlights" may contain simple HTML such as <strong>.
+ *  "color" is the project's colour, used across the whole site.
  * ============================================================
  */
 window.SITE = {
@@ -28,6 +29,14 @@ window.SITE = {
       "Grundfos Holding A/S",
       "Aarhus University, Dept. of Mechanical and Production Engineering"
     ],
+    "tagline": "I develop methods and AI-supported tools that help engineers and product developers represent, generate and evaluate concepts in the early stages of design.",
+    "facts": [
+      { "label": "Now", "text": "Industrial Postdoc, Grundfos and Aarhus University" },
+      { "label": "Also", "text": "Visiting postdoctoral researcher, DTU" },
+      { "label": "Works on", "text": "Conceptual design, function modelling, AI in design" },
+      { "label": "Before", "text": "TU Darmstadt; PhD, Indian Institute of Science" }
+    ],
+    "heroPhoto": "images/anubhab_large.jpg",
     "location": "Aarhus, Denmark",
     "emails": [
       "anubhabm@mpe.au.dk",
@@ -101,6 +110,7 @@ window.SITE = {
   "research": [
     {
       "id": "msmd",
+      "color": "#0E7490",
       "title": "Conceptual Design of Multi-state Mechanical Devices",
       "period": "2018 – 2025",
       "context": "PhD research, IDeaS Lab, Indian Institute of Science",
@@ -138,6 +148,7 @@ window.SITE = {
     },
     {
       "id": "llm",
+      "color": "#6E56CF",
       "title": "Large Language Models for Engineering Design Knowledge",
       "period": "2022 – present",
       "context": "With K. Bhattacharya and A. Chakrabarti (IISc)",
@@ -168,6 +179,7 @@ window.SITE = {
     },
     {
       "id": "mbse",
+      "color": "#2563EB",
       "title": "Model-based Systems Engineering & Resilient Cyber-Physical Systems",
       "period": "2025 – present",
       "context": "TU Darmstadt, with E. Kirchner",
@@ -196,6 +208,7 @@ window.SITE = {
     },
     {
       "id": "theory",
+      "color": "#B45309",
       "title": "Design Theory: Reasoning, Causality and Creativity",
       "period": "2020 – 2026",
       "context": "With A. N. Bhatt, U. Pal and A. Chakrabarti",
@@ -228,6 +241,7 @@ window.SITE = {
     },
     {
       "id": "pisces",
+      "color": "#15803D",
       "title": "Design-led Innovation for Sustainability: the PISCES Living Lab",
       "period": "2024 – 2025",
       "context": "PISCES Partnership (Work Package 6), with Brunel University London, ITS, ITB and Udayana University",
@@ -256,6 +270,7 @@ window.SITE = {
     },
     {
       "id": "hcd",
+      "color": "#C2410C",
       "title": "Learning, Perception and Generative AI in Design",
       "period": "2025 – present",
       "context": "Collaboration with Y. Kahlon, S. Law and colleagues",
@@ -274,6 +289,7 @@ window.SITE = {
     },
     {
       "id": "robotics",
+      "color": "#64748B",
       "title": "Bio-inspired Modular Robots",
       "period": "2017 – 2020",
       "context": "M.Tech. research, IIT (ISM) Dhanbad, with P. Chattopadhyay and S. K. Ghoshal",

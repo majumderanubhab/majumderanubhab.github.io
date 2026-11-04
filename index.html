@@ -14,12 +14,13 @@
   <link rel="icon" href="mylogo.ico">
 
   <script>
+    document.documentElement.classList.add("js");
     try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -46,102 +47,130 @@
 </head>
 
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="profile">
-        <img id="avatar" class="avatar" src="images/profile.jpg" alt="Anubhab Majumder" width="168" height="168">
-        <div>
-          <h1 id="name" class="name">Anubhab Majumder</h1>
-          <div id="position" class="position">Industrial Postdoctoral Researcher</div>
-        </div>
-        <div id="icons" class="icons"></div>
-        <button id="theme-toggle" class="theme-toggle" type="button">Theme</button>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="top-in">
+      <a class="mark" href="#overview" aria-label="Anubhab Majumder, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="9" width="9" height="14" rx="1.5"/><rect x="20" y="4" width="9" height="9" rx="1.5"/><rect x="20" y="19" width="9" height="9" rx="1.5"/><path d="M12 16h4M16 8.5v15M16 8.5h4M16 23.5h4"/></svg>
+        <span>Anubhab Majumder</span>
+      </a>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch colour theme">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 3a7 7 0 0 1 0 14z"/></svg>
+      </button>
+    </div>
+    <nav class="tabs" aria-label="Sections">
+      <div class="tabs-in" role="tablist">
+        <a href="#overview" role="tab" data-tab="overview"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Overview</a>
+        <a href="#research" role="tab" data-tab="research"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>Research <span class="count" id="c-research"></span></a>
+        <a href="#publications" role="tab" data-tab="publications"><i class="fa-regular fa-file-lines" aria-hidden="true"></i>Publications <span class="count" id="c-pubs"></span></a>
+        <a href="#experience" role="tab" data-tab="experience"><i class="fa-solid fa-briefcase" aria-hidden="true"></i>Experience</a>
+        <a href="#awards" role="tab" data-tab="awards"><i class="fa-regular fa-star" aria-hidden="true"></i>Awards &amp; workshops</a>
       </div>
-      <nav class="nav" aria-label="Sections">
-        <a href="#about">About</a>
-        <a href="#news">News</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
-        <a href="#awards">Awards</a>
-        <a href="#workshops">Workshops</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="side" aria-label="Profile">
+      <img id="avatar" class="avatar" src="images/profile.jpg" alt="" width="296" height="296">
+      <h1 class="who"><span id="name" class="name">Anubhab Majumder</span><span id="handle" class="handle"></span></h1>
+      <p id="tagline" class="side-bio"></p>
+      <a id="email-btn" class="btn btn-block" href="#"><i class="fa-regular fa-envelope" aria-hidden="true"></i>Email me</a>
+      <ul id="side-facts" class="side-facts"></ul>
+      <div class="side-block">
+        <h2 class="side-h">Profiles</h2>
+        <ul id="side-links" class="side-links"></ul>
+      </div>
+      <div class="side-block">
+        <h2 class="side-h">Recognition</h2>
+        <ul id="side-awards" class="badges"></ul>
+      </div>
     </aside>
 
-    <main>
+    <main id="main" class="main">
       <noscript><p>This site needs JavaScript to display its content. You can also find me on
         <a href="https://scholar.google.com/citations?user=QJHp9z8AAAAJ">Google Scholar</a>.</p></noscript>
 
-      <section id="about">
-        <h2>About</h2>
-        <div id="bio"></div>
-        <div class="muted small" style="margin-top:14px">Research interests</div>
-        <div id="interests" class="chips"></div>
+      <!-- Overview -->
+      <section id="overview" class="panel" role="tabpanel" aria-label="Overview">
+        <article class="box readme">
+          <header class="box-head"><span class="mono">anubhab / README.md</span></header>
+          <div class="box-body">
+            <h2 class="readme-h">Hi, I'm Anubhab</h2>
+            <div id="bio" class="prose"></div>
+            <h3 class="h-sm">Research interests</h3>
+            <ul id="interests" class="topics"></ul>
+          </div>
+        </article>
+
+        <div class="block">
+          <div class="block-head"><h2 class="h-md">Research lines</h2><a href="#research" class="muted-link">Read all</a></div>
+          <ol id="pinned" class="pinned"></ol>
+        </div>
+
+        <div class="block">
+          <div class="block-head"><h2 class="h-md" id="graph-h"></h2></div>
+          <figure class="box graph" aria-labelledby="graph-h">
+            <div id="graph" class="graph-grid"></div>
+            <figcaption class="graph-foot"><span>Each square is one paper, coloured by research line. Hover for the title.</span><a href="#publications" class="muted-link">All publications</a></figcaption>
+          </figure>
+        </div>
+
+        <div class="block">
+          <div class="block-head"><h2 class="h-md">Activity</h2></div>
+          <ol id="news-list" class="feed"></ol>
+          <button id="news-more" class="btn btn-sm" type="button" hidden>Show more activity</button>
+        </div>
       </section>
 
-      <section id="news">
-        <h2>News</h2>
-        <ul id="news-list" class="news"></ul>
-        <button id="news-more" class="more" type="button" hidden>Show all news ↓</button>
-      </section>
-
-      <section id="research">
-        <h2>Research</h2>
-        <nav id="research-index" class="chips research-index" aria-label="Research projects"></nav>
+      <!-- Research -->
+      <section id="research" class="panel" role="tabpanel" aria-label="Research" hidden>
+        <p class="panel-intro">Seven lines of work, from my PhD on multi-state mechanical devices to current work on AI and model-based systems engineering.</p>
         <div id="research-list" class="research-list"></div>
       </section>
 
-      <section id="publications">
-        <h2>Publications</h2>
-        <div id="pub-filters" class="filters" role="group" aria-label="Filter publications">
-          <input id="pub-search" class="search" type="search" placeholder="Search title, author, venue…" aria-label="Search publications">
+      <!-- Publications -->
+      <section id="publications" class="panel" role="tabpanel" aria-label="Publications" hidden>
+        <div class="toolbar">
+          <input id="pub-search" class="input" type="search" placeholder="Find a publication…" aria-label="Search publications">
+          <div id="pub-filters" class="segmented" role="group" aria-label="Filter by type"></div>
+          <button id="bib-all" class="btn" type="button"><i class="fa-solid fa-download" aria-hidden="true"></i>BibTeX</button>
         </div>
-        <div id="pub-list"></div>
-        <div class="pub-tools">
-          <span id="pub-count" class="muted small"></span>
-          <span class="small">
-            <button id="bib-all" class="linkbtn" type="button" style="font-size:inherit">Download all as BibTeX</button>
-            · <a href="https://scholar.google.com/citations?user=QJHp9z8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar profile</a>
-          </span>
-        </div>
+        <p id="pub-count" class="list-count"></p>
+        <ul id="pub-list" class="box list" aria-live="polite"></ul>
+        <p class="list-foot">Also on <a href="https://scholar.google.com/citations?user=QJHp9z8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
       </section>
 
-      <section id="experience">
-        <h2>Experience</h2>
-        <ul id="experience-list" class="timeline"></ul>
-        <h3 class="sub">Education</h3>
-        <ul id="education-list" class="timeline"></ul>
+      <!-- Experience -->
+      <section id="experience" class="panel" role="tabpanel" aria-label="Experience" hidden>
+        <h2 class="h-md">Experience</h2>
+        <ol id="experience-list" class="timeline"></ol>
+        <h2 class="h-md">Education</h2>
+        <ol id="education-list" class="timeline"></ol>
       </section>
 
-      <section id="awards">
-        <h2>Awards &amp; Honours</h2>
-        <ul id="awards-list" class="awards"></ul>
-        <div id="awards-gallery" class="gallery"></div>
+      <!-- Awards & workshops -->
+      <section id="awards" class="panel" role="tabpanel" aria-label="Awards and workshops" hidden>
+        <h2 class="h-md">Awards and honours</h2>
+        <ul id="awards-list" class="box list"></ul>
+        <h2 class="h-md">Workshops</h2>
+        <div id="workshops-list" class="ws-grid"></div>
       </section>
-
-      <section id="workshops">
-        <h2>Workshops</h2>
-        <div id="workshops-list" class="cards"></div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact">
-          <div><h3>Email</h3><div id="contact-email"></div></div>
-          <div><h3>Address</h3><address id="contact-address"></address></div>
-          <div><h3>Profiles</h3><div id="contact-links"></div></div>
-        </div>
-      </section>
-
-      <footer>
-        © <span id="year"></span> Anubhab Majumder · Last updated <span id="updated"></span><br>
-        <span>Site built with the assistance of Claude Opus 5.5.</span>
-      </footer>
     </main>
   </div>
 
-  <dialog id="lightbox" class="lightbox" aria-label="Figure"><figure><img src="" alt=""><figcaption></figcaption></figure><p class="muted small">Click anywhere to close</p></dialog>
+  <footer class="foot">
+    <div class="foot-in">
+      <span>© <span id="year"></span> Anubhab Majumder</span>
+      <address id="contact-address"></address>
+      <span>Last updated <span id="updated"></span>. Site built with the assistance of Claude Opus 5.5.</span>
+    </div>
+  </footer>
+
+  <dialog id="lightbox" class="lightbox" aria-label="Figure">
+    <figure><img src="" alt=""><figcaption></figcaption></figure>
+    <button type="button" class="btn btn-sm lb-close">Close</button>
+  </dialog>
 
   <script src="data/content.js"></script>
   <script src="js/site.js"></script>
