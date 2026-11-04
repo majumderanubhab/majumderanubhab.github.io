@@ -18,6 +18,8 @@
  *  taken from a published paper (author, year, venue, licence).
  *  "highlights" may contain simple HTML such as <strong>.
  *  "color" is the project's colour, used across the whole site.
+ *  "short" is the compact name used on cards, the heatmap and tags.
+ *  "since" (YYYY or YYYY-MM) orders the thrusts by start in the heatmap.
  * ============================================================
  */
 window.SITE = {
@@ -147,6 +149,8 @@ window.SITE = {
       "id": "industry5",
       "color": "#BE185D",
       "title": "Human-centric Design and Manufacturing for Industry 5.0",
+      "short": "Human-centric Design for Industry 5.0",
+      "since": "2025-12",
       "period": "2025 – present",
       "context": "MUSTANG 5.0, Grundfos, Aarhus University and DTU, with B. Veluri, R. Mansour and D. Ramanujan",
       "summary": "Industry 5.0 asks manufacturing to be human-centric, sustainable and resilient, not only efficient. In the MUSTANG 5.0 project, jointly funded by Grundfos and Innovation Fund Denmark, I support the Industry 5.0 transition of the inserted-stator platform manufacturing process at Grundfos through human-centric manufacturing digitalisation and sustainability.",
@@ -164,6 +168,8 @@ window.SITE = {
       "id": "msmd",
       "color": "#0E7490",
       "title": "Conceptual Design of Multi-state Mechanical Devices",
+      "short": "Multi-state Mechanical Devices",
+      "since": "2018-08",
       "period": "2018 – 2025",
       "context": "PhD research, IDeaS Lab, Indian Institute of Science",
       "summary": "A multi-state mechanical device (MSMD) performs different functions in different operating states by changing its topology and the interactions among its elements. Most computational support for conceptual design deals with single-state problems. My doctoral work set out to support designers through every step of representing, synthesising and analysing MSMD concepts.",
@@ -202,6 +208,8 @@ window.SITE = {
       "id": "llm",
       "color": "#6E56CF",
       "title": "Large Language Models for Engineering Design Knowledge",
+      "short": "LLMs for Design Knowledge",
+      "since": "2022",
       "period": "2022 – present",
       "context": "With K. Bhattacharya and A. Chakrabarti (IISc)",
       "summary": "Causal models such as SAPPhIRE support design-by-analogy, and design structure matrices (DSMs) help analyse system complexity. Building either from technical documents takes experts a lot of time. This work investigates how to extract such structured design knowledge from natural-language documents reliably, first through a systematic manual method and then by using large language models with retrieval-augmented generation (RAG).",
@@ -233,21 +241,41 @@ window.SITE = {
     {
       "id": "mbse",
       "color": "#2563EB",
-      "title": "Model-based Systems Engineering & Resilient Cyber-Physical Systems",
+      "title": "Model-based Systems Engineering and AI-supported Requirements Engineering",
+      "short": "AI-supported Requirements Engineering",
+      "since": "2025-05",
       "period": "2025 – present",
-      "context": "TU Darmstadt, with E. Kirchner",
-      "summary": "High-quality requirements are essential for successful product development, and autonomous systems must stay resilient when disruptions occur. This work connects model-based systems engineering (MBSE) with AI so that requirements can be verified and validated against evidence early in development. It also clarifies what resilience means for autonomous cyber-physical systems (CPS).",
+      "context": "TU Darmstadt, with F. Rahn and E. Kirchner",
+      "summary": "High-quality requirements are essential for successful product development. This work connects model-based systems engineering (MBSE) with AI so that requirements can be structured, verified and validated against evidence early in development.",
       "highlights": [
         "A model-based requirements engineering framework that links design characteristics and measured properties through an OPM-based system model (characteristics–properties modelling)",
-        "An AI-supported tool for systematic verification and validation of requirements, demonstrated end to end on a hydraulic-press case study",
-        "A standard-based definition of resilience comprising 11 properties, used to analyse the literature on autonomous CPS. Measures acting during a disruption dominate, while anticipating and learning measures are scarce"
+        "An AI-supported tool for systematic verification and validation of requirements, demonstrated end to end on a hydraulic-press case study"
       ],
       "figures": [
         {
           "src": "images/Research/papers/cpm_framework.jpg",
           "caption": "Proposed CPM framework and AI-supported requirements engineering tool.",
           "credit": "Rahn, Majumder & Kirchner (2026), Proc. Design Society, CC BY-NC-ND 4.0"
-        },
+        }
+      ],
+      "publications": [
+        "pds2026-re"
+      ]
+    },
+    {
+      "id": "resilience",
+      "color": "#B91C1C",
+      "title": "Resilience of Autonomous Cyber-Physical Systems",
+      "short": "Resilient Cyber-Physical Systems",
+      "since": "2025-08",
+      "period": "2025 – present",
+      "context": "TU Darmstadt, with P. Kortenbusch, H. Firoud and E. Kirchner",
+      "summary": "Autonomous cyber-physical systems (CPS) must stay resilient when disruptions occur, yet resilience is defined inconsistently in the literature. This work clarifies what resilience means for autonomous CPS and studies how design measures such as redundant sensing support it.",
+      "highlights": [
+        "A standard-based definition of resilience comprising 11 properties, used to analyse the literature on autonomous CPS. Measures acting during a disruption dominate, while anticipating and learning measures are scarce",
+        "A causal-mapping approach to redundant sensing and actuation for robustness, resilience and safety, developed in a co-supervised Bachelor's thesis"
+      ],
+      "figures": [
         {
           "src": "images/Research/papers/resilience_properties.jpg",
           "caption": "Resilience properties classified by their time of impact.",
@@ -255,7 +283,6 @@ window.SITE = {
         }
       ],
       "publications": [
-        "pds2026-re",
         "pds2026-resilience"
       ]
     },
@@ -263,6 +290,8 @@ window.SITE = {
       "id": "theory",
       "color": "#B45309",
       "title": "Design Theory: Reasoning, Causality and Creativity",
+      "short": "Design Theory",
+      "since": "2020",
       "period": "2020 – 2026",
       "context": "With A. N. Bhatt, U. Pal and A. Chakrabarti",
       "summary": "Theoretical models of designing help explain how designers reason and how creative their output is. This work uses the SAPPhIRE model of causality to explain reasoning in design synthesis. It also proposes a better way to measure the variety of a concept space, one of the main indicators of divergent thinking.",
@@ -296,6 +325,8 @@ window.SITE = {
       "id": "pisces",
       "color": "#15803D",
       "title": "Design-led Innovation for Sustainability: the PISCES Living Lab",
+      "short": "Design-led Innovation for Sustainability",
+      "since": "2024-02",
       "period": "2024 – 2025",
       "context": "PISCES Partnership (Work Package 6), with Brunel University London, ITS, ITB and Udayana University",
       "summary": "The PISCES Living Lab tackles plastic pollution in Indonesia. To help it move from a project-based initiative to a self-sustaining service enterprise, I adapted the engineering design process into a workshop template that guides interdisciplinary stakeholders through business-model innovation.",
@@ -325,6 +356,8 @@ window.SITE = {
       "id": "hcd",
       "color": "#C2410C",
       "title": "Learning, Perception and Generative AI in Design",
+      "short": "Learning, Perception & GenAI",
+      "since": "2025",
       "period": "2025 – present",
       "context": "Collaboration with Y. Kahlon, S. Law and colleagues",
       "summary": "A set of PRISMA-style systematic reviews that map emerging, fragmented fields at the intersection of design, education and human perception. Each review identifies benefits, limitations and under-explored areas to guide future research.",
@@ -344,6 +377,8 @@ window.SITE = {
       "id": "robotics",
       "color": "#64748B",
       "title": "Bio-inspired Modular Robots",
+      "short": "Bio-inspired Modular Robots",
+      "since": "2017",
       "period": "2017 – 2020",
       "context": "M.Tech. research, IIT (ISM) Dhanbad, with P. Chattopadhyay and S. K. Ghoshal",
       "summary": "Limbless and inchworm-like animals move through confined and vertical spaces where wheels fail. This work took inspiration from them to design modular robots for crawling and climbing, with inspection of pipelines and large structures as target applications.",
