@@ -21,8 +21,12 @@
   /* ---------- Sidebar ---------- */
   $("#avatar").src = P.photo;
   $("#avatar").alt = "Portrait of " + P.name;
-  $("#name").textContent = P.name;
-  $("#handle").textContent = P.position;
+  $("#name").textContent = (P.prefix ? P.prefix + " " : "") + P.name;
+  $("#handle").innerHTML = (P.positionIcon ? `<i class="fa-solid ${esc(P.positionIcon)}" aria-hidden="true"></i>` : "") + esc(P.position);
+  if (P.status && P.status.text) {
+    $("#status").innerHTML = `<i class="fa-solid ${esc(P.status.icon || "fa-circle")}" aria-hidden="true"></i><span>${esc(P.status.text)}</span>`;
+    $("#status").hidden = false;
+  }
   $("#tagline").textContent = P.tagline || "";
   $("#email-btn").href = "mailto:" + P.emails[0];
 

@@ -112,7 +112,11 @@ a:hover { text-decoration: underline; text-underline-offset: .15em; }
 .avatar { width: 100%; aspect-ratio: 1; height: auto; border-radius: 50%; object-fit: cover; object-position: 50% 20%; border: 1px solid var(--border); background: var(--subtle); }
 .who { margin: 16px 0 12px; }
 .name { display: block; font-size: 24px; font-weight: 600; line-height: 1.25; }
-.handle { display: block; font-size: 18px; font-weight: 400; color: var(--muted); line-height: 1.3; }
+.handle { display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 16px; font-weight: 400; color: var(--muted); line-height: 1.3; }
+.handle i { width: 18px; font-size: 14px; text-align: center; }
+.status { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; padding: 5px 10px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); font-size: 14px; }
+.status i { width: 16px; font-size: 13px; text-align: center; color: var(--muted); }
+.status[hidden] { display: none; }
 .side-bio { font-size: 15px; margin-bottom: 16px; }
 .side-facts, .side-links, .badges { list-style: none; margin: 0; padding: 0; }
 .side-facts { margin-top: 16px; font-size: 14px; }
@@ -360,7 +364,8 @@ a.hm-cell:hover, a.hm-cell:focus-visible { outline: 2px solid var(--fg); }
   .avatar { grid-row: 1; }
   .who { grid-row: 1; margin: 0; }
   .name { font-size: 20px; }
-  .handle { font-size: 15px; }
+  .handle { font-size: 14px; }
+  .status { margin-top: 12px; }
   .side > :not(.avatar):not(.who) { grid-column: 1 / -1; }
   .side-bio { margin-top: 16px; }
   .side-block:last-child { display: none; }
