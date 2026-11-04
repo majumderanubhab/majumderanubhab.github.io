@@ -14,7 +14,7 @@
   const pubById = Object.fromEntries(S.publications.map((p) => [p.id, p]));
   const projectOf = {};
   S.research.forEach((r) => r.publications.forEach((id) => (projectOf[id] = r)));
-  const shortTitle = (r) => r.title.split(":")[0];
+  const shortTitle = (r) => r.short || r.title.split(":")[0];
   const papersIn = (r) => r.publications.filter((id) => pubById[id]).length;
   const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
 
@@ -62,21 +62,29 @@
       <p class="pin-meta">${dot(r.color)}<span>${esc(r.period)}</span><span><i class="fa-regular fa-file-lines" aria-hidden="true"></i>${plural(papersIn(r), "paper")}</span></p>
     </li>`).join("");
 
-  /* ---------- Overview: publication graph ---------- */
+  /* ---------- Overview: publication heatmap (thrust × year) ---------- */
   const years = S.publications.map((p) => p.year);
   const gy0 = Math.min(...years), gy1 = Math.max(...years);
-  $("#graph-h").textContent = `${S.publications.length} publications from ${gy0} to ${gy1}`;
-  const cols = [];
-  for (let y = gy0; y <= gy1; y++) {
-    const ps = S.publications.filter((p) => p.year === y)
-      .sort((a, b) => S.research.indexOf(projectOf[a.id]) - S.research.indexOf(projectOf[b.id]));
-    cols.push(`<div class="g-col"><div class="g-cells">${ps.map((p) => {
-      const r = projectOf[p.id];
-      return `<a class="g-cell" href="${esc(pubUrl(p))}" target="_blank" rel="noopener" style="--c:${esc((r && r.color) || "var(--muted)")}" title="${esc(p.title)} (${p.year})${r ? "\n" + esc(shortTitle(r)) : ""}"><span class="vh">${esc(p.title)}</span></a>`;
-    }).join("") || '<span class="g-empty"></span>'}</div><span class="g-year">${y}</span></div>`);
-  }
-  $("#graph").innerHTML = `<div class="g-cols">${cols.join("")}</div>
-    <ul class="g-legend">${S.research.map((r) => `<li>${dot(r.color)}${esc(shortTitle(r))}</li>`).join("")}</ul>`;
+  const yearList = Array.from({ length: gy1 - gy0 + 1 }, (_, i) => gy0 + i);
+  const journey = S.research.slice().sort((a, b) => String(a.since || a.period).localeCompare(String(b.since || b.period)));
+  const shade = (n) => [0, 40, 65, 85, 100][Math.min(n, 4)];
+  const span = (r) => r.period.replace(/\s*–\s*/, "–").replace(/–\s*present$/i, "–").replace(/(\d{4})–\d{2}(\d{2})$/, "$1–$2");
+  $("#graph-h").textContent = `${S.publications.length} publications across ${S.research.length} research thrusts, ${gy0}–${gy1}`;
+  const hmCell = (r, y) => {
+    const ps = r.publications.map((id) => pubById[id]).filter((p) => p && p.year === y);
+    const label = `${shortTitle(r)}, ${y}: ${plural(ps.length, "paper")}`;
+    if (!ps.length) return `<span class="hm-cell" title="${esc(label)}"></span>`;
+    const tip = label + ps.map((p) => "\n• " + p.title).join("");
+    return `<a class="hm-cell" href="#pub-count" data-r="${esc(r.id)}" data-y="${y}" style="--c:${esc(r.color)};--p:${shade(ps.length)}%" title="${esc(tip)}" aria-label="${esc(label)}. Show these publications"></a>`;
+  };
+  $("#graph").innerHTML = `<div class="hm" style="--n:${yearList.length}">
+    ${journey.map((r) => `<a class="hm-name" href="#project-${esc(r.id)}">${dot(r.color)}<span>${esc(shortTitle(r))}</span></a>
+      <span class="hm-period">${esc(span(r))}</span>
+      ${yearList.map((y) => hmCell(r, y)).join("")}
+      <span class="hm-total">${papersIn(r)}</span>`).join("")}
+    <span></span><span class="hm-period"></span>${yearList.map((y) => `<span class="hm-year"><span class="hm-cent">${String(y).slice(0, 2)}</span>${String(y).slice(2)}</span>`).join("")}<span></span>
+  </div>`;
+  $("#graph-key").innerHTML = "Less" + [0, 1, 2, 3, 4].map((n) => `<span class="hm-key" style="--p:${shade(n)}%"${n ? "" : ' data-empty=""'}></span>`).join("") + "More";
 
   /* ---------- Overview: activity ---------- */
   const NEWS_SHOWN = 5;
@@ -199,17 +207,29 @@
     </li>`;
   };
 
-  const state = { type: "all", q: "" };
+  const state = { type: "all", q: "", cell: null };
   function renderPubs() {
-    const q = state.q.toLowerCase();
+    const q = state.q.toLowerCase(), c = state.cell;
     const list = pubs.filter((p) =>
       (state.type === "all" || p.type === state.type) &&
+      (!c || (p.year === c.year && projectOf[p.id] === c.r)) &&
       (!q || (p.title + " " + p.authors + " " + p.venue + " " + p.year).toLowerCase().includes(q)));
     $("#pub-list").innerHTML = list.length
       ? list.map(pubHtml).join("")
-      : `<li class="row empty">No publications match “${esc(state.q)}”. Try a shorter search or another filter.</li>`;
-    $("#pub-count").innerHTML = `<strong>${list.length}</strong> of ${pubs.length} publications`;
+      : `<li class="row empty">No publications match these filters. Try a shorter search or another filter.</li>`;
+    $("#pub-count").innerHTML = `<strong>${list.length}</strong> of ${pubs.length} publications` + (c
+      ? ` <span class="label filter-chip">${dot(c.r.color)}${esc(shortTitle(c.r))}, ${c.year}<button type="button" class="chip-x" aria-label="Clear thrust and year filter">×</button></span>`
+      : "");
   }
+  $("#graph").addEventListener("click", (e) => {
+    const a = e.target.closest("[data-y]"); if (!a) return;
+    state.cell = { r: S.research.find((r) => r.id === a.dataset.r), year: +a.dataset.y };
+    renderPubs();
+  });
+  $("#pub-count").addEventListener("click", (e) => {
+    if (!e.target.closest(".chip-x")) return;
+    state.cell = null; renderPubs();
+  });
   const pf = $("#pub-filters");
   const counts = pubs.reduce((c, p) => ((c[p.type] = (c[p.type] || 0) + 1), c), {});
   pf.innerHTML = [["all", "All"]].concat(Object.entries(TYPE).filter(([k]) => counts[k]))
