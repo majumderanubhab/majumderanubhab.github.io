@@ -29,7 +29,7 @@ window.SITE = {
       "Grundfos Holding A/S",
       "Aarhus University, Dept. of Mechanical and Production Engineering"
     ],
-    "tagline": "I develop methods and AI-supported tools that help engineering designers and product developers represent, generate and evaluate concepts in the early stages of design.",
+    "tagline": "I develop methods and AI-supported tools that help engineering designers and product developers represent, generate and evaluate concepts, working towards design intelligence that combines human creativity with artificial intelligence.",
     "facts": [
       { "label": "Now", "text": "Industrial Postdoc, Grundfos and Aarhus University" },
       { "label": "Also", "text": "Visiting postdoctoral researcher, DTU" },
@@ -37,16 +37,15 @@ window.SITE = {
       { "label": "Before", "text": "TU Darmstadt; PhD, Indian Institute of Science" }
     ],
     "heroPhoto": "images/anubhab_large.jpg",
-    "location": "Aarhus, Denmark",
+    "location": "Bjerringbro, Denmark",
     "emails": [
       "anubhabm@mpe.au.dk",
       "majumderanubhab@gmail.com"
     ],
     "address": [
-      "Department of Mechanical and Production Engineering",
-      "Manufacturing and Mechatronics",
-      "Aarhus University",
-      "Katrinebjergvej 89F, 8200 Aarhus N, Denmark"
+      "Grundfos Holding A/S",
+      "Grundfos Øst 2, Poul Due Jensens Vej 17",
+      "8850 Bjerringbro, Denmark"
     ],
     "photo": "images/profile.jpg",
     "links": {
@@ -57,8 +56,9 @@ window.SITE = {
       "pure": "https://pure.au.dk/portal/en/persons/anubhabm@mpe.au.dk/"
     },
     "bio": [
-      "I am an industrial postdoctoral researcher jointly affiliated with Grundfos and Aarhus University, Denmark, and a visiting postdoctoral researcher at DTU. Before this, I was a postdoctoral researcher at TU Darmstadt, Germany, and a Research Associate in the Department of Design and Manufacturing at the Indian Institute of Science (IISc), Bangalore.",
-      "I received my PhD in Product Design and Engineering from the IDeaS Lab at IISc, an M.Tech. in Mechanical Engineering (Machine Design, Gold Medalist) from IIT (ISM) Dhanbad, and a B.Tech. in Mechanical Engineering from the Government College of Engineering & Textile Technology, Berhampore."
+      "I am an industrial postdoctoral researcher at Grundfos in Bjerringbro, Denmark, jointly affiliated with Aarhus University and a visiting postdoctoral researcher at DTU. I work on the MUSTANG 5.0 project, which supports a human-centric and sustainable Industry 5.0 transition in manufacturing. Before this, I was a postdoctoral researcher at TU Darmstadt, Germany, and a Research Associate in the Department of Design and Manufacturing at the Indian Institute of Science (IISc), Bangalore.",
+      "I received my PhD in Product Design and Engineering from the IDeaS Lab at IISc, where my thesis won the institute gold medal (MAA Communications Medal) for the best PhD thesis in the department. I also hold an M.Tech. in Mechanical Engineering (Machine Design, Gold Medalist) from IIT (ISM) Dhanbad and a B.Tech. in Mechanical Engineering from the Government College of Engineering & Textile Technology, Berhampore.",
+      "I am a member of the Design Society and of the Academy of Design Sciences Foundation India (DeScIn). I serve on the International Programme Committee of ICoRD'27 and the Scientific Advisory Board of DESIGN 2026, and review for Research in Engineering Design, the International Journal of Design Creativity and Innovation, Forschung im Ingenieurwesen and ASME IDETC-CIE."
     ],
     "interests": [
       "Conceptual design",
@@ -70,10 +70,37 @@ window.SITE = {
       "Requirements engineering",
       "Model-based systems engineering",
       "Creativity",
+      "Design for Industry 5.0",
+      "Systems thinking",
+      "Business model innovation",
       "Kinematics & robotics"
     ]
   },
   "news": [
+    {
+      "date": "2026",
+      "text": "Papers on a human-centric PFMEA ontology for social sustainability in manufacturing accepted at <strong>GCSM'26</strong> (Colombo, Sri Lanka) and <strong>ICoRD'27</strong> (IISc Bengaluru)."
+    },
+    {
+      "date": "2026",
+      "text": "Received the <strong>MAA Communications Medal</strong>, IISc's gold medal for the best PhD thesis in the Department of Design and Manufacturing (2024–25)."
+    },
+    {
+      "date": "2026",
+      "text": "Joined the International Programme Committee of <strong>ICoRD'27</strong> and the Scientific Advisory Board of <strong>DESIGN 2026</strong>."
+    },
+    {
+      "date": "Jun 2026",
+      "text": "Attended <em>PAD 2026</em>, the 7th International Summer School on Product Architecture Design, at DTU, Copenhagen."
+    },
+    {
+      "date": "Mar 2026",
+      "text": "Invited talk, \"Supporting Knowledge Capture to Enable Design for Multiple Lifecycles\", at the Teknologisk Videndeling seminar on re-manufacturing, Grundfos, Bjerringbro."
+    },
+    {
+      "date": "2026",
+      "text": "Paper on generative AI in design education published at <em>E&amp;PDE 2026</em>, University of Bristol."
+    },
     {
       "date": "2026",
       "text": "Three papers published in the <em>Proceedings of the Design Society</em>, on AI-supported requirements engineering, resilience in cyber-physical systems, and LLM-based DSM extraction."
@@ -91,8 +118,16 @@ window.SITE = {
       "text": "Started as a postdoctoral researcher at <strong>TU Darmstadt</strong> with a Future Talent Short-term Scholarship."
     },
     {
+      "date": "Jun 2025",
+      "text": "Invited talks on \"AI-supported design synthesis\" at TU Clausthal and on \"Capturing Causal Relationships in Complex Systems\" at the DFG Priority Programme SPP 2305, TU Darmstadt."
+    },
+    {
       "date": "May 2025",
       "text": "Visiting postdoc at TU Darmstadt, hosted by Prof. Eckhard Kirchner, through Ingenium's Future Talent Guest Stay programme."
+    },
+    {
+      "date": "Feb 2025",
+      "text": "Invited webinar on my PhD work in the <em>Sharing to Gain</em> series, Systems Realization Laboratory, University of Oklahoma."
     },
     {
       "date": "Jan 2025",
@@ -103,11 +138,28 @@ window.SITE = {
       "text": "CODE SYMM paper published in the <em>Journal of Mechanical Design</em>."
     },
     {
-      "date": "Jul 2024",
-      "text": "Completed my PhD at the Indian Institute of Science."
+      "date": "Nov 2024",
+      "text": "Defended my PhD at the Indian Institute of Science (thesis submitted in July 2024)."
     }
   ],
   "research": [
+    {
+      "id": "industry5",
+      "color": "#BE185D",
+      "title": "Human-centric Design and Manufacturing for Industry 5.0",
+      "period": "2025 – present",
+      "context": "MUSTANG 5.0, Grundfos, Aarhus University and DTU, with B. Veluri, R. Mansour and D. Ramanujan",
+      "summary": "Industry 5.0 asks manufacturing to be human-centric, sustainable and resilient, not only efficient. In the MUSTANG 5.0 project, jointly funded by Grundfos and Innovation Fund Denmark, I support the Industry 5.0 transition of the inserted-stator platform manufacturing process at Grundfos through human-centric manufacturing digitalisation and sustainability.",
+      "highlights": [
+        "A human-centric PFMEA ontology that brings social-sustainability considerations into process failure mode and effects analysis in manufacturing",
+        "Knowledge capture to enable design for multiple lifecycles and re-manufacturing"
+      ],
+      "figures": [],
+      "publications": [
+        "icord2027-pfmea",
+        "gcsm2026-pfmea"
+      ]
+    },
     {
       "id": "msmd",
       "color": "#0E7490",
@@ -157,7 +209,8 @@ window.SITE = {
         "A method and rule set for extracting SAPPhIRE constructs from natural-language descriptions of technical systems, refined iteratively through user trials with specialists and novices",
         "RAG-based hallucination suppression, showing that the choice of reference knowledge strongly affects the quality of generated technical content",
         "A RAG tool that generates SAPPhIRE models of artificial systems, evaluated for factual accuracy and reliability",
-        "An automated DSM-extraction framework with an explicit reasoning step, benchmarked across GPT-4o-mini, GPT-3.5 and GPT-4o on six metrics and cost"
+        "An automated DSM-extraction framework with an explicit reasoning step, benchmarked across GPT-4o-mini, GPT-3.5 and GPT-4o on six metrics and cost",
+        "<strong>IDEA-INSPIRE (web version)</strong>, a design-by-analogy tool that uses RAG and LLMs to turn unstructured content, such as a Wikipedia article, into structured SAPPhIRE-based analogues"
       ],
       "figures": [
         {
@@ -328,6 +381,24 @@ window.SITE = {
   ],
   "publications": [
     {
+      "id": "icord2027-pfmea",
+      "type": "conference",
+      "year": 2027,
+      "authors": "A Majumder, I Kaushal, B Veluri, R Mansour, D Ramanujan",
+      "title": "A Human-Centric PFMEA Ontology Supporting Social Sustainability in Manufacturing",
+      "venue": "International Conference on Research into Design (ICoRD'27)",
+      "details": "accepted"
+    },
+    {
+      "id": "gcsm2026-pfmea",
+      "type": "conference",
+      "year": 2026,
+      "authors": "A Majumder, B Veluri, R Mansour, D Ramanujan",
+      "title": "A Human-Centric PFMEA Ontology Supporting Social Sustainability in Manufacturing",
+      "venue": "Global Conference on Sustainable Manufacturing (GCSM'26)",
+      "details": "accepted"
+    },
+    {
       "id": "aiedam2026-variety",
       "type": "journal",
       "year": 2026,
@@ -425,7 +496,8 @@ window.SITE = {
       "title": "A study on effect of reference knowledge choice in generating technical content relevant to SAPPhIRE model using large language model",
       "venue": "International Conference on Research into Design (ICoRD'25)",
       "details": "505–519",
-      "doi": "10.1007/978-981-96-5511-3_39"
+      "doi": "10.1007/978-981-96-5511-3_39",
+      "award": "Distinguished Paper Award"
     },
     {
       "id": "pds2025-pisces",
@@ -464,7 +536,9 @@ window.SITE = {
       "authors": "A Majumder",
       "title": "Supporting Concept Representation, Synthesis, and Analysis of Multi-state Mechanical Devices",
       "venue": "PhD thesis, Indian Institute of Science, Bangalore",
-      "details": ""
+      "details": "",
+      "url": "https://etd.iisc.ac.in/handle/2005/6694",
+      "award": "MAA Communications Medal"
     },
     {
       "id": "red2023-empirical",
@@ -484,7 +558,8 @@ window.SITE = {
       "title": "Development of a design support tool for synthesising multi-state mechanical device concepts",
       "venue": "Proceedings of the Design Society (ICED23)",
       "details": "3, 1455–1464",
-      "doi": "10.1017/pds.2023.146"
+      "doi": "10.1017/pds.2023.146",
+      "award": "Reviewers' Favourite Award"
     },
     {
       "id": "icord2023-function",
@@ -494,7 +569,8 @@ window.SITE = {
       "title": "Using SAPPhIRE for functional modelling of multi-state systems",
       "venue": "International Conference on Research into Design (ICoRD'23)",
       "details": "761–773",
-      "doi": "10.1007/978-981-99-0428-0_62"
+      "doi": "10.1007/978-981-99-0428-0_62",
+      "award": "Distinguished Paper Award"
     },
     {
       "id": "dsj2022-tool",
@@ -574,7 +650,8 @@ window.SITE = {
       "title": "A bio-inspired climbing robot: design, simulation, and experiments",
       "venue": "IOP Conference Series: Materials Science and Engineering",
       "details": "377(1), 012105",
-      "doi": "10.1088/1757-899x/377/1/012105"
+      "doi": "10.1088/1757-899x/377/1/012105",
+      "award": "Best Paper Award"
     },
     {
       "id": "aip2018-adams",
@@ -590,24 +667,24 @@ window.SITE = {
   "experience": [
     {
       "role": "Industrial Postdoctoral Researcher",
-      "org": "Grundfos Holding A/S & Aarhus University",
+      "org": "Grundfos Holding A/S (Motors & Drives Innovation, Group AME) & Aarhus University",
       "place": "Bjerringbro / Aarhus, Denmark",
       "period": "Dec 2025 – present",
-      "text": ""
+      "text": "Working on the MUSTANG 5.0 project, which supports the Industry 5.0 transition of Grundfos's inserted-stator platform manufacturing process through human-centric manufacturing digitalisation and sustainability. Mentors: Dr. Badrinath Veluri (Grundfos), Dr. Rami Mansour (AU) and Prof. Devarajan Ramanujan (DTU). Jointly funded by Grundfos and Innovation Fund Denmark."
     },
     {
       "role": "Visiting Postdoctoral Researcher",
       "org": "DTU – Technical University of Denmark",
       "place": "Lyngby, Denmark",
       "period": "Dec 2025 – present",
-      "text": ""
+      "text": "Visiting postdoc alongside the Grundfos industrial postdoc, mentored by Prof. Devarajan Ramanujan."
     },
     {
       "role": "Postdoctoral Researcher",
       "org": "Technische Universität Darmstadt",
       "place": "Darmstadt, Germany",
       "period": "Aug 2025 – Nov 2025",
-      "text": "Future Talent Short-term Scholarship. Worked on AI and MBSE in requirements engineering, and on resilience in autonomous cyber-physical systems. Co-supervised a Bachelor's thesis."
+      "text": "Future Talent Short-term Scholarship, mentored by Prof. Eckhard Kirchner. Worked on design for resilience, AI and MBSE in requirements engineering, and resilience in autonomous cyber-physical systems. Co-supervised a Bachelor's thesis and began co-authoring the Springer book \"Tools and Methods of Product Development: from Idea to Successful Product\" with Prof. Kirchner."
     },
     {
       "role": "Research Associate II, Industry 4.0",
@@ -621,7 +698,14 @@ window.SITE = {
       "org": "Technische Universität Darmstadt (pmd)",
       "place": "Darmstadt, Germany",
       "period": "May 2025 – Jun 2025",
-      "text": "Hosted by Prof. Eckhard Kirchner at the Institute for Product Development and Machine Elements, supported by Ingenium's Future Talent Guest Stay programme."
+      "text": "Hosted by Prof. Eckhard Kirchner at the Institute for Product Development and Machine Elements, supported by Ingenium's Future Talent Guest Stay programme. Researched the use of AI in requirements engineering to structure, verify and falsify product requirements."
+    },
+    {
+      "role": "Co-instructor, Design Thinking and Methodology",
+      "org": "Centre of Excellence in Design (D-CoE), Indian Institute of Science",
+      "place": "Bengaluru, India",
+      "period": "2025",
+      "text": "With Prof. Amaresh Chakrabarti. Prepared course material on generative AI in the design thinking process and lectured D-CoE trainers on GenAI, prompt engineering for designers, and GenAI tools that support design thinking."
     },
     {
       "role": "Research Associate II",
@@ -631,11 +715,25 @@ window.SITE = {
       "text": "Contributed to the design and development of the PISCES Living Lab, which combines engineering design and business model innovation to tackle plastic pollution in Indonesia. Coordinated three stakeholder workshops in Banyuwangi with Brunel University London, ITS, ITB and Udayana University."
     },
     {
+      "role": "Instructor, Plant Simulation",
+      "org": "PG Advanced Certification Programme in Digital Manufacturing and Smart Factories, Indian Institute of Science",
+      "place": "Bengaluru, India",
+      "period": "2022",
+      "text": "Prepared and delivered lectures on discrete-event simulation and introduced industry professionals to Tecnomatix Plant Simulation."
+    },
+    {
       "role": "Doctoral Researcher",
       "org": "IDeaS Lab, Indian Institute of Science",
       "place": "Bengaluru, India",
       "period": "Aug 2018 – Jul 2024",
       "text": "Developed methods and a web-based tool (CODE SYMM) to support the representation, synthesis and analysis of multi-state mechanical device concepts."
+    },
+    {
+      "role": "Teaching Assistant",
+      "org": "Dept. of Mechanical Engineering, IIT (ISM) Dhanbad",
+      "place": "Dhanbad, India",
+      "period": "2017 – 2018",
+      "text": "With Prof. Sanjoy K. Ghoshal: assignments, grading and course administration."
     }
   ],
   "education": [
@@ -643,13 +741,13 @@ window.SITE = {
       "degree": "PhD, Product Design and Engineering",
       "org": "Indian Institute of Science (IISc), Bangalore",
       "period": "2018 – 2024",
-      "text": "Thesis: Supporting Concept Representation, Synthesis, and Analysis of Multi-state Mechanical Devices"
+      "text": "Thesis: Supporting Concept Representation, Synthesis, and Analysis of Multi-state Mechanical Devices. Defended 13 Nov 2024. Gold medal for the best PhD thesis (MAA Communications Medal)."
     },
     {
       "degree": "M.Tech., Mechanical Engineering (Machine Design)",
       "org": "Indian Institute of Technology (ISM), Dhanbad",
       "period": "2016 – 2018",
-      "text": "Gold Medalist"
+      "text": "Thesis: A Bio-inspired Climbing Robot: Dynamic Modelling and Prototype Development. Gold Medalist."
     },
     {
       "degree": "B.Tech., Mechanical Engineering",
@@ -659,6 +757,11 @@ window.SITE = {
     }
   ],
   "awards": [
+    {
+      "year": "2026",
+      "title": "MAA Communications Medal (best PhD thesis)",
+      "by": "Indian Institute of Science, Bengaluru, India"
+    },
     {
       "year": "2025",
       "title": "Future Talent Short-term Scholarship & Guest Stay",
@@ -692,6 +795,11 @@ window.SITE = {
       "title": "Best Paper Award",
       "by": "ICMMRE 2017, Sikkim, India",
       "image": "images/Awards/icmmre.JPG"
+    },
+    {
+      "year": "2018–2023",
+      "title": "PhD Fellowship (JRF & SRF)",
+      "by": "Ministry of Education, Government of India"
     },
     {
       "year": "2016–2018",
