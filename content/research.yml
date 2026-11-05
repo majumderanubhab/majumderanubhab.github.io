@@ -18,10 +18,11 @@ research:
     summary: Industry 5.0 asks manufacturing to be human-centric, sustainable and resilient, not only efficient. In the MUSTANG 5.0 project, jointly funded by Grundfos and Innovation Fund Denmark, I support the Industry 5.0 transition of the inserted-stator platform manufacturing process at Grundfos through human-centric manufacturing digitalisation and sustainability.
     highlights:
       - A human-centric PFMEA ontology that brings social-sustainability considerations into process failure mode and effects analysis in manufacturing
+      - Support for systematic development of unit process life cycle inventories (LCI) for manufacturing processes
       - Knowledge capture to enable design for multiple lifecycles and re-manufacturing
     figures: []
     publications:
-      - icord2027-pfmea
+      - icord2027-lci
       - gcsm2026-pfmea
   - id: msmd
     color: '#0E7490'
