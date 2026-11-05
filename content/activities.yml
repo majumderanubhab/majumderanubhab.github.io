@@ -1,0 +1,71 @@
+# Activities tab: workshops, invited talks, summer schools and academic service.
+
+workshops:
+  - title: Practicing Causal Reasoning in Product Design using the SAPPhIRE Model and GenAI
+    where: ICoRD'25 (Workshop WS-110), IIT Hyderabad
+    date: Jan 2025
+    with: Kausik Bhattacharya
+    image: images/Workshops/icord25.jpeg
+  - title: PISCES Entrepreneurship Workshop Series (3 workshops)
+    where: Banyuwangi, Indonesia
+    date: Apr, Aug & Dec 2024
+    with: Prof. Amaresh Chakrabarti, Prof. Vishal Singh
+    image: images/Workshops/pisces2.jpeg
+  - title: How to Build the SAPPhIRE Model of Causality Representing the Working of Engineering Systems
+    where: ICoRD'23, IISc Bengaluru
+    date: Jan 2023
+    with: Kausik Bhattacharya, Dr. Apoorv Naresh Bhatt
+    image: images/Workshops/Icord23_2.jpg
+  - title: 'IISc D-Box: Design Thinking Workshops for Undergraduate and School Students'
+    where: Dept. of Design and Manufacturing, IISc Bengaluru
+    date: May 2019 – Feb 2023
+    with: Dr. Apoorv Naresh Bhatt, Prof. Amaresh Chakrabarti
+    image: images/Workshops/DT_airforce.jpeg
+talks:
+  - date: Mar 2026
+    title: Supporting Knowledge Capture to Enable Design for Multiple Lifecycles
+    event: 'Seminar: Re-manufacturing – Building resilient and resource-efficient production (Teknologisk Videndeling)'
+    place: Grundfos, Bjerringbro, Denmark
+  - date: Jun 2025
+    title: AI-supported design synthesis
+    event: Institute of Mechanical Engineering, TU Clausthal
+    place: Clausthal-Zellerfeld, Germany
+  - date: Jun 2025
+    title: Capturing Causal Relationships in Complex Systems
+    event: DFG Priority Programme SPP 2305, TU Darmstadt
+    place: Darmstadt, Germany
+  - date: Feb 2025
+    title: Supporting Concept Representation, Synthesis, and Analysis of Multi-state Mechanical Devices
+    event: Sharing to Gain webinar series, Systems Realization Laboratory, University of Oklahoma
+    place: Online
+  - date: Dec 2024
+    title: 'PISCES Relay: The Living Lab Enterprise (co-presenter)'
+    event: 3rd Annual Meeting of the PISCES Partnership
+    place: Banyuwangi, Indonesia
+summerSchools:
+  - date: Jun 2026
+    title: 'PAD 2026: 7th International Summer School on Product Architecture Design'
+    place: DTU, Copenhagen, Denmark
+  - date: Jul 2023
+    title: 'DRM Gurukooll 2023: First Indian Summer School on Design Research'
+    place: IISc, Bengaluru, India
+  - date: Aug 2019
+    title: PBL South Asia Training Workshop for Faculty and Advanced Students
+    place: IIT Bombay, Mumbai, India
+service:
+  - group: Programme committees and boards
+    items:
+      - International Programme Committee, ICoRD'27, IISc Bengaluru (2027)
+      - Scientific Advisory Board, DESIGN 2026, 19th International Design Conference (2026)
+  - group: Reviewing
+    items:
+      - Research in Engineering Design, Springer (since 2025)
+      - International Journal of Design Creativity and Innovation, Taylor & Francis (since 2025)
+      - Forschung im Ingenieurwesen / Engineering Research, Springer (since 2025)
+      - ASME IDETC-CIE 2026, Houston
+      - Research and Industrial Conclave RIC'25, IIT Guwahati
+  - group: Conference organisation
+    items:
+      - 'Organising committee: I-4AM''26, I-4AM''24, I-4AM''22 (IISc); ICoRD''23, ICoRD''19 (IISc); ICoRD''21 (IIT Bombay)'
+      - Lead volunteer, I-4AM'24 Robotics Challenge, IISc
+      - 'Volunteer: ICoRD''25 (IIT Hyderabad), InFuSED''23, PLMSS''19 pre-conference workshop, I-4AM''19'

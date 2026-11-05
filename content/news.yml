@@ -1,0 +1,41 @@
+# News on the Overview tab, newest first. The first five are shown,
+# the rest appear under "Show more news".
+# Simple HTML is allowed in text: <strong>bold</strong>, <em>italic</em>.
+#
+# Example:
+#   - date: Dec 2026
+#     text: Paper accepted at <strong>ICED27</strong>.
+
+news:
+  - date: '2026'
+    text: Papers on a human-centric PFMEA ontology for social sustainability in manufacturing accepted at <strong>GCSM'26</strong> (Colombo, Sri Lanka) and <strong>ICoRD'27</strong> (IISc Bengaluru).
+  - date: '2026'
+    text: Received the <strong>MAA Communications Medal</strong>, IISc's gold medal for the best PhD thesis in the Department of Design and Manufacturing (2024–25).
+  - date: '2026'
+    text: Joined the International Programme Committee of <strong>ICoRD'27</strong> and the Scientific Advisory Board of <strong>DESIGN 2026</strong>.
+  - date: Jun 2026
+    text: Attended <em>PAD 2026</em>, the 7th International Summer School on Product Architecture Design, at DTU, Copenhagen.
+  - date: Mar 2026
+    text: Invited talk, "Supporting Knowledge Capture to Enable Design for Multiple Lifecycles", at the Teknologisk Videndeling seminar on re-manufacturing, Grundfos, Bjerringbro.
+  - date: '2026'
+    text: Paper on generative AI in design education published at <em>E&amp;PDE 2026</em>, University of Bristol.
+  - date: '2026'
+    text: Three papers published in the <em>Proceedings of the Design Society</em>, on AI-supported requirements engineering, resilience in cyber-physical systems, and LLM-based DSM extraction.
+  - date: '2026'
+    text: Paper on assessing the variety of a concept space with Rao's quadratic index published in <em>AI EDAM</em>.
+  - date: Dec 2025
+    text: Joined <strong>Grundfos</strong> and <strong>Aarhus University</strong> as an Industrial Postdoc, and <strong>DTU</strong> as a visiting postdoctoral researcher.
+  - date: Aug 2025
+    text: Started as a postdoctoral researcher at <strong>TU Darmstadt</strong> with a Future Talent Short-term Scholarship.
+  - date: Jun 2025
+    text: Invited talks on "AI-supported design synthesis" at TU Clausthal and on "Capturing Causal Relationships in Complex Systems" at the DFG Priority Programme SPP 2305, TU Darmstadt.
+  - date: May 2025
+    text: Visiting postdoc at TU Darmstadt, hosted by Prof. Eckhard Kirchner, through Ingenium's Future Talent Guest Stay programme.
+  - date: Feb 2025
+    text: Invited webinar on my PhD work in the <em>Sharing to Gain</em> series, Systems Realization Laboratory, University of Oklahoma.
+  - date: Jan 2025
+    text: <strong>Distinguished Paper Award</strong> at ICoRD'25, IIT Hyderabad, where I also co-ran a workshop on causal reasoning with SAPPhIRE and GenAI.
+  - date: '2025'
+    text: CODE SYMM paper published in the <em>Journal of Mechanical Design</em>.
+  - date: Nov 2024
+    text: Defended my PhD at the Indian Institute of Science (thesis submitted in July 2024).

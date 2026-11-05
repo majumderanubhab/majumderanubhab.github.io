@@ -1,0 +1,51 @@
+# Your profile: sidebar, README on the Overview tab, and contact details.
+#   prefix        goes before your name ("Dr.")
+#   positionIcon  / status.icon   Font Awesome icon names, see fontawesome.com/icons
+#   bio           one entry per paragraph
+#   interests     shown as tags under "Research interests"
+
+profile:
+  name: Anubhab Majumder
+  prefix: Dr.
+  position: Postdoctoral Researcher
+  positionIcon: fa-graduation-cap
+  status:
+    icon: fa-shapes
+    text: Research into Design
+  affiliations:
+    - Grundfos Holding A/S
+    - Aarhus University, Dept. of Mechanical and Production Engineering
+  tagline: I develop methods and AI-supported tools that help engineering designers and product developers represent, generate and evaluate concepts, working towards design intelligence that combines human creativity with artificial intelligence.
+  location: Bjerringbro, Denmark
+  emails:
+    - anubhabm@mpe.au.dk
+    - majumderanubhab@gmail.com
+  address:
+    - Grundfos Holding A/S
+    - Grundfos Øst 2, Poul Due Jensens Vej 17
+    - 8850 Bjerringbro, Denmark
+  photo: images/profile-2026.jpg
+  links:
+    scholar: https://scholar.google.com/citations?user=QJHp9z8AAAAJ&hl=en
+    orcid: https://orcid.org/0000-0002-8447-0629
+    linkedin: https://www.linkedin.com/in/anubhab-majumder-88949066/
+    researchgate: https://www.researchgate.net/profile/Anubhab-Majumder
+    pure: https://pure.au.dk/portal/en/persons/anubhabm@mpe.au.dk/
+  bio:
+    - I am an industrial postdoctoral researcher at Grundfos in Bjerringbro, Denmark, jointly affiliated with Aarhus University and a visiting postdoctoral researcher at DTU. I work on the MUSTANG 5.0 project, which supports a human-centric and sustainable Industry 5.0 transition in manufacturing. Before this, I was a postdoctoral researcher at TU Darmstadt, Germany, and a Research Associate in the Department of Design and Manufacturing at the Indian Institute of Science (IISc), Bangalore.
+    - I received my PhD in Product Design and Engineering from the IDeaS Lab at IISc, where my thesis won the institute gold medal (MAA Communications Medal) for the best PhD thesis in the department. I also hold an M.Tech. in Mechanical Engineering (Machine Design, Gold Medalist) from IIT (ISM) Dhanbad and a B.Tech. in Mechanical Engineering from the Government College of Engineering & Textile Technology, Berhampore.
+    - I am a member of the Design Society and the Academy of Design Sciences Foundation India (DeScIn), and I serve on programme committees, scientific advisory boards and organising committees of flagship international conferences organised or endorsed by these societies. I also review for leading journals and conferences in engineering design.
+  interests:
+    - Conceptual design
+    - Design theory & methodology
+    - Function modelling
+    - Multi-state mechanical devices
+    - Design by analogy
+    - AI in design
+    - Requirements engineering
+    - Model-based systems engineering
+    - Creativity
+    - Design for Industry 5.0
+    - Systems thinking
+    - Business model innovation
+    - Kinematics & robotics

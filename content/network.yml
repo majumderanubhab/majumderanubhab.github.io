@@ -1,0 +1,374 @@
+# Network tab and Overview card: academic journey and research collaborations.
+#   journey       places in order; "also" adds extra squares for one step
+#   institutions  co-author institutions; "from" = journey step (0 = first)
+#                 you were at when working with them; cc = flag code (in, de, dk, ...)
+#   coauthors     each co-author, their institution and joint paper ids
+
+journey:
+  - name: GCETT Berhampore
+    role: B.Tech., Mechanical Engineering
+    period: 2012 – 2016
+    cc: in
+    lat: 24.1
+    lon: 88.25
+  - name: IIT (ISM) Dhanbad
+    role: M.Tech., Mechanical Engineering (Machine Design)
+    period: 2016 – 2018
+    cc: in
+    lat: 23.81
+    lon: 86.44
+  - name: IISc Bengaluru
+    role: PhD and Research Associate
+    period: 2018 – 2025
+    cc: in
+    lat: 13.02
+    lon: 77.57
+  - name: TU Darmstadt
+    role: Postdoctoral researcher, pmd
+    period: '2025'
+    cc: de
+    lat: 49.86
+    lon: 8.68
+  - name: Grundfos · Aarhus University · DTU
+    role: Industrial postdoctoral researcher
+    period: 2025 – present
+    cc: dk
+    lat: 56.17
+    lon: 10.19
+    also:
+      - - 56.38
+        - 9.66
+      - - 55.78
+        - 12.52
+institutions:
+  - name: IISc
+    city: Bengaluru
+    country: India
+    cc: in
+    lat: 13.02
+    lon: 77.57
+    from: 2
+  - name: IIT (ISM) Dhanbad
+    city: Dhanbad
+    country: India
+    cc: in
+    lat: 23.81
+    lon: 86.44
+    from: 1
+  - name: CSIR-CMERI
+    city: Durgapur
+    country: India
+    cc: in
+    lat: 23.55
+    lon: 87.29
+    from: 1
+  - name: Institute of Science Tokyo
+    city: Tokyo
+    country: Japan
+    cc: jp
+    lat: 35.6
+    lon: 139.68
+    from: 3
+  - name: University College London
+    city: London
+    country: UK
+    cc: gb
+    lat: 51.52
+    lon: -0.13
+    from: 3
+  - name: TU Darmstadt
+    city: Darmstadt
+    country: Germany
+    cc: de
+    lat: 49.86
+    lon: 8.68
+    from: 3
+  - name: Aarhus University
+    city: Aarhus
+    country: Denmark
+    cc: dk
+    lat: 56.17
+    lon: 10.19
+    from: 4
+  - name: Grundfos
+    city: Bjerringbro
+    country: Denmark
+    cc: dk
+    lat: 56.38
+    lon: 9.66
+    from: 4
+  - name: DTU
+    city: Lyngby
+    country: Denmark
+    cc: dk
+    lat: 55.78
+    lon: 12.52
+    from: 4
+  - name: Dr. H. N. National College of Engineering
+    city: Bengaluru
+    country: India
+    cc: in
+    lat: 12.94
+    lon: 77.58
+    from: 2
+  - name: NIT Karnataka
+    city: Surathkal
+    country: India
+    cc: in
+    lat: 13.01
+    lon: 74.79
+    from: 2
+  - name: IIT Delhi
+    city: New Delhi
+    country: India
+    cc: in
+    lat: 28.55
+    lon: 77.19
+    from: 2
+  - name: IIIT Delhi
+    city: New Delhi
+    country: India
+    cc: in
+    lat: 28.55
+    lon: 77.27
+    from: 2
+  - name: Brunel University London
+    city: Uxbridge
+    country: UK
+    cc: gb
+    lat: 51.53
+    lon: -0.47
+    from: 2
+  - name: ITS
+    city: Surabaya
+    country: Indonesia
+    cc: id
+    lat: -7.28
+    lon: 112.8
+    from: 2
+  - name: ITB
+    city: Bandung
+    country: Indonesia
+    cc: id
+    lat: -6.89
+    lon: 107.61
+    from: 2
+  - name: University of Cambridge
+    city: Cambridge
+    country: UK
+    cc: gb
+    lat: 52.2
+    lon: 0.12
+    from: 3
+  - name: SUSTech
+    city: Shenzhen
+    country: China
+    cc: cn
+    lat: 22.6
+    lon: 114.0
+    from: 3
+  - name: University of Illinois Urbana-Champaign
+    city: Urbana
+    country: USA
+    cc: us
+    lat: 40.1
+    lon: -88.23
+    from: 4
+coauthors:
+  - name: Amaresh Chakrabarti
+    institution: IISc
+    papers:
+      - aiedam2026-variety
+      - pds2026-dsm
+      - jmd2025-codesymm
+      - icord2025-rag
+      - icord2025-reference
+      - pds2025-pisces
+      - aiedam2024-sapphire-nl
+      - iftomm2024-causal
+      - red2023-empirical
+      - iced2023-tool
+      - icord2023-function
+      - dsj2022-tool
+      - aiedam2021-reasoning
+  - name: Kausik Bhattacharya
+    institution: IISc
+    papers:
+      - pds2026-dsm
+      - icord2025-rag
+      - icord2025-reference
+      - aiedam2024-sapphire-nl
+  - name: Apoorv Naresh Bhatt
+    institution: IISc
+    papers:
+      - aiedam2024-sapphire-nl
+      - icord2023-function
+      - aiedam2021-reasoning
+  - name: Ujjwal Pal
+    institution: IISc
+    papers:
+      - aiedam2026-variety
+  - name: Sahana Parasuram
+    institution: IISc
+    papers:
+      - pds2026-dsm
+  - name: Vishal Singh
+    institution: IISc
+    papers:
+      - pds2025-pisces
+  - name: Ranjan B.S.C.
+    institution: Dr. H. N. National College of Engineering
+    papers:
+      - aiedam2024-sapphire-nl
+  - name: Srinivasan Venkataraman
+    institution: IIT Delhi
+    papers:
+      - aiedam2024-sapphire-nl
+  - name: Sonal Keshwani
+    institution: IIIT Delhi
+    papers:
+      - aiedam2024-sapphire-nl
+  - name: Somasekhara Rao Todeti
+    institution: NIT Karnataka
+    papers:
+      - red2023-empirical
+  - name: Sanjoy Kumar Ghoshal
+    institution: IIT (ISM) Dhanbad
+    papers:
+      - aip2018-adams
+      - iop2018-climbing
+      - jestr2018-review
+      - air2019-ann
+      - ncame2020-climbing
+      - asem2020-limbless
+      - ijra2020-sine
+  - name: H. Dikshit
+    institution: IIT (ISM) Dhanbad
+    papers:
+      - jestr2018-review
+      - iop2018-climbing
+      - aip2018-adams
+  - name: Asesh Patra
+    institution: IIT (ISM) Dhanbad
+    papers:
+      - air2019-ann
+      - ncame2020-climbing
+      - asem2020-limbless
+  - name: Meet Patel
+    institution: IIT (ISM) Dhanbad
+    papers:
+      - air2019-ann
+      - ncame2020-climbing
+      - asem2020-limbless
+  - name: Priyabrata Chattopadhyay
+    institution: CSIR-CMERI
+    papers:
+      - aip2018-adams
+      - iop2018-climbing
+      - jestr2018-review
+      - air2019-ann
+      - ncame2020-climbing
+      - asem2020-limbless
+      - ijra2020-sine
+  - name: A. Maity
+    institution: CSIR-CMERI
+    papers:
+      - iop2018-climbing
+      - aip2018-adams
+  - name: Spyridoula Gerassimidou
+    institution: Brunel University London
+    papers:
+      - pds2025-pisces
+  - name: Susan Jobling
+    institution: Brunel University London
+    papers:
+      - pds2025-pisces
+  - name: Eleni Iacovidou
+    institution: Brunel University London
+    papers:
+      - pds2025-pisces
+  - name: Titing Reza Fahrisa
+    institution: ITS
+    papers:
+      - pds2025-pisces
+  - name: Gatot Yudoko
+    institution: ITB
+    papers:
+      - pds2025-pisces
+  - name: Eckhard Kirchner
+    institution: TU Darmstadt
+    papers:
+      - pds2026-re
+      - pds2026-resilience
+  - name: Fabian Rahn
+    institution: TU Darmstadt
+    papers:
+      - pds2026-re
+  - name: Patrick Kortenbusch
+    institution: TU Darmstadt
+    papers:
+      - pds2026-resilience
+  - name: Hamza Firoud
+    institution: TU Darmstadt
+    papers:
+      - pds2026-resilience
+  - name: Yuval Kahlon
+    institution: Institute of Science Tokyo
+    papers:
+      - cexr2026-gaze
+      - urbsci2026-visual
+      - epde2026-genai
+  - name: Toshihiro Osaragi
+    institution: Institute of Science Tokyo
+    papers:
+      - cexr2026-gaze
+      - urbsci2026-visual
+  - name: Takuya Oki
+    institution: Institute of Science Tokyo
+    papers:
+      - urbsci2026-visual
+  - name: Maki Kishimoto
+    institution: Institute of Science Tokyo
+    papers:
+      - cexr2026-gaze
+  - name: Mitsue Nagamine
+    institution: Institute of Science Tokyo
+    papers:
+      - cexr2026-gaze
+  - name: Stephen Law
+    institution: University College London
+    papers:
+      - cexr2026-gaze
+      - urbsci2026-visual
+      - epde2026-genai
+  - name: Michal Gath-Morad
+    institution: University of Cambridge
+    papers:
+      - cexr2026-gaze
+  - name: Christiane M. Herr
+    institution: SUSTech
+    papers:
+      - cexr2026-gaze
+  - name: Rachel Flood Heaton
+    institution: University of Illinois Urbana-Champaign
+    papers:
+      - urbsci2026-visual
+  - name: Rami Mansour
+    institution: Aarhus University
+    papers:
+      - icord2027-pfmea
+      - gcsm2026-pfmea
+  - name: Ishaan Kaushal
+    institution: Aarhus University
+    papers:
+      - icord2027-pfmea
+  - name: Badrinath Veluri
+    institution: Grundfos
+    papers:
+      - icord2027-pfmea
+      - gcsm2026-pfmea
+  - name: Devarajan Ramanujan
+    institution: DTU
+    papers:
+      - icord2027-pfmea
+      - gcsm2026-pfmea
