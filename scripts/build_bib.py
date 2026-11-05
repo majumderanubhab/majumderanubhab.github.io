@@ -34,6 +34,7 @@ def check(site):
         if p.get("type") not in ("journal", "conference", "thesis"):
             errors.append(f"publication #{i + 1} has unknown type {p.get('type')!r}")
     images = [i.get("image") for i in site["workshops"] + site["awards"]]
+    images += [g.get("src") for g in site.get("gallery", [])]
     images += [f.get("src") for r in site["research"] for f in r.get("figures", [])]
     for img in images:
         if img and not (ROOT / img).exists():

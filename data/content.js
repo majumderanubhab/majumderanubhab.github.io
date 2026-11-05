@@ -746,13 +746,6 @@ window.SITE = {
       "text": "Hosted by Prof. Eckhard Kirchner at the Institute for Product Development and Machine Elements, supported by Ingenium's Future Talent Guest Stay programme. Researched the use of AI in requirements engineering to structure, verify and falsify product requirements."
     },
     {
-      "role": "Co-instructor, Design Thinking and Methodology",
-      "org": "Centre of Excellence in Design (D-CoE), Indian Institute of Science",
-      "place": "Bengaluru, India",
-      "period": "2025",
-      "text": "With Prof. Amaresh Chakrabarti. Prepared course material on generative AI in the design thinking process and lectured D-CoE trainers on GenAI, prompt engineering for designers, and GenAI tools that support design thinking."
-    },
-    {
       "role": "Research Associate II",
       "org": "PISCES Partnership (Work Package 6)",
       "place": "Bengaluru, India",
@@ -760,18 +753,27 @@ window.SITE = {
       "text": "Contributed to the design and development of the PISCES Living Lab, which combines engineering design and business model innovation to tackle plastic pollution in Indonesia. Coordinated three stakeholder workshops in Banyuwangi with Brunel University London, ITS, ITB and Udayana University."
     },
     {
-      "role": "Instructor, Plant Simulation",
-      "org": "PG Advanced Certification Programme in Digital Manufacturing and Smart Factories, Indian Institute of Science",
-      "place": "Bengaluru, India",
-      "period": "2022",
-      "text": "Prepared and delivered lectures on discrete-event simulation and introduced industry professionals to Tecnomatix Plant Simulation."
-    },
-    {
       "role": "Doctoral Researcher",
       "org": "IDeaS Lab, Indian Institute of Science",
       "place": "Bengaluru, India",
       "period": "Aug 2018 – Jul 2024",
       "text": "Developed methods and a web-based tool (CODE SYMM) to support the representation, synthesis and analysis of multi-state mechanical device concepts."
+    }
+  ],
+  "teaching": [
+    {
+      "role": "Co-instructor, Design Thinking and Methodology",
+      "org": "Centre of Excellence in Design (D-CoE), Indian Institute of Science",
+      "place": "Bengaluru, India",
+      "period": "2025",
+      "text": "With Prof. Amaresh Chakrabarti. Prepared course material on generative AI in the design thinking process and lectured D-CoE trainers on GenAI, prompt engineering for designers, and GenAI tools that support design thinking."
+    },
+    {
+      "role": "Instructor, Plant Simulation",
+      "org": "PG Advanced Certification Programme in Digital Manufacturing and Smart Factories, Indian Institute of Science",
+      "place": "Bengaluru, India",
+      "period": "2022",
+      "text": "Prepared and delivered lectures on discrete-event simulation and introduced industry professionals to Tecnomatix Plant Simulation."
     },
     {
       "role": "Teaching Assistant",
@@ -857,6 +859,71 @@ window.SITE = {
       "by": "Department of Higher Education, Ministry of Education, Government of India"
     }
   ],
+  "gallery": [
+    {
+      "src": "images/Awards/ICoRD25.jpeg",
+      "caption": "Distinguished Paper Award, ICoRD'25",
+      "place": "IIT Hyderabad",
+      "year": "2025",
+      "tag": "Awards"
+    },
+    {
+      "src": "images/Awards/iced23.jpeg",
+      "caption": "Reviewers' Favourite Award, ICED23",
+      "place": "University of Bordeaux",
+      "year": "2023",
+      "tag": "Awards"
+    },
+    {
+      "src": "images/Awards/ICoRD23.JPG",
+      "caption": "Distinguished Paper Award, ICoRD'23",
+      "place": "IISc Bengaluru",
+      "year": "2023",
+      "tag": "Awards"
+    },
+    {
+      "src": "images/Awards/icmmre.JPG",
+      "caption": "Best Paper Award, ICMMRE'17",
+      "place": "SMIT, Sikkim",
+      "year": "2017",
+      "tag": "Awards"
+    },
+    {
+      "src": "images/Bordeaux.jpeg",
+      "caption": "ICED23",
+      "place": "Bordeaux, France",
+      "year": "2023",
+      "tag": "Conferences"
+    },
+    {
+      "src": "images/icord.jpg",
+      "caption": "Hosting parallel sessions, ICoRD'19",
+      "place": "IISc Bengaluru",
+      "year": "2019",
+      "tag": "Conferences"
+    },
+    {
+      "src": "images/icord21.jpg",
+      "caption": "Virtual stage manager and host, ICoRD'21 (online)",
+      "place": "",
+      "year": "2021",
+      "tag": "Conferences"
+    },
+    {
+      "src": "images/bg.JPG",
+      "caption": "Hosting the PLMSS 2019 keynote sessions",
+      "place": "Bengaluru",
+      "year": "2019",
+      "tag": "Conferences"
+    },
+    {
+      "src": "images/5.JPG",
+      "caption": "PLMSS 2019",
+      "place": "Bengaluru",
+      "year": "2019",
+      "tag": "Conferences"
+    }
+  ],
   "workshops": [
     {
       "title": "Practicing Causal Reasoning in Product Design using the SAPPhIRE Model and GenAI",
@@ -885,6 +952,82 @@ window.SITE = {
       "date": "May 2019 – Feb 2023",
       "with": "Dr. Apoorv Naresh Bhatt, Prof. Amaresh Chakrabarti",
       "image": "images/Workshops/DT_airforce.jpeg"
+    }
+  ],
+  "talks": [
+    {
+      "date": "Mar 2026",
+      "title": "Supporting Knowledge Capture to Enable Design for Multiple Lifecycles",
+      "event": "Seminar: Re-manufacturing – Building resilient and resource-efficient production (Teknologisk Videndeling)",
+      "place": "Grundfos, Bjerringbro, Denmark"
+    },
+    {
+      "date": "Jun 2025",
+      "title": "AI-supported design synthesis",
+      "event": "Institute of Mechanical Engineering, TU Clausthal",
+      "place": "Clausthal-Zellerfeld, Germany"
+    },
+    {
+      "date": "Jun 2025",
+      "title": "Capturing Causal Relationships in Complex Systems",
+      "event": "DFG Priority Programme SPP 2305, TU Darmstadt",
+      "place": "Darmstadt, Germany"
+    },
+    {
+      "date": "Feb 2025",
+      "title": "Supporting Concept Representation, Synthesis, and Analysis of Multi-state Mechanical Devices",
+      "event": "Sharing to Gain webinar series, Systems Realization Laboratory, University of Oklahoma",
+      "place": "Online"
+    },
+    {
+      "date": "Dec 2024",
+      "title": "PISCES Relay: The Living Lab Enterprise (co-presenter)",
+      "event": "3rd Annual Meeting of the PISCES Partnership",
+      "place": "Banyuwangi, Indonesia"
+    }
+  ],
+  "summerSchools": [
+    {
+      "date": "Jun 2026",
+      "title": "PAD 2026: 7th International Summer School on Product Architecture Design",
+      "place": "DTU, Copenhagen, Denmark"
+    },
+    {
+      "date": "Jul 2023",
+      "title": "DRM Gurukooll 2023: First Indian Summer School on Design Research",
+      "place": "IISc, Bengaluru, India"
+    },
+    {
+      "date": "Aug 2019",
+      "title": "PBL South Asia Training Workshop for Faculty and Advanced Students",
+      "place": "IIT Bombay, Mumbai, India"
+    }
+  ],
+  "service": [
+    {
+      "group": "Programme committees and boards",
+      "items": [
+        "International Programme Committee, ICoRD'27, IISc Bengaluru (2027)",
+        "Scientific Advisory Board, DESIGN 2026, 19th International Design Conference (2026)"
+      ]
+    },
+    {
+      "group": "Reviewing",
+      "items": [
+        "Research in Engineering Design, Springer (since 2025)",
+        "International Journal of Design Creativity and Innovation, Taylor & Francis (since 2025)",
+        "Forschung im Ingenieurwesen / Engineering Research, Springer (since 2025)",
+        "ASME IDETC-CIE 2026, Houston",
+        "Research and Industrial Conclave RIC'25, IIT Guwahati"
+      ]
+    },
+    {
+      "group": "Conference organisation",
+      "items": [
+        "Organising committee: I-4AM'26, I-4AM'24, I-4AM'22 (IISc); ICoRD'23, ICoRD'19 (IISc); ICoRD'21 (IIT Bombay)",
+        "Lead volunteer, I-4AM'24 Robotics Challenge, IISc",
+        "Volunteer: ICoRD'25 (IIT Hyderabad), InFuSED'23, PLMSS'19 pre-conference workshop, I-4AM'19"
+      ]
     }
   ],
   "footprint": {

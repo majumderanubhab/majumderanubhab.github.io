@@ -99,8 +99,8 @@
   }) : [];
   const fpLevel = (n) => (n >= 7 ? 1 : n >= 3 ? 0.75 : n >= 2 ? 0.55 : 0.38);
   const fpState = { view: "world", layer: "both", cells: {}, open: null };
-  function fpDraw() {
-    const v = LAND[fpState.view], H = v.rows.length, W = v.rows[0].length, S = 960 / W;
+  function fpDraw(map = $("#fp-map"), view = fpState.view, layer = fpState.layer, mini = false) {
+    const v = LAND[view], H = v.rows.length, W = v.rows[0].length, S = 960 / W;
     const [w, e] = v.lon, [n, s] = v.lat;
     const cellOf = (lat, lon) => {
       const c = Math.floor((lon - w) / (e - w) * W), r = Math.floor((n - lat) / (n - s) * H);
@@ -110,7 +110,7 @@
     let svg = "";
     v.rows.forEach((row, r) => { for (let c = 0; c < W; c++) if (row[c] === "1") svg += `<rect class="fp-land" x="${c * S}" y="${r * S}" width="${S - S / 5}" height="${S - S / 5}" rx="${S / 6}"/>`; });
     const jCells = FP.journey.map((j) => cellOf(j.lat, j.lon));
-    const showJ = fpState.layer !== "collab", showC = fpState.layer !== "journey";
+    const showJ = layer !== "collab", showC = layer !== "journey";
     if (showC) fpInst.forEach((inst) => {
       const a = jCells[inst.from], b = cellOf(inst.lat, inst.lon);
       if (!a || !b) return;
@@ -136,10 +136,9 @@
         svg += `<rect class="fp-sq fp-c" data-k="${k}" style="opacity:${fpLevel(papers)}" x="${x}" y="${y}" width="${z}" height="${z}" rx="${S / 4}"/>`;
       }
     }
-    const map = $("#fp-map");
     map.setAttribute("viewBox", `0 0 960 ${H * S}`);
-    map.innerHTML = svg;
-    fpState.cells = cells;
+    map.innerHTML = mini ? svg.replace(/ class="fp-sq/g, ' class="fp-dot') : svg;
+    if (!mini) fpState.cells = cells;
   }
   const fpSummary = (inst) => `${plural(inst.people.length, "co-author")}, ${plural(inst.papers.length, "paper")}`;
   function fpOpen(ids) {
@@ -162,7 +161,14 @@
     $("#fp-inst").querySelectorAll("[data-i]").forEach((b) => b.setAttribute("aria-pressed", "false"));
   }
   if (FP && LAND) {
-    $("#fp-stat").textContent = `${plural(FP.coauthors.length, "co-author")} · ${plural(fpInst.length, "institution")} · ${plural(new Set(fpInst.map((i) => i.country)).size, "country").replace("countrys", "countries")}`;
+    const fpCountries = [...new Map(fpInst.map((i) => [i.country, i.cc])).entries()];
+    const fpStats = `${plural(FP.coauthors.length, "co-author")} · ${plural(fpInst.length, "institution")} · ${fpCountries.length} countries`;
+    $("#fp-stat").textContent = fpStats;
+    $("#c-network").textContent = FP.coauthors.length;
+    $("#net-stat").textContent = fpStats;
+    $("#net-flags").innerHTML = fpCountries.map(([name, cc]) => flag(cc, name)).join("");
+    fpDraw($("#net-mini"), "world", "both", true);
+
     $("#fp-journey").innerHTML = FP.journey.map((j) => `<li><span class="fp-key fp-j" aria-hidden="true"></span>${flag(j.cc, "")}<span><strong>${esc(j.name)}</strong> · ${esc(j.role)} · ${esc(j.period)}</span></li>`).join("");
     $("#fp-inst").innerHTML = fpInst.map((inst, i) => `<li><button type="button" class="fp-row" data-i="${i}" aria-pressed="false"><span class="fp-key fp-c" style="opacity:${fpLevel(inst.papers.length)}" aria-hidden="true"></span>${flag(inst.cc, inst.country)}<span><strong>${esc(inst.name)}</strong>, ${esc(inst.country)} · ${fpSummary(inst)}</span></button></li>`).join("");
     fpDraw();
@@ -370,14 +376,16 @@
   renderPubs();
 
   /* ---------- Experience & education ---------- */
-  $("#experience-list").innerHTML = S.experience.map((x) => {
+  const roleHtml = (x) => {
     const now = /present/i.test(x.period);
     return `<li class="${now ? "now" : ""}"><span class="tl-dot" aria-hidden="true"></span><div class="box tl-box">
       <p class="tl-period">${esc(x.period)}${now ? ' <span class="label label-accent">Current</span>' : ""}</p>
       <h3 class="tl-role">${esc(x.role)}</h3>
       <p class="tl-org">${esc(x.org)}<span>${esc(x.place)}</span></p>
       ${x.text ? `<p class="tl-text">${esc(x.text)}</p>` : ""}</div></li>`;
-  }).join("");
+  };
+  $("#experience-list").innerHTML = S.experience.map(roleHtml).join("");
+  $("#teaching-list").innerHTML = (S.teaching || []).map(roleHtml).join("");
   $("#education-list").innerHTML = S.education.map((x) => `
     <li><span class="tl-dot" aria-hidden="true"></span><div class="box tl-box">
       <p class="tl-period">${esc(x.period)}</p>
@@ -409,6 +417,40 @@
     const w = S.workshops[+b.dataset.ws];
     openLightbox(w.image, w.title, `<span class="cap">${esc(w.title)}</span><span class="credit">${esc(w.where)}, ${esc(w.date)}</span>`);
   });
+
+  /* ---------- Activities: talks, service, summer schools ---------- */
+  const dated = (x, icon) => `<li class="row dated"><i class="fa-solid ${icon} row-icon" aria-hidden="true"></i><div class="row-main">
+      <p class="row-title">${esc(x.title)}</p><p class="row-sub">${esc([x.event, x.place].filter(Boolean).join(" · "))}</p></div>
+      <span class="row-year">${esc(x.date)}</span></li>`;
+  $("#talks-list").innerHTML = (S.talks || []).map((x) => dated(x, "fa-microphone-lines")).join("");
+  $("#schools-list").innerHTML = (S.summerSchools || []).map((x) => dated(x, "fa-school")).join("");
+  $("#service-list").innerHTML = (S.service || []).map((g) => `<article class="box service-group"><header class="box-head">${esc(g.group)}</header>
+      <ul>${g.items.map((it) => `<li>${esc(it)}</li>`).join("")}</ul></article>`).join("");
+
+  /* ---------- Recognition: GitHub-style photo gallery ---------- */
+  const G = S.gallery || [];
+  const gTags = ["All"].concat([...new Set(G.map((g) => g.tag).filter(Boolean))]);
+  let gTag = "All";
+  const gMeta = (g) => [g.place, g.year].filter(Boolean).join(" · ");
+  function renderGallery() {
+    const list = G.map((g, i) => [g, i]).filter(([g]) => gTag === "All" || g.tag === gTag);
+    $("#gallery").innerHTML = list.map(([g, i]) => `<li><button type="button" class="g-item" data-g="${i}" aria-label="View photo: ${esc(g.caption)}">
+        <img src="${esc(g.src)}" alt="" loading="lazy"><span class="g-cap"><strong>${esc(g.caption)}</strong>${gMeta(g) ? `<span>${esc(gMeta(g))}</span>` : ""}</span></button></li>`).join("");
+    $("#gallery-count").textContent = plural(list.length, "photo");
+  }
+  $("#gallery-filters").innerHTML = gTags.map((t) => `<button type="button" data-tag="${esc(t)}" aria-pressed="${t === gTag}">${esc(t)}</button>`).join("");
+  $("#gallery-filters").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-tag]"); if (!b) return;
+    gTag = b.dataset.tag;
+    $("#gallery-filters").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+    renderGallery();
+  });
+  $("#gallery").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-g]"); if (!b) return;
+    const g = G[+b.dataset.g];
+    openLightbox(g.src, g.caption, `<span class="cap">${esc(g.caption)}</span>${gMeta(g) ? `<span class="credit">${esc(gMeta(g))}</span>` : ""}`);
+  });
+  renderGallery();
 
   /* ---------- Footer ---------- */
   $("#contact-address").innerHTML = P.address.map(esc).join(", ");
@@ -444,6 +486,49 @@
     if (target && target !== show) requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
     else window.scrollTo({ top: 0 });
   }
-  window.addEventListener("hashchange", () => route(true));
+  window.addEventListener("hashchange", () => { route(true); layoutTabs(); closeMore(); });
   route(!!location.hash);
+
+  /* ---------- GitHub-style overflow: tabs that don't fit go into "More" ---------- */
+  const tabsIn = $(".tabs-in"), moreWrap = $(".tabs-more"), moreBtn = $(".more-btn"), moreMenu = $("#tabs-menu");
+  function closeMore() { moreMenu.hidden = true; moreBtn.setAttribute("aria-expanded", "false"); }
+  function layoutTabs() {
+    tabs.forEach((t) => (t.hidden = false));
+    moreWrap.hidden = true;
+    const avail = tabsIn.clientWidth;
+    const widths = tabs.map((t) => t.getBoundingClientRect().width + 4);
+    if (widths.reduce((a, b) => a + b, 0) <= avail) { moreMenu.innerHTML = ""; return; }
+    moreWrap.hidden = false;
+    const room = avail - moreWrap.getBoundingClientRect().width - 8;
+    let used = 0, fit = 0;
+    while (fit < tabs.length && used + widths[fit] <= room) used += widths[fit++];
+    const keep = tabs.slice(0, fit);
+    const active = tabs.find((t) => t.classList.contains("active"));
+    if (active && !keep.includes(active)) {
+      used += widths[tabs.indexOf(active)];
+      while (keep.length && used > room) used -= widths[tabs.indexOf(keep.pop())];
+      keep.push(active);
+    }
+    const shown = new Set(keep);
+    const hidden = tabs.filter((t) => !shown.has(t));
+    hidden.forEach((t) => (t.hidden = true));
+    moreMenu.innerHTML = hidden.map((t) => `<a href="${t.getAttribute("href")}" role="menuitem">${t.innerHTML}</a>`).join("");
+  }
+  moreBtn.addEventListener("click", () => {
+    const open = moreMenu.hidden;
+    moreMenu.hidden = !open; moreBtn.setAttribute("aria-expanded", String(open));
+    if (open) { const f = moreMenu.querySelector("a"); if (f) f.focus(); }
+  });
+  moreMenu.addEventListener("keydown", (e) => {
+    const items = [...moreMenu.querySelectorAll("a")], i = items.indexOf(document.activeElement);
+    if (e.key === "ArrowDown") { e.preventDefault(); items[(i + 1) % items.length].focus(); }
+    if (e.key === "ArrowUp") { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); }
+    if (e.key === "Escape") { closeMore(); moreBtn.focus(); }
+  });
+  moreMenu.addEventListener("click", (e) => { if (e.target.closest("a")) closeMore(); });
+  document.addEventListener("click", (e) => { if (!moreWrap.contains(e.target)) closeMore(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !moreMenu.hidden) { closeMore(); moreBtn.focus(); } });
+  if (window.ResizeObserver) new ResizeObserver(layoutTabs).observe(tabsIn); else window.addEventListener("resize", layoutTabs);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutTabs);
+  layoutTabs();
 })();
