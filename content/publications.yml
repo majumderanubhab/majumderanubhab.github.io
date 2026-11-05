@@ -20,7 +20,7 @@ publications:
     type: conference
     year: 2027
     authors: A Majumder, I Kaushal, B Veluri, R Mansour, D Ramanujan
-    title: A Human-Centric PFMEA Ontology Supporting Social Sustainability in Manufacturing
+    title: Supporting Systematic Unit Process Life Cycle Inventory Development in Manufacturing Processes
     venue: International Conference on Research into Design (ICoRD'27)
     details: accepted
   - id: gcsm2026-pfmea
