@@ -418,19 +418,19 @@ coauthors:
   - name: Rami Mansour
     institution: Aarhus University
     papers:
-      - icord2027-pfmea
+      - icord2027-lci
       - gcsm2026-pfmea
   - name: Ishaan Kaushal
     institution: Aarhus University
     papers:
-      - icord2027-pfmea
+      - icord2027-lci
   - name: Badrinath Veluri
     institution: Grundfos
     papers:
-      - icord2027-pfmea
+      - icord2027-lci
       - gcsm2026-pfmea
   - name: Devarajan Ramanujan
     institution: DTU
     papers:
-      - icord2027-pfmea
+      - icord2027-lci
       - gcsm2026-pfmea

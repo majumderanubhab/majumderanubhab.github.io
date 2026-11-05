@@ -16,7 +16,7 @@
 # After adding a paper, also list its id under a thrust in research.yml.
 
 publications:
-  - id: icord2027-pfmea
+  - id: icord2027-lci
     type: conference
     year: 2027
     authors: A Majumder, I Kaushal, B Veluri, R Mansour, D Ramanujan
