@@ -62,12 +62,20 @@
       </button>
     </div>
     <nav class="tabs" aria-label="Sections">
-      <div class="tabs-in" role="tablist">
-        <a href="#overview" role="tab" data-tab="overview"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Overview</a>
-        <a href="#research" role="tab" data-tab="research"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>Research <span class="count" id="c-research"></span></a>
-        <a href="#publications" role="tab" data-tab="publications"><i class="fa-regular fa-file-lines" aria-hidden="true"></i>Publications <span class="count" id="c-pubs"></span></a>
-        <a href="#experience" role="tab" data-tab="experience"><i class="fa-solid fa-briefcase" aria-hidden="true"></i>Experience</a>
-        <a href="#awards" role="tab" data-tab="awards"><i class="fa-regular fa-star" aria-hidden="true"></i>Awards &amp; workshops</a>
+      <div class="tabs-in">
+        <div class="tabs-list" role="tablist">
+          <a href="#overview" role="tab" data-tab="overview"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Overview</a>
+          <a href="#research" role="tab" data-tab="research"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>Research <span class="count" id="c-research"></span></a>
+          <a href="#publications" role="tab" data-tab="publications"><i class="fa-regular fa-file-lines" aria-hidden="true"></i>Publications <span class="count" id="c-pubs"></span></a>
+          <a href="#experience" role="tab" data-tab="experience"><i class="fa-solid fa-briefcase" aria-hidden="true"></i>Experience</a>
+          <a href="#awards" role="tab" data-tab="awards"><i class="fa-regular fa-star" aria-hidden="true"></i>Recognition</a>
+          <a href="#activities" role="tab" data-tab="activities"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>Activities</a>
+          <a href="#network" role="tab" data-tab="network"><i class="fa-solid fa-earth-europe" aria-hidden="true"></i>Network <span class="count" id="c-network"></span></a>
+        </div>
+        <div class="tabs-more" hidden>
+          <button type="button" class="more-btn" aria-haspopup="true" aria-expanded="false" aria-controls="tabs-menu">More <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
+          <div id="tabs-menu" class="tabs-menu" hidden></div>
+        </div>
       </div>
     </nav>
   </header>
@@ -120,26 +128,17 @@
         </div>
 
         <div class="block">
-          <div class="block-head"><h2 class="h-md" id="fp-h">Academic journey and collaborators</h2><span id="fp-stat" class="fp-stat"></span></div>
-          <figure class="box fp" aria-labelledby="fp-h">
-            <div class="fp-bar">
-              <div id="fp-zoom" class="segmented" role="group" aria-label="Map area"><button type="button" data-v="world" aria-pressed="true">World</button><button type="button" data-v="europe" aria-pressed="false">Europe</button><button type="button" data-v="india" aria-pressed="false">India</button></div>
-              <div id="fp-layer" class="segmented" role="group" aria-label="Show on map"><button type="button" data-v="both" aria-pressed="true">Both</button><button type="button" data-v="journey" aria-pressed="false">Journey</button><button type="button" data-v="collab" aria-pressed="false">Collaborators</button></div>
-            </div>
-            <svg id="fp-map" class="fp-map" role="img" aria-label="Map of the academic journey and co-author institutions. The same information is listed below the map."></svg>
-            <p id="fp-tip" class="fp-tip">Hover a square for details; click it, or an institution below, to see co-authors and their papers.</p>
-            <div id="fp-panel" class="fp-panel" hidden></div>
-            <div class="fp-lists">
-              <div><h3 class="fp-h">Academic journey</h3><ol id="fp-journey" class="fp-list"></ol></div>
-              <div><h3 class="fp-h">Co-author institutions</h3><ul id="fp-inst" class="fp-list"></ul></div>
-            </div>
-          </figure>
+          <div class="block-head"><h2 class="h-md">Academic journey and research collaborations</h2><a href="#network" class="muted-link">Explore the map</a></div>
+          <a class="box net-card" href="#network" aria-label="Open the academic journey and research collaborations map">
+            <svg id="net-mini" class="net-mini" aria-hidden="true"></svg>
+            <span class="net-text"><strong id="net-stat"></strong><span id="net-flags" class="net-flags"></span><span class="muted-link">Academic journey and research collaborations</span></span>
+          </a>
         </div>
 
         <div class="block">
-          <div class="block-head"><h2 class="h-md">Activity</h2></div>
+          <div class="block-head"><h2 class="h-md">News</h2></div>
           <ol id="news-list" class="feed"></ol>
-          <button id="news-more" class="btn btn-sm" type="button" hidden>Show more activity</button>
+          <button id="news-more" class="btn btn-sm" type="button" hidden>Show more news</button>
         </div>
       </section>
 
@@ -163,18 +162,58 @@
 
       <!-- Experience -->
       <section id="experience" class="panel" role="tabpanel" aria-label="Experience" hidden>
-        <h2 class="h-md">Experience</h2>
+        <nav class="jump" aria-label="On this page"><a href="#exp-positions">Research positions</a><a href="#exp-teaching">Teaching</a><a href="#exp-education">Education</a></nav>
+        <h2 class="h-md" id="exp-positions">Research positions</h2>
         <ol id="experience-list" class="timeline"></ol>
-        <h2 class="h-md">Education</h2>
+        <h2 class="h-md" id="exp-teaching">Teaching</h2>
+        <ol id="teaching-list" class="timeline"></ol>
+        <h2 class="h-md" id="exp-education">Education</h2>
         <ol id="education-list" class="timeline"></ol>
       </section>
 
-      <!-- Awards & workshops -->
-      <section id="awards" class="panel" role="tabpanel" aria-label="Awards and workshops" hidden>
+      <!-- Recognition (awards & workshops) -->
+      <section id="awards" class="panel" role="tabpanel" aria-label="Recognition" hidden>
         <h2 class="h-md">Awards and honours</h2>
         <ul id="awards-list" class="box list"></ul>
-        <h2 class="h-md">Workshops</h2>
+        <div class="block-head"><h2 class="h-md" id="gallery-h">Gallery</h2><div id="gallery-filters" class="segmented" role="group" aria-label="Filter photos"></div></div>
+        <div class="box gallery-box">
+          <header class="box-head gallery-head"><span class="mono">anubhab / gallery</span><span id="gallery-count" class="muted-link"></span></header>
+          <ul id="gallery" class="gallery"></ul>
+        </div>
+      </section>
+
+      <!-- Activities -->
+      <section id="activities" class="panel" role="tabpanel" aria-label="Activities" hidden>
+        <nav class="jump" aria-label="On this page"><a href="#act-workshops">Workshops</a><a href="#act-talks">Invited talks</a><a href="#act-service">Academic service</a><a href="#act-schools">Summer schools</a></nav>
+        <h2 class="h-md" id="act-workshops">Workshops</h2>
         <div id="workshops-list" class="ws-grid"></div>
+        <h2 class="h-md" id="act-talks">Invited talks</h2>
+        <ul id="talks-list" class="box list"></ul>
+        <h2 class="h-md" id="act-service">Academic service</h2>
+        <div id="service-list" class="service"></div>
+        <h2 class="h-md" id="act-schools">Summer schools and training</h2>
+        <ul id="schools-list" class="box list"></ul>
+      </section>
+
+      <!-- Network -->
+      <section id="network" class="panel" role="tabpanel" aria-label="Network" hidden>
+        <div class="block">
+          <div class="block-head"><h2 class="h-md" id="fp-h">Academic journey and research collaborations</h2><span id="fp-stat" class="fp-stat"></span></div>
+          <figure class="box fp" aria-labelledby="fp-h">
+            <div class="fp-bar">
+              <div id="fp-zoom" class="segmented" role="group" aria-label="Map area"><button type="button" data-v="world" aria-pressed="true">World</button><button type="button" data-v="europe" aria-pressed="false">Europe</button><button type="button" data-v="india" aria-pressed="false">India</button></div>
+              <div id="fp-layer" class="segmented" role="group" aria-label="Show on map"><button type="button" data-v="both" aria-pressed="true">Both</button><button type="button" data-v="journey" aria-pressed="false">Journey</button><button type="button" data-v="collab" aria-pressed="false">Collaborators</button></div>
+            </div>
+            <svg id="fp-map" class="fp-map" role="img" aria-label="Map of the academic journey and co-author institutions. The same information is listed below the map."></svg>
+            <p id="fp-tip" class="fp-tip">Hover a square for details; click it, or an institution below, to see co-authors and their papers.</p>
+            <div id="fp-panel" class="fp-panel" hidden></div>
+            <div class="fp-lists">
+              <div><h3 class="fp-h">Academic journey</h3><ol id="fp-journey" class="fp-list"></ol></div>
+              <div><h3 class="fp-h">Co-author institutions</h3><ul id="fp-inst" class="fp-list"></ul></div>
+            </div>
+          </figure>
+        </div>
+
       </section>
     </main>
   </div>
