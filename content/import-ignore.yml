@@ -1,0 +1,8 @@
+# Works the weekly ORCID import should never add (wrong attribution, duplicates,
+# preprints of papers already listed...). One DOI or OpenAlex id (W123...) per line.
+#
+# Example:
+#   ignore:
+#     - 10.20944/preprints202607.1622.v1
+
+ignore: []
