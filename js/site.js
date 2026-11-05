@@ -1,4 +1,4 @@
-/* Renders the website from data/content.js. You normally don't need to edit this file. */
+/* Renders the website from data/content.js, which scripts/build.py generates from content/*.yml. You normally don't need to edit this file. */
 (function () {
   "use strict";
   const S = window.SITE;

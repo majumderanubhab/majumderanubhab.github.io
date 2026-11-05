@@ -1,0 +1,86 @@
+# Recognition tab: awards and the photo gallery.
+#   awards   the first six also appear in the sidebar; "image" is optional
+#   gallery  src = path to a photo in images/; tag = Awards or Conferences
+#            (any new tag becomes a new filter button)
+
+awards:
+  - year: '2026'
+    title: MAA Communications Medal (best PhD thesis)
+    by: Indian Institute of Science, Bengaluru, India
+  - year: '2025'
+    title: Future Talent Short-term Scholarship & Guest Stay
+    by: Ingenium, Technical University of Darmstadt, Germany
+  - year: '2025'
+    title: Distinguished Paper Award
+    by: ICoRD'25, Indian Institute of Technology Hyderabad, India
+    image: images/Awards/ICoRD25.jpeg
+  - year: '2023'
+    title: Reviewers' Favourite Award
+    by: ICED23, University of Bordeaux, France
+    image: images/Awards/iced23.jpeg
+  - year: '2023'
+    title: Distinguished Paper Award
+    by: ICoRD'23, Indian Institute of Science, India
+    image: images/Awards/ICoRD23.JPG
+  - year: '2018'
+    title: IIT (ISM) Gold Medal
+    by: Indian Institute of Technology (ISM), Dhanbad, India
+  - year: '2017'
+    title: Best Paper Award
+    by: ICMMRE 2017, Sikkim, India
+    image: images/Awards/icmmre.JPG
+  - year: 2018–2023
+    title: PhD Fellowship (JRF & SRF)
+    by: Ministry of Education, Government of India
+  - year: 2016–2018
+    title: GATE Scholarship
+    by: Ministry of Education, Government of India
+  - year: 2012–2016
+    title: National Scholarship
+    by: Department of Higher Education, Ministry of Education, Government of India
+gallery:
+  - src: images/Awards/ICoRD25.jpeg
+    caption: Distinguished Paper Award, ICoRD'25
+    place: IIT Hyderabad
+    year: '2025'
+    tag: Awards
+  - src: images/Awards/iced23.jpeg
+    caption: Reviewers' Favourite Award, ICED23
+    place: University of Bordeaux
+    year: '2023'
+    tag: Awards
+  - src: images/Awards/ICoRD23.JPG
+    caption: Distinguished Paper Award, ICoRD'23
+    place: IISc Bengaluru
+    year: '2023'
+    tag: Awards
+  - src: images/Awards/icmmre.JPG
+    caption: Best Paper Award, ICMMRE'17
+    place: SMIT, Sikkim
+    year: '2017'
+    tag: Awards
+  - src: images/Bordeaux.jpeg
+    caption: ICED23
+    place: Bordeaux, France
+    year: '2023'
+    tag: Conferences
+  - src: images/icord.jpg
+    caption: Hosting parallel sessions, ICoRD'19
+    place: IISc Bengaluru
+    year: '2019'
+    tag: Conferences
+  - src: images/icord21.jpg
+    caption: Virtual stage manager and host, ICoRD'21 (online)
+    place: ''
+    year: '2021'
+    tag: Conferences
+  - src: images/bg.JPG
+    caption: Hosting the PLMSS 2019 keynote sessions
+    place: Bengaluru
+    year: '2019'
+    tag: Conferences
+  - src: images/5.JPG
+    caption: PLMSS 2019
+    place: Bengaluru
+    year: '2019'
+    tag: Conferences

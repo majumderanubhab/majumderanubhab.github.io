@@ -1,0 +1,54 @@
+# Builds the site from content/*.yml and publishes it to GitHub Pages.
+# Runs on every push to main (including edits made on github.com).
+# On pull requests it only checks the content, so mistakes are caught before going live.
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PyYAML
+        run: pip install pyyaml==6.0.2
+      - name: Check content and build data/content.js
+        run: python scripts/build.py
+      - name: Prepare site folder
+        if: github.event_name != 'pull_request'
+        run: |
+          mkdir _site
+          cp -r index.html mylogo.ico css js data images references.bib _site/
+      - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
