@@ -34,6 +34,16 @@ If something is wrong (a missing field, a paper id that doesn't exist, a photo t
 - **New photo:** upload it to `images/` (on GitHub: *Add file → Upload files*), then add an entry to `gallery` in `content/recognition.yml`.
 - **New job:** add it at the top of `positions` in `content/experience.yml`, and update `position` / `affiliations` / `bio` in `content/profile.yml`.
 
+### New papers arrive by themselves
+
+Every Monday, GitHub checks your ORCID (through OpenAlex). If it finds a paper that isn't on the site yet, it opens a **pull request** (Pull requests tab; GitHub also emails you) that already adds the paper to `content/publications.yml` and its co-authors and institutions to `content/network.yml`.
+
+1. Open the pull request and read the summary at the top.
+2. Add the paper's `id` under the right thrust in `content/research.yml`: open **Files changed**, then the file, then **Edit file**, or edit the file in the same branch.
+3. Click **Merge pull request**. The site updates about a minute later.
+
+Not your paper? Close the pull request and add its DOI to `content/import-ignore.yml`. To check right away instead of waiting for Monday: **Actions → Import new publications → Run workflow**.
+
 ### YAML in 30 seconds
 
 ```yaml

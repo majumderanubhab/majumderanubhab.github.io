@@ -1,0 +1,42 @@
+# Once a week, looks for new publications on your ORCID (via OpenAlex) and,
+# if it finds any, opens a pull request that adds them to content/publications.yml
+# and their co-authors to content/network.yml. Nothing goes live until you merge it.
+# You can also run it any time: Actions tab -> "Import new publications" -> Run workflow.
+name: Import new publications
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PyYAML
+        run: pip install pyyaml==6.0.2
+      - name: Look for new publications
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: python scripts/import_orcid.py --summary "$RUNNER_TEMP/summary.md"
+      - name: Check the result still builds
+        run: python scripts/build.py
+      - name: Open a pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: orcid-import
+          delete-branch: true
+          commit-message: Add new publications from ORCID
+          title: New publications from ORCID
+          body-path: ${{ runner.temp }}/summary.md
+          add-paths: |
+            content/publications.yml
+            content/network.yml

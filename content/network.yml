@@ -48,6 +48,7 @@ institutions:
     lat: 13.02
     lon: 77.57
     from: 2
+    openalex: I59270414
   - name: IIT (ISM) Dhanbad
     city: Dhanbad
     country: India
@@ -55,6 +56,7 @@ institutions:
     lat: 23.81
     lon: 86.44
     from: 1
+    openalex: I189109744
   - name: CSIR-CMERI
     city: Durgapur
     country: India
@@ -62,6 +64,7 @@ institutions:
     lat: 23.55
     lon: 87.29
     from: 1
+    openalex: I70735523
   - name: Institute of Science Tokyo
     city: Tokyo
     country: Japan
@@ -69,6 +72,7 @@ institutions:
     lat: 35.6
     lon: 139.68
     from: 3
+    openalex: I4400009020
   - name: University College London
     city: London
     country: UK
@@ -76,6 +80,7 @@ institutions:
     lat: 51.52
     lon: -0.13
     from: 3
+    openalex: I45129253
   - name: TU Darmstadt
     city: Darmstadt
     country: Germany
@@ -83,6 +88,7 @@ institutions:
     lat: 49.86
     lon: 8.68
     from: 3
+    openalex: I31512782
   - name: Aarhus University
     city: Aarhus
     country: Denmark
@@ -118,6 +124,7 @@ institutions:
     lat: 13.01
     lon: 74.79
     from: 2
+    openalex: I11880225
   - name: IIT Delhi
     city: New Delhi
     country: India
@@ -125,6 +132,7 @@ institutions:
     lat: 28.55
     lon: 77.19
     from: 2
+    openalex: I68891433
   - name: IIIT Delhi
     city: New Delhi
     country: India
@@ -132,6 +140,7 @@ institutions:
     lat: 28.55
     lon: 77.27
     from: 2
+    openalex: I119939252
   - name: Brunel University London
     city: Uxbridge
     country: UK
@@ -139,6 +148,7 @@ institutions:
     lat: 51.53
     lon: -0.47
     from: 2
+    openalex: I59433898
   - name: ITS
     city: Surabaya
     country: Indonesia
@@ -146,6 +156,7 @@ institutions:
     lat: -7.28
     lon: 112.8
     from: 2
+    openalex: I166843116
   - name: ITB
     city: Bandung
     country: Indonesia
@@ -153,6 +164,7 @@ institutions:
     lat: -6.89
     lon: 107.61
     from: 2
+    openalex: I134635517
   - name: University of Cambridge
     city: Cambridge
     country: UK
@@ -160,6 +172,7 @@ institutions:
     lat: 52.2
     lon: 0.12
     from: 3
+    openalex: I241749
   - name: SUSTech
     city: Shenzhen
     country: China
@@ -167,6 +180,7 @@ institutions:
     lat: 22.6
     lon: 114.0
     from: 3
+    openalex: I3045169105
   - name: University of Illinois Urbana-Champaign
     city: Urbana
     country: USA
@@ -191,6 +205,7 @@ coauthors:
       - icord2023-function
       - dsj2022-tool
       - aiedam2021-reasoning
+    openalex: A5016400353
   - name: Kausik Bhattacharya
     institution: IISc
     papers:
@@ -198,40 +213,49 @@ coauthors:
       - icord2025-rag
       - icord2025-reference
       - aiedam2024-sapphire-nl
+    openalex: A5065940338
   - name: Apoorv Naresh Bhatt
     institution: IISc
     papers:
       - aiedam2024-sapphire-nl
       - icord2023-function
       - aiedam2021-reasoning
+    openalex: A5038161145
   - name: Ujjwal Pal
     institution: IISc
     papers:
       - aiedam2026-variety
+    openalex: A5089018515
   - name: Sahana Parasuram
     institution: IISc
     papers:
       - pds2026-dsm
+    openalex: A5119975358
   - name: Vishal Singh
     institution: IISc
     papers:
       - pds2025-pisces
+    openalex: A5059624322
   - name: Ranjan B.S.C.
     institution: Dr. H. N. National College of Engineering
     papers:
       - aiedam2024-sapphire-nl
+    openalex: A5115612200
   - name: Srinivasan Venkataraman
     institution: IIT Delhi
     papers:
       - aiedam2024-sapphire-nl
+    openalex: A5080059551
   - name: Sonal Keshwani
     institution: IIIT Delhi
     papers:
       - aiedam2024-sapphire-nl
+    openalex: A5082359260
   - name: Somasekhara Rao Todeti
     institution: NIT Karnataka
     papers:
       - red2023-empirical
+    openalex: A5004558925
   - name: Sanjoy Kumar Ghoshal
     institution: IIT (ISM) Dhanbad
     papers:
@@ -242,24 +266,28 @@ coauthors:
       - ncame2020-climbing
       - asem2020-limbless
       - ijra2020-sine
+    openalex: A5068785342
   - name: H. Dikshit
     institution: IIT (ISM) Dhanbad
     papers:
       - jestr2018-review
       - iop2018-climbing
       - aip2018-adams
+    openalex: A5023250517
   - name: Asesh Patra
     institution: IIT (ISM) Dhanbad
     papers:
       - air2019-ann
       - ncame2020-climbing
       - asem2020-limbless
+    openalex: A5043018792
   - name: Meet Patel
     institution: IIT (ISM) Dhanbad
     papers:
       - air2019-ann
       - ncame2020-climbing
       - asem2020-limbless
+    openalex: A5110842269
   - name: Priyabrata Chattopadhyay
     institution: CSIR-CMERI
     papers:
@@ -270,89 +298,109 @@ coauthors:
       - ncame2020-climbing
       - asem2020-limbless
       - ijra2020-sine
+    openalex: A5026947933
   - name: A. Maity
     institution: CSIR-CMERI
     papers:
       - iop2018-climbing
       - aip2018-adams
+    openalex: ''
   - name: Spyridoula Gerassimidou
     institution: Brunel University London
     papers:
       - pds2025-pisces
+    openalex: A5061981957
   - name: Susan Jobling
     institution: Brunel University London
     papers:
       - pds2025-pisces
+    openalex: A5046991673
   - name: Eleni Iacovidou
     institution: Brunel University London
     papers:
       - pds2025-pisces
+    openalex: A5022590449
   - name: Titing Reza Fahrisa
     institution: ITS
     papers:
       - pds2025-pisces
+    openalex: A5119444678
   - name: Gatot Yudoko
     institution: ITB
     papers:
       - pds2025-pisces
+    openalex: A5089078489
   - name: Eckhard Kirchner
     institution: TU Darmstadt
     papers:
       - pds2026-re
       - pds2026-resilience
+    openalex: A5019294293
   - name: Fabian Rahn
     institution: TU Darmstadt
     papers:
       - pds2026-re
+    openalex: A5138279168
   - name: Patrick Kortenbusch
     institution: TU Darmstadt
     papers:
       - pds2026-resilience
+    openalex: A5139906359
   - name: Hamza Firoud
     institution: TU Darmstadt
     papers:
       - pds2026-resilience
+    openalex: A5139889787
   - name: Yuval Kahlon
     institution: Institute of Science Tokyo
     papers:
       - cexr2026-gaze
       - urbsci2026-visual
       - epde2026-genai
+    openalex: A5022526886
   - name: Toshihiro Osaragi
     institution: Institute of Science Tokyo
     papers:
       - cexr2026-gaze
       - urbsci2026-visual
+    openalex: A5057944783
   - name: Takuya Oki
     institution: Institute of Science Tokyo
     papers:
       - urbsci2026-visual
+    openalex: A5027280396
   - name: Maki Kishimoto
     institution: Institute of Science Tokyo
     papers:
       - cexr2026-gaze
+    openalex: A5130762962
   - name: Mitsue Nagamine
     institution: Institute of Science Tokyo
     papers:
       - cexr2026-gaze
+    openalex: A5064804072
   - name: Stephen Law
     institution: University College London
     papers:
       - cexr2026-gaze
       - urbsci2026-visual
       - epde2026-genai
+    openalex: A5130786338
   - name: Michal Gath-Morad
     institution: University of Cambridge
     papers:
       - cexr2026-gaze
+    openalex: A5063528874
   - name: Christiane M. Herr
     institution: SUSTech
     papers:
       - cexr2026-gaze
+    openalex: A5013948920
   - name: Rachel Flood Heaton
     institution: University of Illinois Urbana-Champaign
     papers:
       - urbsci2026-visual
+    openalex: A5089365552
   - name: Rami Mansour
     institution: Aarhus University
     papers:
