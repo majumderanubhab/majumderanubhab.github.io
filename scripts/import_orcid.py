@@ -178,6 +178,15 @@ def find_institution(text):
     return None
 
 
+def years(period):
+    """'2018 – 2025' -> (2018, 2025); '2025 – present' -> (2025, 9999); '2025' -> (2025, 2025)."""
+    nums = [int(y) for y in re.findall(r"\d{4}", str(period))]
+    if not nums:
+        return None
+    end = 9999 if re.search(r"present|now", str(period), re.I) else nums[-1]
+    return nums[0], end
+
+
 def is_me(authorship, orcid):
     a = authorship.get("author") or {}
     return (a.get("orcid") or "").endswith(orcid)
@@ -213,10 +222,31 @@ def main():
     person_by_oa = {a["openalex"]: a for a in people if a.get("openalex")}
     person_by_name = {norm(a["name"]): a for a in people}
     current_step = len(net["journey"]) - 1
+    journey = net["journey"]
+
+    def journey_step(work):
+        """Which journey step you were at for this paper, and why."""
+        mine = next((a for a in work.get("authorships", []) if is_me(a, orcid)), {})
+        ids = {(i.get("id") or "").split("/")[-1] for i in mine.get("institutions") or []}
+        if not ids:  # try the affiliation text printed in the paper
+            text = next(iter(mine.get("raw_affiliation_strings") or []), "")
+            hit = find_institution(text) if text else None
+            if hit:
+                ids = {hit["id"].split("/")[-1]}
+        for i, j in enumerate(journey):
+            if ids & set(j.get("openalex") or []):
+                return i, "your affiliation in the paper"
+        year = work.get("publication_year") or 0
+        for i, j in enumerate(journey):  # earliest step whose dates cover the year (allows for publication lag)
+            span = years(j.get("period"))
+            if span and span[0] <= year <= span[1]:
+                return i, f"publication year {year}"
+        return current_step, "no match; using your current position"
 
     added, doi_filled, new_people, new_insts, unplaced = [], [], [], [], []
 
     def link_coauthors(work, pid):
+        step, why = journey_step(work)
         for au in work.get("authorships", []):
             if is_me(au, orcid):
                 continue
@@ -246,11 +276,11 @@ def main():
                     continue
                 inst = {"name": info.get("display_name") or oi.get("display_name"), "city": geo.get("city") or "",
                         "country": geo.get("country") or "", "cc": (info.get("country_code") or geo.get("country_code") or "").lower(),
-                        "lat": round(geo["latitude"], 2), "lon": round(geo["longitude"], 2), "from": current_step, "openalex": i_id}
+                        "lat": round(geo["latitude"], 2), "lon": round(geo["longitude"], 2), "from": step, "openalex": i_id}
                 insts.append(inst)
                 inst_by_oa[i_id] = inst
                 inst_by_name[norm(inst["name"])] = inst
-                new_insts.append(inst)
+                new_insts.append((inst, journey[step]["name"], why))
             person = {"name": name, "institution": inst["name"], "papers": [pid], "openalex": a_id}
             people.append(person)
             person_by_oa[a_id] = person
@@ -311,7 +341,7 @@ def main():
     if doi_filled:
         lines += ["### DOI added to an existing entry", ""] + [f"- `{p['id']}`: {p['title']}" for p in doi_filled] + [""]
     if new_insts:
-        lines += ["### New institutions on the map", ""] + [f"- {i['name']}, {i['city']}, {i['country']}" for i in new_insts] + [""]
+        lines += ["### New institutions on the map", ""] + [f"- {i['name']}, {i['city']}, {i['country']}: linked to **{j}** ({why})" for i, j, why in new_insts] + [""]
     if new_people:
         lines += ["### New co-authors", ""] + [f"- {a['name']} ({a['institution']})" for a in new_people] + [""]
     if unplaced:
@@ -319,7 +349,7 @@ def main():
     lines += ["### Before merging", "",
               "- [ ] Add each new paper's `id` under the right thrust in `content/research.yml` (edit the file in this pull request).",
               "- [ ] Check titles, author names and venue in `content/publications.yml`.",
-              "- [ ] New institutions are linked to your current position (`from`) in `content/network.yml`; change it if the work was done elsewhere.",
+              "- [ ] New institutions are linked to where you were for that paper (see above); adjust `from` in `content/network.yml` if needed.",
               "- [ ] Optional: add a news item in `content/news.yml`.",
               "", "Not your paper? Close this pull request and add its DOI to `content/import-ignore.yml`."]
     summary = "\n".join(lines)

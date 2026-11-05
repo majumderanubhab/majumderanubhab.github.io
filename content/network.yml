@@ -1,5 +1,6 @@
 # Network tab and Overview card: academic journey and research collaborations.
-#   journey       places in order; "also" adds extra squares for one step
+#   journey       places in order; "also" adds extra squares for one step;
+#                 "openalex" lists the institution ids used to recognise your affiliation
 #   institutions  co-author institutions; "from" = journey step (0 = first)
 #                 you were at when working with them; cc = flag code (in, de, dk, ...)
 #   coauthors     each co-author, their institution and joint paper ids
@@ -17,18 +18,24 @@ journey:
     cc: in
     lat: 23.81
     lon: 86.44
+    openalex:
+      - I189109744
   - name: IISc Bengaluru
     role: PhD and Research Associate
     period: 2018 – 2025
     cc: in
     lat: 13.02
     lon: 77.57
+    openalex:
+      - I59270414
   - name: TU Darmstadt
     role: Postdoctoral researcher, pmd
     period: '2025'
     cc: de
     lat: 49.86
     lon: 8.68
+    openalex:
+      - I31512782
   - name: Grundfos · Aarhus University · DTU
     role: Industrial postdoctoral researcher
     period: 2025 – present
@@ -40,6 +47,10 @@ journey:
         - 9.66
       - - 55.78
         - 12.52
+    openalex:
+      - I4210161280
+      - I204337017
+      - I96673099
 institutions:
   - name: IISc
     city: Bengaluru
@@ -96,6 +107,7 @@ institutions:
     lat: 56.17
     lon: 10.19
     from: 4
+    openalex: I204337017
   - name: Grundfos
     city: Bjerringbro
     country: Denmark
@@ -103,6 +115,7 @@ institutions:
     lat: 56.38
     lon: 9.66
     from: 4
+    openalex: I4210161280
   - name: DTU
     city: Lyngby
     country: Denmark
@@ -110,6 +123,7 @@ institutions:
     lat: 55.78
     lon: 12.52
     from: 4
+    openalex: I96673099
   - name: Dr. H. N. National College of Engineering
     city: Bengaluru
     country: India
